@@ -1,165 +1,28 @@
-#Cooli [![Build Status](https://raw.github.com/avenjan/cooli/master/v1/images/logo.png)]
+#Cooli ![COOLI](https://raw.github.com/avenjan/cooli/master/v1/images/logo.png)
 
-Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created and maintained by [Mark Otto](http://twitter.com/mdo) and [Jacob Thornton](http://twitter.com/fat).
+酷爱音乐网站管理系统是由 [桦盟网络技术团队](http://www.huamengnet.com/) 的核心成员 [Aven Jan](http://avenjan.huamengnet.com)采用DedeCMS作为核心框架，整合功能强大的[CMP4](http://bbs.cenfun.com)播放器二次开发而成.
+酷爱先后经历了V1 & V2两个版本。
 
-To get started, check out <http://getbootstrap.com>!
+正如你所看到的，作者本人已经将前两个版本开源公布，或许是因为目前Aven 正在构思开发出新的beta V0.1版本，新的版本将沿用之前的基础架构，采用简洁、直观、强悍的Bootstrap来作为前端布局框架。相信在不久之后你就可以看到它的身影。
 
 
 
-## Quick start
+## 开源说明
+cooli V1 和 V2 版本一经发布曾受到广大网友的好评，发布数日边有近千余人次的下载和安装。当然用作者本人的话来说它现在并不是完美的。更加完美的作品仍处于构想之中。但是我们完全有理由详细这样一件值得推广的作品可以在更多开发者的手中变得更加完善和符合使用者各自的使用习惯。于是它出现在了这里，期待着你发现并利用它，从而让它变得更加完美更加具有价值。
+所以 任何人目前都可完全拥有并使用cooli的全部源代码，但是当你进行发布的时候请保留些许关于原作者的说明，或者你能够将你进行完善的内容告知作者，或许这能为作者带来更多的创作思路。
 
-Three quick start options are available:
 
-* [Download the latest release](https://github.com/twbs/bootstrap/archive/v3.0.2.zip).
-* Clone the repo: `git clone https://github.com/twbs/bootstrap.git`.
-* Install with [Bower](http://bower.io): `bower install bootstrap`.
 
-Read the [Getting Started page](http://getbootstrap.com/getting-started/) for information on the framework contents, templates and examples, and more.
 
-### What's included
+## 关于作者
 
-Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
+**Aven Jan**
+E-mail: avenjan@gmail.com
+QQ 599238526
++ 作者主页：<http://avenjan.huamengnet.com>
++ 网络技术团队： <http://www.huamengnet.com>
 
-```
-bootstrap/
-├── css/
-│   ├── bootstrap.css
-│   ├── bootstrap.min.css
-│   ├── bootstrap-theme.css
-│   └── bootstrap-theme.min.css
-├── js/
-│   ├── bootstrap.js
-│   └── bootstrap.min.js
-└── fonts/
-    ├── glyphicons-halflings-regular.eot
-    ├── glyphicons-halflings-regular.svg
-    ├── glyphicons-halflings-regular.ttf
-    └── glyphicons-halflings-regular.woff
-```
 
-We provide compiled CSS and JS (`bootstrap.*`), as well as compiled and minified CSS and JS (`bootstrap.min.*`). Fonts from Glyphicons are included, as is the optional Bootstrap theme.
+## Copyright 
 
-
-
-## Bugs and feature requests
-
-Have a bug or a feature request? [Please open a new issue](https://github.com/twbs/bootstrap/issues). Before opening any issue, please search for existing issues and read the [Issue Guidelines](https://github.com/necolas/issue-guidelines), written by [Nicolas Gallagher](https://github.com/necolas/).
-
-You may use [this JS Bin](http://jsbin.com/aKiCIDO/1/edit) as a template for your bug reports.
-
-
-
-## Documentation
-
-Bootstrap's documentation, included in this repo in the root directory, is built with [Jekyll](http://jekyllrb.com) and publicly hosted on GitHub Pages at <http://getbootstrap.com>. The docs may also be run locally.
-
-### Running documentation locally
-
-1. If necessary, [install Jekyll](http://jekyllrb.com/docs/installation) (requires v1.x).
-2. From the root `/bootstrap` directory, run `jekyll serve` in the command line.
-  - **Windows users:** run `chcp 65001` first to change the command prompt's character encoding ([code page](http://en.wikipedia.org/wiki/Windows_code_page)) to UTF-8 so Jekyll runs without errors.
-3. Open <http://localhost:9001> in your browser, and voilà.
-
-Learn more about using Jekyll by reading its [documentation](http://jekyllrb.com/docs/home/).
-
-### Documentation for previous releases
-
-Documentation for v2.3.2 has been made available for the time being at <http://getbootstrap.com/2.3.2/> while folks transition to Bootstrap 3.
-
-[Previous releases](https://github.com/twbs/bootstrap/releases) and their documentation are also available for download.
-
-
-
-## Compiling CSS and JavaScript
-
-Bootstrap uses [Grunt](http://gruntjs.com/) with convenient methods for working with the framework. It's how we compile our code, run tests, and more. To use it, install the required dependencies as directed and then run some Grunt commands.
-
-### Install Grunt
-
-From the command line:
-
-1. Install `grunt-cli` globally with `npm install -g grunt-cli`.
-2. Navigate to the root `/bootstrap` directory, then run `npm install`. npm will look at [package.json](package.json) and automatically install the necessary local dependencies listed there.
-
-When completed, you'll be able to run the various Grunt commands provided from the command line.
-
-**Unfamiliar with `npm`? Don't have node installed?** That's a-okay. npm stands for [node packaged modules](http://npmjs.org/) and is a way to manage development dependencies through node.js. [Download and install node.js](http://nodejs.org/download/) before proceeding.
-
-### Available Grunt commands
-
-#### Build - `grunt`
-Run `grunt` to run tests locally and compile the CSS and JavaScript into `/dist`. **Uses [recess](http://twitter.github.io/recess/) and [UglifyJS](http://lisperator.net/uglifyjs/).**
-
-#### Only compile CSS and JavaScript - `grunt dist`
-`grunt dist` creates the `/dist` directory with compiled files. **Uses [recess](http://twitter.github.io/recess/) and [UglifyJS](http://lisperator.net/uglifyjs/).**
-
-#### Tests - `grunt test`
-Runs [JSHint](http://jshint.com) and [QUnit](http://qunitjs.com/) tests headlessly in [PhantomJS](http://phantomjs.org/) (used for CI).
-
-#### Watch - `grunt watch`
-This is a convenience method for watching just Less files and automatically building them whenever you save.
-
-### Troubleshooting dependencies
-
-Should you encounter problems with installing dependencies or running Grunt commands, uninstall all previous dependency versions (global and local). Then, rerun `npm install`.
-
-
-
-## Contributing
-
-Please read through our [contributing guidelines](https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
-
-More over, if your pull request contains JavaScript patches or features, you must include relevant unit tests. All HTML and CSS should conform to the [Code Guide](http://github.com/mdo/code-guide), maintained by [Mark Otto](http://github.com/mdo).
-
-Editor preferences are available in the [editor config](.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
-
-With v3.1, we're moving from the Apache 2 to the MIT license for the Bootstrap code (not the docs). Please see the [contributing guidelines](https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md) for more information.
-
-
-## Community
-
-Keep track of development and community news.
-
-* Follow [@twbootstrap on Twitter](http://twitter.com/twbootstrap).
-* Read and subscribe to [The Official Bootstrap Blog](http://blog.getbootstrap.com).
-* Have a question that's not a feature request or bug report? [Ask on the mailing list.](http://groups.google.com/group/twitter-bootstrap)
-* Chat with fellow Bootstrappers in IRC. On the `irc.freenode.net` server, in the `##twitter-bootstrap` channel.
-
-
-
-
-## Versioning
-
-For transparency and insight into our release cycle, and for striving to maintain backward compatibility, Bootstrap will be maintained under the Semantic Versioning guidelines as much as possible.
-
-Releases will be numbered with the following format:
-
-`<major>.<minor>.<patch>`
-
-And constructed with the following guidelines:
-
-* Breaking backward compatibility bumps the major (and resets the minor and patch)
-* New additions without breaking backward compatibility bumps the minor (and resets the patch)
-* Bug fixes and misc changes bumps the patch
-
-For more information on SemVer, please visit <http://semver.org/>.
-
-
-
-## Authors
-
-**Mark Otto**
-
-+ <http://twitter.com/mdo>
-+ <http://github.com/mdo>
-
-**Jacob Thornton**
-
-+ <http://twitter.com/fat>
-+ <http://github.com/fat>
-
-
-
-## Copyright and license
-
-Copyright 2013 Twitter, Inc under [the Apache 2.0 license](LICENSE).
+Copyright 2013 huamengnet 
