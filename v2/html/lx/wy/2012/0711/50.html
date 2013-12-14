@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Unbreakable_酷爱音乐</title>
+<meta name="keywords" content="Unbreakable,Took,hand,Touched,,Unbreakable,Westlife" />
+<meta name="description" content="Took my hand Touched my heart Held me close You were always there By my side Night and day Through it all Babycome what may Swept away on a wave of emotion Were caught in the eye of a storm And whenever you smileI can hardly believe that yo" />
+<link href="/templets/default/style/style.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script>
+
+<script>
+
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin()
+{
+	var taget_obj = document.getElementById('_ajax_feedback');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/member/ajax_feedback.php");
+	DedeXHTTP = null;
+}
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+	DedeXHTTP = null;
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+	DedeXHTTP = null;
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+-->
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+	$(function(){
+		$("a[_for]").mouseover(function(){
+			$(this).parents().children("a[_for]").removeClass("thisclass").parents().children("dd").hide();
+			$(this).addClass("thisclass").blur();
+			$("#"+$(this).attr("_for")).show();
+		});
+		$("a[_for=uc_member]").mouseover();
+		$("a[_for=flink_1]").mouseover();
+	});
+	
+	function CheckLogin(){
+	  var taget_obj = document.getElementById('_userlogin');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("/member/ajax_loginsta.php");
+	  DedeXHTTP = null;
+	}
+-->
+</script>
+
+</head>
+<body class="playpage">
+<div id="body-bg"><img style="" src="/templets/default/images/playpage_bg.jpg"></div>
+<a name="gotop">&nbsp;</a>
+<div id="page">
+	<div class="chl-poster simple" id=header>
+	<a href="http://i.huamengnet.com"><img src="/images/logo.png" height="35" width="175" alt="酷爱音乐"/ style="float:left; margin-left:5px;"></a> 
+		<div id=site-nav>
+			<UL class=quick-menu>
+			  <LI class="mytaobao menu-item">
+				  <div class=menu>
+					  <A class=menu-hd href="#" target=_top rel=nofollow>我的酷爱<B></B></A> 
+					  <div class=menu-bd>
+					       <div id="_userlogin">
+						  <div class="userlogin">
+						   <form name="userlogin" action="/member/index_do.php" method="post">
+							<input type="hidden" name="fmdo" value="login" />
+							<input type="hidden" name="dopost" value="login" />
+							<input type="hidden" name="keeptime" value="604800" />
+							<div class="fb"><span>用户名:</span>
+							 <input type="text" name="userid" size="20" class="ipt-txt" />
+							</div>
+							<div class="fb"><span>密码:</span>
+							 <input type="password" name="pwd" size="20" class="ipt-txt" />
+							</div>
+							
+							<div class="fb"><span>验证码:</span>
+							 <input type="text" name="vdcode" size="8" class="ipt-txt" />
+							 <img id="vdimgck" align="middle" onclick="this.src=this.src+'?'" style="cursor:pointer;margin-left:0px;text-transform:uppercase;" alt="看不清？点击更换" src="/include/vdimgck.php"/></div>
+							
+							<div class="submit">
+							 <button type="submit" class="btn-1">登录</button>
+							 <a href="/member/index_do.php?fmdo=user&dopost=regnew" >注册帐号</a> <a href="/member/resetpassword.php">忘记密码?</a> </div>
+						   </form>
+						  </div>
+						 </div>
+						 <!-- /userlogin -->
+					  </div>
+				  </div>
+			  </LI>
+			  <LI class="search menu-item">
+				  <div class=menu><SPAN class=menu-hd><S></S>搜索<B></B></SPAN> 
+					  <div class=menu-bd>
+						  <div class=menu-bd-panel>
+							 <form  name="formsearch" action="/plus/search.php">
+							 <div class="form" id="login_2">
+								 <input type="hidden" name="kwtype" value="0" />
+								 <input name="q" type="text" class="" id="search-keyword" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';};hidekeyboard=true;login_2.className='form_on'"  onblur="if(this.value==''){this.value='在这里搜索...';};login_2.className='form'" />
+							   <select name="searchtype" class="search-option" id="search-option">
+							   <option value="title" selected="selected">检索标题</option>
+							   <option value="titlekeyword">智能模糊</option>
+							  </select>
+							  <button type="submit" class="post_btn">搜索</button>
+							</div>
+							</form>
+							 <a href="/plus/heightsearch.php" target="_blank" style="float:right; margin-top:10px;">高级搜索</a>
+						  </div>
+					  </div>
+				  </div>
+			  </LI>
+			  <LI class="services menu-item last">
+				  <div class=menu>
+					  <A class=menu-hd href="#" target=_top>网站导航<B></B></A> 
+					  <div class=menu-bd style="WIDTH: 210px;  _width: 202px">
+						  <div class=menu-bd-panel>
+							  <DL>
+								<DT>分类
+								<DD>
+							
+							<a href='/plus/list.php?tid=3'  rel='dropmenu3' target="_blank"><span>流行</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+							<a href='/plus/list.php?tid=1'  rel='dropmenu1' target="_blank"><span>轻音乐</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+							<a href='/plus/list.php?tid=8'  target="_blank"><span>MV</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+							<a href='/plus/list.php?tid=6'  target="_blank"><span>音乐专辑</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+							<a href='/plus/guestbook.php'  target="_blank"><span>在线留言</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+								</DD>
+							</DL>
+							  <DL>
+								<DT>快速导航 
+								<DD>			
+								 <a href="/data/rssmap.html" target="_blank">网站地图</a>|
+								<a href="/tags.php">TAG标签</a>
+								<a href="/data/rssmap.html" class="rss">RSS订阅</a>
+								</DD>
+							</DL>
+								
+							  <DL>
+								<DT>热门搜索 
+								<DD>
+								<div class="tags">
+							  
+								<a href='/tags.php?/%E5%B0%B1/' target="_blank">就</a>
+							  
+								<a href='/tags.php?/%E9%97%AE%E5%80%99/' target="_blank">问候</a>
+							  
+								<a href='/tags.php?/%E5%BF%83%E5%A2%83/' target="_blank">心境</a>
+							  
+								<a href='/tags.php?/%E6%9F%90%E4%B8%AA/' target="_blank">某个</a>
+							  
+								<a href='/tags.php?/Run/' target="_blank">Run</a>
+							  
+								<a href='/tags.php?/%E7%AB%99%E5%9C%A8/' target="_blank">站在</a>
+							  
+								<a href='/tags.php?/%E7%BC%B1%E7%BB%BB/' target="_blank">缱绻</a>
+							  
+								<a href='/tags.php?/%E6%9A%97%E6%81%8B%E8%BF%87/' target="_blank">暗恋过</a>
+							  
+								<a href='/tags.php?/%E9%AB%98%E5%A4%84/' target="_blank">高处</a>
+							  
+								<a href='/tags.php?/with/' target="_blank">with</a>
+							  
+								</DD></DL>
+							  <DL class=last>
+								<DD><STRONG style="FONT-WEIGHT: bold"><A href="/data/rssmap.html">更多内容</A></STRONG></DD>
+							  </DL>
+						  </div>
+					  </div>
+				  </div>
+			  </LI>
+			  
+		    </UL>
+		</div>
+	<div id="playnow" style="color:#fff"><span></span>爱生活，爱音乐...</div>
+	</div>
+</div>
+<div class="clear"></div>
+
+<!-- /header -->
+<div class="topnav">
+	<div class="tools">
+		<ul>
+			<li id="act-err"><a href="/plus/erraddsave.php?aid=50&title=Unbreakable" target="_blank">报错</a></li>
+			<li id="act-pus"><a href="/plus/recommend.php?aid=50" target="_blank" title="推荐给好友" >推荐</a></li>
+			<!--li id="act-pnt"><a href="#" onClick="window.print();">打印</a></li-->
+			<li id="collection"><a href="/plus/stow.php?aid=50&type=3&music_url=http://kosal.info/mp3/english/mp3-11.mp3" title="收藏到我的播放列表" target="_blank">收藏</a></li>
+			<li id="download"><a href='/plus/download.php?open=0&aid=50&cid=3' class="gotodownload" target="_blank" title="音乐下载">下载</a>
+</li>
+			<li id="feedback"><a href="/plus/feedback.php?aid=50" target="_blank">评论</a></li>
+		</ul>
+	</div>
+		<div class="position"><img src="/templets/default/images/chart_bar.png"/>&nbsp;&nbsp;当前分类：外语经典</div>
+
+</div>
+
+<div class="playerbox">
+	<div class="song_info">
+		<div class="song">
+		<div class="song_img"><img src='http://imgcache.qq.com/music/photo/album/41/albumpic_15441_0.jpg' /></div>
+		<div class="cmplayer" id="player"></div>
+			<div class="control">
+			  <ul>
+			  <li><input type=button onclick=document.location.href='/html/lx/wy/2012/0624/38.html'  title=上一曲  id=up /> </li>
+			  <li class="nopress" onClick="press(this)"><input type="button" value="" onclick="sendEvent('view_play');" title="播放/暂停"  id="play"  /></li>
+				<script>
+				function press(obj)
+				{
+				if(obj.className=="nopress")
+				{obj.className="press"}
+				else
+				{obj.className="nopress"}
+				}
+				</script>
+			  <li><input type=button onclick=document.location.href='/html/lx/wy/2012/0711/51.html'  title=下一曲  id=next /> </li>
+			  <!--li><input type="button" value="" onclick="sendEvent('view_stop');" title="停止"  id="stop" /></li-->
+			  </ul>
+			</div>
+			<div id="lrc_content" style="float:left; width:250px">正在为您加载播放器...</div>
+					<div class="newdigg" id="newdigg"></div>
+			 <script language="javascript" type="text/javascript">getDigg(50);</script>
+			 <!-- Baidu Button BEGIN -->
+			<script type="text/javascript" id="bdshare_js" data="type=button&amp;uid=139658" ></script>
+			<script type="text/javascript" id="bdshell_js"></script>
+			<script type="text/javascript">
+				document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+			</script>
+			<!-- Baidu Button END -->
+
+		</div>
+		<div class="song_intro">
+		<div class="song_name">《Unbreakable》<br/><span class="song_writer">BY&nbsp;-&nbsp;Westlife</span></div>
+		<div class="content">
+			<p><span style="white-space:nowrap;">Took my hand</span></p><p><span style="white-space:nowrap;">Touched my heart</span></p><p><span style="white-space:nowrap;">Held me close</span></p><p><span style="white-space:nowrap;">You were always there</span></p><p><span style="white-space:nowrap;">By my side</span></p><p><span style="white-space:nowrap;">Night and day</span></p><p><span style="white-space:nowrap;">Through it all</span></p><p><span style="white-space:nowrap;">Baby&#39;come what may</span></p><p><span style="white-space:nowrap;">Swept away on a wave of emotion</span></p><p><span style="white-space:nowrap;">Were caught in the eye of a storm</span></p><p><span style="white-space:nowrap;">And whenever you smile&#39;I can hardly believe that you&#39;re mine</span></p><p><span style="white-space:nowrap;">Believe that you&#39;re mine</span></p><p><span style="white-space:nowrap;">This love is unbreakable</span></p><p><span style="white-space:nowrap;">It&#39;s unmistakable</span></p><p><span style="white-space:nowrap;">And each time I look in your eyes</span></p><p><span style="white-space:nowrap;">I know why</span></p><p><span style="white-space:nowrap;">This love is untouchable</span></p><p><span style="white-space:nowrap;">I feel in my heart&#39;just can&#39;t deny</span></p><p><span style="white-space:nowrap;">Each time I look in your eyes</span></p><p><span style="white-space:nowrap;">Oh baby&#39;I know why</span></p><p><span style="white-space:nowrap;">This love is unbreakable</span></p><p><span style="white-space:nowrap;">Shared the laughter</span></p><p><span style="white-space:nowrap;">Shared the tears</span></p><p><span style="white-space:nowrap;">We both know we&#39;ll go on from here</span></p><p><span style="white-space:nowrap;">Cause together we are strong</span></p><p><span style="white-space:nowrap;">In my arms</span></p><p><span style="white-space:nowrap;">That&#39;s where you belong</span></p><p><span style="white-space:nowrap;">I&#39;ve been touched by the hands of an angel</span></p><p><span style="white-space:nowrap;">I&#39;ve been blessed by the power of love</span></p><p><span style="white-space:nowrap;">And whenever you smile</span></p><p><span style="white-space:nowrap;">I can hardly believe that you&#39;re mine</span></p><p><span style="white-space:nowrap;">This love is unbreakable</span></p><p><span style="white-space:nowrap;">It&#39;s unmistakable</span></p><p><span style="white-space:nowrap;">And each time I look in your eyes</span></p><p><span style="white-space:nowrap;">I know why</span></p><p><span style="white-space:nowrap;">This love is untouchable</span></p><p><span style="white-space:nowrap;">I feel in my heart&#39;just can&#39;t deny</span></p><p><span style="white-space:nowrap;">Each time you whisper my name</span></p><p><span style="white-space:nowrap;">Oh baby&#39;I know why</span></p><p><span style="white-space:nowrap;">This love is unbreakable</span></p><p><span style="white-space:nowrap;">Through fire and flame</span></p><p><span style="white-space:nowrap;">When all this is over</span></p><p><span style="white-space:nowrap;">Our love still remains</span></p><p><span style="white-space:nowrap;">Cause each time I look in your eyes</span></p><p><span style="white-space:nowrap;">Oh baby&#39;I know why</span></p><p><span style="white-space:nowrap;">This love is unbreakable ooh</span></p><p><br /></p>
+		</div>
+		</div>
+	</div>
+
+</div>
+<div class="foot"> ©2012 KuAi 酷爱音乐</div>
+
+<script type="text/javascript" src="/play/cmp.js"></script> 
+<script type="text/javascript">
+var cmpo;
+function sendEvent(type, data) {
+	cmpo.sendEvent(type, data);
+}
+function cmp_loaded(key) {
+	//cmp loaded
+	cmpo = CMP.get("cmp");
+	if (cmpo) {
+		//cmp callback		
+		showInfo(cmpo.config("name"));
+		//开始播放时
+		showInfo(cmpo.config("play"));
+
+		cmpo.addEventListener("model_start", "cmp_model_start");
+		//侦听歌词行改变事件
+		cmpo.addEventListener("lrc_rowchange", "cmp_lrc_rowchange");
+	}
+}
+//开始播放时清除信息，并显示描述
+function cmp_model_start(data) {
+	showInfo(cmpo.config("description"));
+}
+//歌词行改变时显示当前行信息
+function cmp_lrc_rowchange(data) {
+	showInfo(data);
+}
+function showInfo(str) {
+	//显示到浏览器窗口标题
+	//document.title = str;
+	//输出到页面
+	
+	document.getElementById("lrc_content").innerHTML = str;
+}
+
+//cmp主程序地址，替换成你自己的
+var cmp_url = "/play/player.swf?php=1&src=http://kosal.info/mp3/english/mp3-11.mp3&label=Unbreakable";
+var musicname = "Unbreakable"
+var writer = "Westlife"
+//cmp的参数
+var flashvars = {
+	name : "正在为您缓冲歌曲...",
+	play : "正在缓冲：《"+musicname+"》- "+writer+"",
+	//cmp初始化完成时的脚本接口回调函数名
+	api:"cmp_loaded"
+};
+//id, width, height, swf_url, flashvars, params, attrs
+var htm = CMP.create("cmp", "100%", "100%", cmp_url, flashvars);
+document.getElementById("player").innerHTML = htm;
+</script>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+
+</body>
+</html>

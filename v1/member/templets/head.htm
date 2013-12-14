@@ -1,0 +1,149 @@
+
+<SCRIPT type=text/javascript>
+$(document).ready(function() {	
+	$("#menu1 li").prepend("<span></span>"); //Throws an empty span tag right before the a tag
+	
+	$("#menu1 li").each(function() { //For each list item...
+		var linkText = $(this).find("a").html(); //Find the text inside of the a tag
+		$(this).find("span").show().html(linkText); //Add the text in the span tag
+	}); 
+	
+	$("#menu1 li").hover(function() {	//On hover...
+		$(this).find("span").stop().animate({ 
+			marginTop: "-40" //Find the span tag and move it up 40 pixels
+		}, 250);
+	} , function() { //On hover out...
+		$(this).find("span").stop().animate({
+			marginTop: "0" //Move the span back to its original state (0px)
+		}, 250);
+	});	
+	
+	/*	2nd example	*/
+	$("#menu2 li").prepend("<span></span>"); //Throws an empty span tag right before the a tag
+	
+	$("#menu2 li").each(function() { //For each list item...
+		var linkText = $(this).find("a").html(); //Find the text inside of the a tag
+		$(this).find("span").show().html(linkText); //Add the text in the span tag
+	}); 
+	
+	$("#menu2 li").hover(function() {	//On hover...
+		$(this).find("span").stop().animate({ 
+			marginTop: "-40" //Find the span tag and move it up 40 pixels
+		}, 250);
+	} , function() { //On hover out...
+		$(this).find("span").stop().animate({
+			marginTop: "0" //Move the span back to its original state (0px)
+		}, 250);
+	});	
+});
+</SCRIPT>
+
+<?php
+//未登录显示的head
+if(!$cfg_ml->IsLogin()) {
+?>
+<div id="header">
+	<div id="siteNav">
+    <div class="innerWrap">
+      <div id="loginInfo">
+      <script type="text/javascript">
+           	var now=(new Date()).getHours();
+			if(now>0&&now<=6){
+				document.write("午夜好，");
+			}else if(now>6&&now<=11){
+				document.write("早上好，");
+			}else if(now>11&&now<=14){
+				document.write("中午好，");
+			}else if(now>14&&now<=18){
+				document.write("下午好，");
+			}else{
+				document.write("晚上好，");
+			}
+			</script>
+       游客
+       </div>
+      <ul id="quickMenu">
+        <li><a title="网站主页" href="../" target="_blank">网站首页</a> </li>
+        <li><a title="注册" href="../member/index_do.php?fmdo=user&dopost=regnew">注册</a> </li>
+        <li><a title="登录" href="../member/login.php">登录</a> </li>
+        <li class="help"> <a title="帮助中心" href="http://help.dedecms.com" target="_blank">帮助</a> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<?php
+}
+//登录后显示的head
+else {
+?>
+<div id="header">
+  <div id="siteNav">
+    <div class="innerWrap">
+      <div id="loginInfo">
+      <script type="text/javascript">
+           	var now=(new Date()).getHours();
+			if(now>0&&now<=6){
+				document.write("午夜好，");
+			}else if(now>6&&now<=11){
+				document.write("早上好，");
+			}else if(now>11&&now<=14){
+				document.write("中午好，");
+			}else if(now>14&&now<=18){
+				document.write("下午好，");
+			}else{
+				document.write("晚上好，");
+			}
+			</script>
+       <a href="#" class="userName"><?php echo $cfg_ml->M_UserName?></a> <a href="../member/index_do.php?fmdo=login&dopost=exit#">[退出]</a> 
+       <?php
+       $pms = $dsql->GetOne("SELECT COUNT(*) AS nums FROM #@__member_pms WHERE toid='{$cfg_ml->M_ID}' AND `hasview`=0 AND folder = 'inbox'");
+		if($pms['nums'] > 0)
+		{
+			echo "<a href='/member/pm.php'>收件箱 [<font color='#FF0000'>{$pms['nums']}条未读</font>]</a>";
+		}
+		elseif($pms['nums']==0)
+		{
+			echo "<a href='/member/pm.php' >收件箱</a>";
+		}
+       ?>
+       </div>
+      <ul id="quickMenu">
+        <li class="home"><a href="../" title="回到网站首页" target="_blank">网站首页</a></li>
+        <!--li><a href="#">内容中心</a></li>
+        <li><a href="<?php echo $myurl; ?>" title="会员空间">会员空间</a></li-->
+        <li><a href="../member/mystow.php" title="我的播放器">我的播放器</a></li>
+        <li class="help"><a href="/help" title="帮助中心">帮助中心</a></li>
+      </ul>
+    </div>
+  </div>
+   <div id="topPic"> <a href="../member/"><img alt="会员中心" src="../images/memberlogo.png" class="topLogo"/></a> </div>
+
+  <!--顶部导航 -->
+  <div id="menu1">
+  <ul>
+      <li><a href="../" target="_blank" title="返回网站首页">网站首页</a></li>
+      <li <?php echo ($menutype == 'content')? 'class="thisApp"' : "" ;?>><a href="../member/content_list.php?channelid=3" title="内容管理">内容管理</a></li>
+      <li <?php echo ($menutype == 'mydede')? 'class="thisApp"' : "" ;?>><a href="../member/" title="个人中心">个人中心</a></li>
+      <li <?php echo ($menutype == 'config')? 'class="thisApp"' : "" ;?>><a href="../member/edit_baseinfo.php" title="个人设置">个人设置</a></li>
+  </ul>
+  <div class="cls"></div>
+</div>
+
+<div id="menu2">
+<ul>
+		<li><a href="<?php echo $myurl; ?>" title="个人空间" target="_blank">我的空间</a></li>
+        <li <?php echo ($menutype_son == 'my')? 'class="thisApp"' : "" ;?>><a href="../member/mystow.php" title="我的播放器">我的播放器</a></li>
+        <li <?php echo ($menutype_son == 'mf')? 'class="thisApp"' : "" ;?>><a href="../member/myfriend.php" title="我的好友">我的好友</a></li>
+        <li <?php echo ($menutype_son == 'pm')? 'class="thisApp"' : "" ;?>><a href="../member/pm.php" title="收件箱">收件箱</a></li>
+        <li <?php echo ($menutype_son == 'gu')? 'class="thisApp"' : "" ;?>><a href="../member/guestbook_admin.php" title="留言板">留言板</a></li>
+        <li <?php echo ($menutype_son == 'op')? 'class="thisApp"' : "" ;?>><a href="../member/operation.php" title="消费中心">消费中心</a></li>
+        <li <?php echo ($menutype_son == 'cc')? 'class="thisApp"' : "" ;?>><a href="../member/caicai.php" title="随便踩踩">随便踩踩</a></li>
+</ul>
+<div class="cls"></div>
+</div>
+    <!--导航栏目项 -->
+  </div>
+</div>
+<?php
+}
+?>

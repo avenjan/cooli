@@ -1,0 +1,178 @@
+<?php
+$song_id = $_GET['song_id'];
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "/www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="/www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>歌曲联播 - {dede:global.cfg_webname/}</title>
+<meta name="copyright" content="CopyRight (c) 2012 huamengnet.com. All Rights Reserved." />
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+<link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="{dede:global.cfg_templets_skin/}/style/music.css" rel="stylesheet" media="screen" type="text/css" />
+
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/cmp.js"></script>
+<script type="text/javascript"> 
+var cmpo;
+function cmploaded(key) {
+	cmpo = CMP.get("cmp");
+	if (!cmpo) {
+		showMsg("未能加载播放器");
+		return;	
+	}
+	showMsg("播放器初始化完成");
+	if(cmpo){
+        document.title=cmpo.config("name");
+        cmpo.addEventListener("model_start","cmp_model_start")
+    }
+	//播放器事件
+	cmpo.addEventListener("model_start", "startHandler");
+	cmpo.addEventListener("model_state", "stateHandler");
+	cmpo.addEventListener("model_error", "errorHandler");
+	cmpo.addEventListener("lrc_complete", "lrcHandler");
+	cmpo.addEventListener("view_stop", "viewstopHandler");
+}
+function showCmp() {
+	var vars = {
+		api : "cmploaded",
+		name : "歌曲联播-{dede:global.cfg_webname/}",
+		list_delete:"1",
+		auto_play:"1",
+		play_id:"1",
+		plugins :"",
+		skin_id:"1",
+		php:5,
+		lists:"list.php?song_id=<?php echo $song_id ;?>"
+	};
+	var htm = CMP.create("cmp", "100%", "100%", "player.swf",vars, {wmode:"transparent"});
+	//,vars, true); 非透明
+	$(".player").html(htm);
+}
+$(document).ready(function(){
+	showCmp();
+	//showMenu();
+	$(".button div").hover(function(){
+		$(this).addClass("button_item_hover");
+	}, function(){
+		$(this).removeClass("button_item_hover");
+	});
+}); 
+function clearMusic() {
+	if (cmpo) {
+		//覆盖一个空列表
+		cmpo.list_xml('<list></list>', false);
+		//showWin("list");
+		showMsg("已经清除列表内容");
+	}
+	else 
+	{
+		showMsg("播放器还未初始化", true);
+	}
+}
+function loadMusic() 
+{
+	if (cmpo) 
+	{
+		//覆盖一个空列表
+		cmpo.list_xml('<list></list>', false);
+		//加载一个新列表
+		cmpo.config("lists", "list.php?song_id=<?php echo $song_id ?>");
+		
+        cmpo.addEventListener("list_change", "cmp_list_change");
+        cmpo.sendEvent("list_load");
+       	showMsg("加载成功");
+	}else 
+	{
+		showMsg("播放器还未初始化", true);
+	}
+}
+function cmp_list_change() {
+	if (cmpo) {
+		cmpo.removeEventListener("list_change", "cmp_list_change");
+		cmpo.sendEvent("view_play", 1);
+	}
+}
+function showMsg(str, red)
+ {
+	if (str)
+	{
+		$(".loadinginfo").html(str);
+		if (red) {
+			$(".loadinginfo").addClass("red");
+		} else {
+			$(".loadinginfo").removeClass("red");
+		}
+	}
+}
+function cmp_model_start(data) 
+{
+  $("#commentform").hide();
+  $("#mContent").html("<div class='content'>&nbsp;&nbsp;歌曲信息加载中...</div>");
+  $("#aid").val(cmpo.item().aid);
+  LoadCommets(1);
+	var title = "正在播放：<a href=http://web.huamengnet.com/plus/view.php?aid="+cmpo.item().aid+" target='_blank' class=fa>"+cmpo.item("label")+"</a>";
+	$(".mtitle").html(title);
+	loadContent();
+	$("#commentform").show();
+}
+
+function loadContent() {
+    $.ajax({
+        url:"get.php?song_id="+cmpo.item().aid,
+        type:"get",
+        success:function(data){
+        $("#mContent").html(data);
+        }
+    });
+}
+
+function stateHandler(data) {
+	//showMsg(data);
+	if (data == "playing") parent.window.document.title = "正在播放 " + cmpo.item("label");
+	//if (data == "playing") parent.window.document.title = "正在播放 " + cmpo.item("label")+ " - " + cmpo.config("name");
+	if (data == "paused")  parent.window.document.title = "暂停播放 " + cmpo.item("label");
+	if (data == "buffering") parent.window.document.title = "正在缓冲 " + cmpo.item("label");
+}
+//按停止播放时
+function viewstopHandler(data) {
+	parent.window.document.title = "停止播放 - " + cmpo.config("name");
+}
+</script>
+</head>
+<body>
+<!--[if lte IE 6]>
+<div id="ie6_warning">提示：您正在使用的浏览器版本太低，部分功能可能无法正常使用。请升级 <a href="/windows.microsoft.com/zh-CN/internet-explorer/downloads/ie">Internet Explorer</a> 或使用 <a href="/www.google.com/chrome/">Google Chrome</a> 浏览器。</div>
+<![endif]-->
+{dede:include filename="head.htm"/}
+<div id="top"> 
+	<div class="title">
+		<h1>歌曲联播 - {dede:global.cfg_webname/}</h1>
+   </div>
+</div>
+<div class="index">
+	<div class="index_top">
+	<div class="cmpplayer">
+    	<div class="player" id="player"></div>
+		<div class="player_btn">
+		<div class="mtitle" style="float:left"></div>
+    	<a href="javascript:;" onclick="clearMusic()" class="post_btn">清空列表</a> 
+    	<a href="javascript:;" onclick="loadMusic()" class="post_btn">重新加载列表</a>
+		</div>
+	</div>
+	<div class="lianboad_r" style="float:right; width:550px">{dede:myad name='lianbo_r'/}</div>
+	</div>
+<div class="line01"></div>
+<div id="mContent"></div>
+</div>
+<script language="javascript" type="text/javascript"> 
+function LoadCommets(page)
+{
+    var aid = $("#aid").val();
+}
+</script>
+{dede:include filename="footer.htm"/}
+</body>
+</html>

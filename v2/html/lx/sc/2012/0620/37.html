@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>隔离_酷爱音乐</title>
+<meta name="keywords" content="隔离,出版,年代,2003年,发行,公司,BMG,语言,,隔离,铁竹堂" />
+<meta name="description" content="出版年代：2003年 发行公司：BMG 语言类别：国语 歌手名称：铁竹堂 歌手类别：台湾乐队 词曲：作词：许世昌 作曲：林迈可 歌词编写：Rang lntro: Vince: dedicace a toutes les bonasses. ki moot ja" />
+<link href="/templets/default/style/style.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script>
+
+<script>
+
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin()
+{
+	var taget_obj = document.getElementById('_ajax_feedback');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/member/ajax_feedback.php");
+	DedeXHTTP = null;
+}
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+	DedeXHTTP = null;
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+	DedeXHTTP = null;
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+-->
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+	$(function(){
+		$("a[_for]").mouseover(function(){
+			$(this).parents().children("a[_for]").removeClass("thisclass").parents().children("dd").hide();
+			$(this).addClass("thisclass").blur();
+			$("#"+$(this).attr("_for")).show();
+		});
+		$("a[_for=uc_member]").mouseover();
+		$("a[_for=flink_1]").mouseover();
+	});
+	
+	function CheckLogin(){
+	  var taget_obj = document.getElementById('_userlogin');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("/member/ajax_loginsta.php");
+	  DedeXHTTP = null;
+	}
+-->
+</script>
+
+</head>
+<body class="playpage">
+<div id="body-bg"><img style="" src="/templets/default/images/playpage_bg.jpg"></div>
+<a name="gotop">&nbsp;</a>
+<div id="page">
+	<div class="chl-poster simple" id=header>
+	<a href="http://i.huamengnet.com"><img src="/images/logo.png" height="35" width="175" alt="酷爱音乐"/ style="float:left; margin-left:5px;"></a> 
+		<div id=site-nav>
+			<UL class=quick-menu>
+			  <LI class="mytaobao menu-item">
+				  <div class=menu>
+					  <A class=menu-hd href="#" target=_top rel=nofollow>我的酷爱<B></B></A> 
+					  <div class=menu-bd>
+					       <div id="_userlogin">
+						  <div class="userlogin">
+						   <form name="userlogin" action="/member/index_do.php" method="post">
+							<input type="hidden" name="fmdo" value="login" />
+							<input type="hidden" name="dopost" value="login" />
+							<input type="hidden" name="keeptime" value="604800" />
+							<div class="fb"><span>用户名:</span>
+							 <input type="text" name="userid" size="20" class="ipt-txt" />
+							</div>
+							<div class="fb"><span>密码:</span>
+							 <input type="password" name="pwd" size="20" class="ipt-txt" />
+							</div>
+							
+							<div class="fb"><span>验证码:</span>
+							 <input type="text" name="vdcode" size="8" class="ipt-txt" />
+							 <img id="vdimgck" align="middle" onclick="this.src=this.src+'?'" style="cursor:pointer;margin-left:0px;text-transform:uppercase;" alt="看不清？点击更换" src="/include/vdimgck.php"/></div>
+							
+							<div class="submit">
+							 <button type="submit" class="btn-1">登录</button>
+							 <a href="/member/index_do.php?fmdo=user&dopost=regnew" >注册帐号</a> <a href="/member/resetpassword.php">忘记密码?</a> </div>
+						   </form>
+						  </div>
+						 </div>
+						 <!-- /userlogin -->
+					  </div>
+				  </div>
+			  </LI>
+			  <LI class="search menu-item">
+				  <div class=menu><SPAN class=menu-hd><S></S>搜索<B></B></SPAN> 
+					  <div class=menu-bd>
+						  <div class=menu-bd-panel>
+							 <form  name="formsearch" action="/plus/search.php">
+							 <div class="form" id="login_2">
+								 <input type="hidden" name="kwtype" value="0" />
+								 <input name="q" type="text" class="" id="search-keyword" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';};hidekeyboard=true;login_2.className='form_on'"  onblur="if(this.value==''){this.value='在这里搜索...';};login_2.className='form'" />
+							   <select name="searchtype" class="search-option" id="search-option">
+							   <option value="title" selected="selected">检索标题</option>
+							   <option value="titlekeyword">智能模糊</option>
+							  </select>
+							  <button type="submit" class="post_btn">搜索</button>
+							</div>
+							</form>
+							 <a href="/plus/heightsearch.php" target="_blank" style="float:right; margin-top:10px;">高级搜索</a>
+						  </div>
+					  </div>
+				  </div>
+			  </LI>
+			  <LI class="services menu-item last">
+				  <div class=menu>
+					  <A class=menu-hd href="#" target=_top>网站导航<B></B></A> 
+					  <div class=menu-bd style="WIDTH: 210px;  _width: 202px">
+						  <div class=menu-bd-panel>
+							  <DL>
+								<DT>分类
+								<DD>
+							
+							<a href='/plus/list.php?tid=3'  rel='dropmenu3' target="_blank"><span>流行</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+							<a href='/plus/list.php?tid=1'  rel='dropmenu1' target="_blank"><span>轻音乐</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+							<a href='/plus/list.php?tid=8'  target="_blank"><span>MV</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+							<a href='/plus/list.php?tid=6'  target="_blank"><span>音乐专辑</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+							<a href='/plus/guestbook.php'  target="_blank"><span>在线留言</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+								</DD>
+							</DL>
+							  <DL>
+								<DT>快速导航 
+								<DD>			
+								 <a href="/data/rssmap.html" target="_blank">网站地图</a>|
+								<a href="/tags.php">TAG标签</a>
+								<a href="/data/rssmap.html" class="rss">RSS订阅</a>
+								</DD>
+							</DL>
+								
+							  <DL>
+								<DT>热门搜索 
+								<DD>
+								<div class="tags">
+							  
+								<a href='/tags.php?/%E5%B0%B1/' target="_blank">就</a>
+							  
+								<a href='/tags.php?/%E9%97%AE%E5%80%99/' target="_blank">问候</a>
+							  
+								<a href='/tags.php?/%E5%BF%83%E5%A2%83/' target="_blank">心境</a>
+							  
+								<a href='/tags.php?/%E6%9F%90%E4%B8%AA/' target="_blank">某个</a>
+							  
+								<a href='/tags.php?/Run/' target="_blank">Run</a>
+							  
+								<a href='/tags.php?/%E7%AB%99%E5%9C%A8/' target="_blank">站在</a>
+							  
+								<a href='/tags.php?/%E7%BC%B1%E7%BB%BB/' target="_blank">缱绻</a>
+							  
+								<a href='/tags.php?/%E6%9A%97%E6%81%8B%E8%BF%87/' target="_blank">暗恋过</a>
+							  
+								<a href='/tags.php?/%E9%AB%98%E5%A4%84/' target="_blank">高处</a>
+							  
+								<a href='/tags.php?/with/' target="_blank">with</a>
+							  
+								</DD></DL>
+							  <DL class=last>
+								<DD><STRONG style="FONT-WEIGHT: bold"><A href="/data/rssmap.html">更多内容</A></STRONG></DD>
+							  </DL>
+						  </div>
+					  </div>
+				  </div>
+			  </LI>
+			  
+		    </UL>
+		</div>
+	<div id="playnow" style="color:#fff"><span></span>爱生活，爱音乐...</div>
+	</div>
+</div>
+<div class="clear"></div>
+
+<!-- /header -->
+<div class="topnav">
+	<div class="tools">
+		<ul>
+			<li id="act-err"><a href="/plus/erraddsave.php?aid=37&title=隔离" target="_blank">报错</a></li>
+			<li id="act-pus"><a href="/plus/recommend.php?aid=37" target="_blank" title="推荐给好友" >推荐</a></li>
+			<!--li id="act-pnt"><a href="#" onClick="window.print();">打印</a></li-->
+			<li id="collection"><a href="/plus/stow.php?aid=37&type=3&music_url=http://bu.xmanyao.info/COFFdD0xMzQwMTY4MzUyJmk9MTIzLjIzMi4xMDkuMTImdT1Tb25ncy92Mi9mYWludFFDLzkyLzBjL2RiMTgxNzljZDI4MmJiZjE5NDEyYmY1NWMyMzMwYzkyLm1wMyZtPTQwNDJhZmViYjZmMTM5OTYyODE5NjY3YTE4NzI5YTkxJnY9bGlzdGVuJm49uPTA6yZzPcz61vHMwyZwPW4=.mp3" title="收藏到我的播放列表" target="_blank">收藏</a></li>
+			<li id="download"><a href='/plus/download.php?open=0&aid=37&cid=3' class="gotodownload" target="_blank" title="音乐下载">下载</a>
+</li>
+			<li id="feedback"><a href="/plus/feedback.php?aid=37" target="_blank">评论</a></li>
+		</ul>
+	</div>
+		<div class="position"><img src="/templets/default/images/chart_bar.png"/>&nbsp;&nbsp;当前分类：摇滚说唱</div>
+
+</div>
+
+<div class="playerbox">
+	<div class="song_info">
+		<div class="song">
+		<div class="song_img"><img src='http://imgcache.qq.com/music/photo/singer/28/150_singerpic_4428_0.jpg' /></div>
+		<div class="cmplayer" id="player"></div>
+			<div class="control">
+			  <ul>
+			  <li><input type=button onclick=document.location.href='/plus/view.php?aid=36'  title=上一曲  id=up /> </li>
+			  <li class="nopress" onClick="press(this)"><input type="button" value="" onclick="sendEvent('view_play');" title="播放/暂停"  id="play"  /></li>
+				<script>
+				function press(obj)
+				{
+				if(obj.className=="nopress")
+				{obj.className="press"}
+				else
+				{obj.className="nopress"}
+				}
+				</script>
+			  <li></li>
+			  <!--li><input type="button" value="" onclick="sendEvent('view_stop');" title="停止"  id="stop" /></li-->
+			  </ul>
+			</div>
+			<div id="lrc_content" style="float:left; width:250px">正在为您加载播放器...</div>
+					<div class="newdigg" id="newdigg"></div>
+			 <script language="javascript" type="text/javascript">getDigg(37);</script>
+			 <!-- Baidu Button BEGIN -->
+			<script type="text/javascript" id="bdshare_js" data="type=button&amp;uid=139658" ></script>
+			<script type="text/javascript" id="bdshell_js"></script>
+			<script type="text/javascript">
+				document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+			</script>
+			<!-- Baidu Button END -->
+
+		</div>
+		<div class="song_intro">
+		<div class="song_name">《隔离》<br/><span class="song_writer">BY&nbsp;-&nbsp;铁竹堂</span></div>
+		<div class="content">
+			<p>出版年代：2003年</p><p>发行公司：BMG</p><p>语言类别：国语</p><p>歌手名称：铁竹堂</p><p>歌手类别：台湾乐队</p><p>词曲：作词：许世昌　作曲：林迈可 歌词编写：Rang</p><p>lntro: Vince:</p><p>dedicace a toutes les bonasses. ki moot jamais aimer.</p><p>Jespere revoir vos visages. Pour donner un demier baiser.</p><p>A1: Jason</p><p>爱情起风和雾我拉着你的手　</p><p>让你我　更沉默</p><p>爱你不能和幸福画上等号的　</p><p>你走了　证明了</p><p>B1: Scottie</p><p>我像影子被隔离　</p><p>呼吸剩下的空气</p><p>我是用心爱过你　</p><p>住过你心里</p><p>你却先说分手　</p><p>要我放手</p><p>你是不是没爱过我</p><p>C1: Michael</p><p>还相爱的那一年是多久以前　</p><p>你右脸的弧线记忆还是很明显</p><p>分手后照片还你有什么意义　</p><p>只是设下了陷阱　</p><p>让我走向你</p><p>A2: Jason</p><p>过去听你怎么说我就怎么做　</p><p>没想过　是谁错</p><p>讨好着你好像堆积木过生活　</p><p>一步错　全都错</p><p>B2: Scottie</p><p>我像影子被隔离　</p><p>呼吸剩下的空气</p><p>我是用心爱过你　</p><p>住过你心里</p><p>你先说分手　</p><p>我让你懂　让你走　</p><p>你是真的没有爱过我</p><p>C2: Michael</p><p>还相爱的那一年是多久以前　</p><p>我双眼的想念怎么还没有复原</p><p>拒绝所有故事的结局想着你　</p><p>也许你不再哭泣</p><p>允许我重新......爱你</p><p>思念着你　</p><p>我还没有复原</p><p>拒绝所有故事的结局想着你　</p><p>也许你不再　不再哭泣</p><p>不允许我重新爱你　</p><p>我重新爱你</p><p style="margin-top:0px; margin-bottom:0px; white-space:normal; padding-top:0px; padding-right:0px; padding-bottom:0px; padding-left:0px; color:rgb(139, 139, 139); font-family:arial, tahoma, &#39;hiragino sans gb&#39;, helvetica; font-size:12px; line-height:24px; background-color:rgb(255, 255, 255); "><br /></p>
+		</div>
+		</div>
+	</div>
+
+</div>
+<div class="foot"> ©2012 KuAi 酷爱音乐</div>
+
+<script type="text/javascript" src="/play/cmp.js"></script> 
+<script type="text/javascript">
+var cmpo;
+function sendEvent(type, data) {
+	cmpo.sendEvent(type, data);
+}
+function cmp_loaded(key) {
+	//cmp loaded
+	cmpo = CMP.get("cmp");
+	if (cmpo) {
+		//cmp callback		
+		showInfo(cmpo.config("name"));
+		//开始播放时
+		showInfo(cmpo.config("play"));
+
+		cmpo.addEventListener("model_start", "cmp_model_start");
+		//侦听歌词行改变事件
+		cmpo.addEventListener("lrc_rowchange", "cmp_lrc_rowchange");
+	}
+}
+//开始播放时清除信息，并显示描述
+function cmp_model_start(data) {
+	showInfo(cmpo.config("description"));
+}
+//歌词行改变时显示当前行信息
+function cmp_lrc_rowchange(data) {
+	showInfo(data);
+}
+function showInfo(str) {
+	//显示到浏览器窗口标题
+	//document.title = str;
+	//输出到页面
+	
+	document.getElementById("lrc_content").innerHTML = str;
+}
+
+//cmp主程序地址，替换成你自己的
+var cmp_url = "/play/player.swf?php=1&src=http://bu.xmanyao.info/COFFdD0xMzQwMTY4MzUyJmk9MTIzLjIzMi4xMDkuMTImdT1Tb25ncy92Mi9mYWludFFDLzkyLzBjL2RiMTgxNzljZDI4MmJiZjE5NDEyYmY1NWMyMzMwYzkyLm1wMyZtPTQwNDJhZmViYjZmMTM5OTYyODE5NjY3YTE4NzI5YTkxJnY9bGlzdGVuJm49uPTA6yZzPcz61vHMwyZwPW4=.mp3&label=隔离";
+var musicname = "隔离"
+var writer = "铁竹堂"
+//cmp的参数
+var flashvars = {
+	name : "正在为您缓冲歌曲...",
+	play : "正在缓冲：《"+musicname+"》- "+writer+"",
+	//cmp初始化完成时的脚本接口回调函数名
+	api:"cmp_loaded"
+};
+//id, width, height, swf_url, flashvars, params, attrs
+var htm = CMP.create("cmp", "100%", "100%", cmp_url, flashvars);
+document.getElementById("player").innerHTML = htm;
+</script>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+
+</body>
+</html>

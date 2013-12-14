@@ -1,0 +1,172 @@
+<a name="gotop">&nbsp;</a>
+<div id="page">
+	<div class="chl-poster simple" id=header>
+	<a href="{dede:global.cfg_basehost/}"><img src="/images/logo.png" height="35" width="175" alt="{dede:global.cfg_webname/}"/ style="float:left; margin-left:5px;"></a> 
+		<div id=site-nav>
+		<ul class="playerbtn">
+			<li class="choise">
+			<input type="checkbox" onclick="checkAll(this);" value=""/ class="choise" title="全选">全选
+			</li>
+			<li>
+			<button onclick="playSelected();" class="playthese" title="播放选中">播放选中</button>
+			</li>
+			<li>
+			<button onclick="addSelected();" class="add" title="加入列表">加入列表</button>
+			</li>
+
+		</ul>
+			<UL class=quick-menu>
+			
+			  <LI class="mytaobao menu-item">
+				  <div class=menu>
+					  <A class=menu-hd href="#" target=_top rel=nofollow>我的酷爱<B></B></A> 
+					  <div class=menu-bd>
+					       <div id="_userlogin">
+						  <div class="userlogin">
+						   <form name="userlogin" action="{dede:global.cfg_memberurl/}/index_do.php" method="post">
+							<input type="hidden" name="fmdo" value="login" />
+							<input type="hidden" name="dopost" value="login" />
+							<input type="hidden" name="keeptime" value="604800" />
+							<div class="fb"><span>用户名:</span>
+							 <input type="text" name="userid" size="20" class="ipt-txt" />
+							</div>
+							<div class="fb"><span>密码:</span>
+							 <input type="password" name="pwd" size="20" class="ipt-txt" />
+							</div>
+							{dede:php}
+							if(preg_match("#2#", $safe_gdopen))
+							{
+							echo '
+							<div class="fb"><span>验证码:</span>
+							 <input type="text" name="vdcode" size="8" class="ipt-txt" />
+							 <img id="vdimgck" align="middle" onclick="this.src=this.src+\'?\'" style="cursor:pointer;margin-left:0px;text-transform:uppercase;" alt="看不清？点击更换" src="'.$cfg_cmspath.'/include/vdimgck.php"/></div>
+							';
+							}
+							{/dede:php}
+							<div class="submit">
+							 <button type="submit" class="btn-1">登录</button>
+							 <a href="{dede:global.cfg_memberurl/}/index_do.php?fmdo=user&dopost=regnew" >注册帐号</a> <a href="{dede:global.cfg_memberurl/}/resetpassword.php">忘记密码?</a> </div>
+						   </form>
+						  </div>
+						 </div>
+						 <!-- /userlogin -->
+					  </div>
+				  </div>
+			  </LI>
+			  <LI class="search menu-item">
+				  <div class=menu><SPAN class=menu-hd><S></S>搜索<B></B></SPAN> 
+					  <div class=menu-bd>
+						  <div class=menu-bd-panel>
+							 <form  name="formsearch" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+							 <div class="form" id="login_2">
+								 <input type="hidden" name="kwtype" value="0" />
+								 <input name="q" type="text" class="" id="search-keyword" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';};hidekeyboard=true;login_2.className='form_on'"  onblur="if(this.value==''){this.value='在这里搜索...';};login_2.className='form'" />
+							   <select name="searchtype" class="search-option" id="search-option">
+							   <option value="title" selected="selected">检索标题</option>
+							   <option value="titlekeyword">智能模糊</option>
+							  </select>
+							  <button type="submit" class="post_btn">搜索</button>
+							</div>
+							</form>
+							 <a href="{dede:global.cfg_cmsurl/}/plus/heightsearch.php" target="_blank" style="float:right; margin-top:10px;">高级搜索</a>
+						  </div>
+					  </div>
+				  </div>
+			  </LI>
+			  <LI class="services menu-item last">
+				  <div class=menu>
+					  <A class=menu-hd href="#" target=_top>网站导航<B></B></A> 
+					  <div class=menu-bd style="WIDTH: 210px;  _width: 202px">
+						  <div class=menu-bd-panel>
+							  <DL>
+								<DT>分类
+								<DD>
+							{dede:channel type='top' row='10' currentstyle=""}
+							<a href='[field:typeurl/]' [field:rel/] target="_blank"><span>[field:typename/]</span></a><span class="sep">&nbsp;&nbsp;</span>
+							{/dede:channel}
+								</DD>
+							</DL>
+							  <DL>
+								<DT>快速导航 
+								<DD>			
+								 <a href="{dede:global.cfg_cmsurl/}/data/rssmap.html" target="_blank">网站地图</a>|
+								<a href="{dede:global.cfg_cmsurl/}/tags.php">TAG标签</a>
+								<a href="{dede:global.cfg_dataurl/}/rssmap.html" class="rss">RSS订阅</a>
+								</DD>
+							</DL>
+								
+							  <DL>
+								<DT>热门搜索 
+								<DD>
+								<div class="tags">
+							  {dede:tag row='10' getall='1' sort='month'}
+								<a href='[field:link/]' target="_blank">[field:tag /]</a>
+							  {/dede:tag}
+								</DD></DL>
+							  <DL class=last>
+								<DD><STRONG style="FONT-WEIGHT: bold"><A href="/data/rssmap.html">更多内容</A></STRONG></DD>
+							  </DL>
+						  </div>
+					  </div>
+				  </div>
+			  </LI>
+			  
+		    </UL>
+		</div>
+	<div id="playnow" style="color:#fff"><span></span>爱生活，爱音乐...</div>
+	</div>
+</div>
+<div class="clear"></div>
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/jquery-fn-tab-mini.js"></script>
+
+
+<div class=miniplayer id="miniplayer">
+	<div class=foot_msg_tp  id=foot_tab>
+	<div class="play_r">
+	    <div class="player"> 
+		  <script type="text/javascript">
+		CMP.write("cmp", "480", "100", "/play/player.swf", "php=9&list_delete=1&api=cmp_loaded&lists=");
+		</script> 
+		</div>
+		<div class="debug">
+		  <ul>
+		  <li><input type="button" value="" onclick="sendEvent('view_prev');" title="上一曲"  id="up" /></li>
+		  <li class="nopress" onClick="press(this)"><input type="button" value="" onclick="sendEvent('view_play');" title="播放/暂停"  id="play"  /></li>
+			<script>
+			function press(obj)
+			{
+			if(obj.className=="nopress")
+			{obj.className="press"}
+			else
+			{obj.className="nopress"}
+			}
+			</script>
+		  <li><input type="button" value="" onclick="sendEvent('view_next');" title="下一曲"  id="next" /></li>
+		  <li><input type="button" value="" onclick="sendEvent('view_stop');" title="停止"  id="stop" /></li>
+	
+		  <span>
+		  <li><input type="button" value="" onclick="sendEvent('view_random');" title="随机" id="unordere" /></li>
+		  <li><input type="button" value="" onclick="sendEvent('view_repeat');" title="重复" id="cycle" /></li>
+		  <li class="nomute" onClick="mute(this)"><input type="button" value="" onclick="sendEvent('view_mute');" title="静音"   id="volume" /></li>
+		  	<script>
+			function mute(obj)
+			{
+			if(obj.className=="nomute")
+			{obj.className="mute"}
+			else
+			{obj.className="nomute"}
+			}
+			</script>
+		  <li><input type="button" value="" onclick="sendEvent('view_list');" title="列表"   id="list" /></li>
+		  <li><input type="button" value="" onclick="clearMusic()" title="清空列表" id="clearlist"/> 
+		  </span>
+		  </ul>
+		</div>
+	</div>
+	</div>
+	<div class=foot_msg_hide>
+		<P><img src="{dede:global.cfg_templets_skin/}/images/player_close.png"></P>
+	</div>
+</div>
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/miniplay.js"></script>

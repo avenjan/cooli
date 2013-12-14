@@ -1,0 +1,107 @@
+<?php  
+//php的时间是以秒算。js的时间以毫秒算  
+  
+date_default_timezone_set('PRC');  
+//date_default_timezone_set("Asia/Hong_Kong");//地区  
+  
+//配置每天的活动时间段  
+$starttimestr = date("Y-m-d H:i:s");  
+$endtimestr = "2012-6-20 00:00:00";  
+  
+$starttime = strtotime($starttimestr);  
+$endtime = strtotime($endtimestr);  
+$nowtime = time();  
+if ($nowtime<$starttime){  
+die("活动还没开始,活动时间是：{$starttimestr}至{$endtimestr}");  
+}  
+if ($endtime>=$nowtime){  
+$lefttime = $endtime-$nowtime; //实际剩下的时间（秒）  
+ }else{  
+ $lefttime=0;  
+ die("已经开始公测，如果不能正常访问可能您使用的IP地址不在允许范围内！");  
+}  
+?>  
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>酷爱音乐网公测倒计时</title>
+<!--[if lte IE 6]>
+<script src="js/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        DD_belatedPNG.fix('a');
+    </script>
+<![endif]-->
+<script type="text/javascript" src="img/cmp.js"></script>
+
+<style type="text/css">
+body{ margin:0; padding:0; font:Arial, Helvetica, sans-serif; font-size:14px; color:#555; text-align:center; background:url(img/bg.png) repeat}
+strong{ color:#FFCC33; font-size:24px;}
+.top{ width:100%; height:40px; background:url(img/top.png) repeat; line-height:50px;FONT: 14px/2 Arial, simsun;}
+.title{ color:#0f820c}
+#player{ width:950px; height:350px; margin:15px auto}
+</style>
+</head>
+<script language="JavaScript">  
+var runtimes = 0;  
+function GetRTime(){  
+var nMS = <?php echo $lefttime; ?>*1000-runtimes*1000;  
+if (nMS>=0){  
+var nD=Math.floor(nMS/(1000*60*60*24))%24;  
+var nH=Math.floor(nMS/(1000*60*60))%24;  
+var nM=Math.floor(nMS/(1000*60)) % 60;  
+var nS=Math.floor(nMS/1000) % 60;  
+document.getElementById("RemainD").innerHTML=nD;  
+document.getElementById("RemainH").innerHTML=nH;  
+document.getElementById("RemainM").innerHTML=nM;  
+document.getElementById("RemainS").innerHTML=nS;  
+if(nMS==5*60*1000)  
+{  
+alert("还有最后五分钟！");  
+}  
+runtimes++;  
+setTimeout("GetRTime()",1000);  
+}  
+}  
+window.onload=GetRTime;  
+</script>  
+<div class="top">酷爱音乐 - 出品：桦盟网络 合作： T2音狮 CopyRight © 2012 huamengnet.com. All Rights Reserved.</div>
+<div class="title">
+<h4>距离酷爱音乐网公测开始还有 </h4>
+
+<img src="img/go.png" /><br />
+
+<strong id="RemainD">&nbsp;</strong>天 
+<strong id="RemainH">&nbsp;</strong>小时 
+<strong id="RemainM">&nbsp;</strong>分钟 
+<strong id="RemainS">&nbsp;</strong>秒
+</div>
+
+<div id="player">
+<script type="text/javascript">
+var cmpo;
+function cmp_loaded(key) {
+	//cmp loaded
+	cmpo = CMP.get("cmp");
+	if (cmpo) {
+		//cmp callback
+		//alert(cmpo.config("version"));
+		//document.title = cmpo.config("name");
+		cmpo.addEventListener("model_load", "cmp_model_load");
+	}
+}
+function cmp_model_load(data) {
+	//document.title = cmpo.item("label");
+}
+var flashvars = {
+	api : "cmp_loaded",
+	auto_play:"1",
+	skin : "youtube.swf",
+	context_menu : "0"
+};
+//id, width, height, swf_url, flashvars, params, attrs
+var htm = CMP.create("cmp", "650", "100%", "img/player.swf?lists=list.xml", flashvars);
+document.getElementById("player").innerHTML = htm;
+</script>
+
+</div>

@@ -1,0 +1,68 @@
+<div class="header_top">  
+    <div class="w960 center">  
+     <span id="time" class="time">KuAi音乐 - 爱生活，爱音乐！</span>
+     <div class="toplinks">
+	 <a href="{dede:global.cfg_cmsurl/}/plus/heightsearch.php" target="_blank">高级搜索</a>|
+	 <a href="{dede:global.cfg_cmsurl/}/data/rssmap.html" target="_blank">网站地图</a>|
+	 <a href="{dede:global.cfg_cmsurl/}/tags.php">TAG标签</a>
+	 <a href="{dede:global.cfg_dataurl/}/rssmap.html" class="rss">RSS订阅</a>
+	 <span>
+		 [<a href=""onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('{dede:global.cfg_basehost/}');">设为首页</a>]
+		 [<a href="javascript:window.external.AddFavorite('{dede:global.cfg_basehost/}','{dede:global.cfg_webname/}')">加入收藏</a>]
+	 </span>
+	 </div>
+    </div> 
+</div>
+
+<div class="header">
+	<div class="top w960 center">
+      <div class="title">
+        <h1><a href="{dede:global.cfg_basehost/}"><img src="/images/logo.png" height="60" width="220" alt="{dede:global.cfg_webname/}"/></a> </h1>
+      </div>
+      <div class="banner">
+		  <div class="search">
+		  <form  name="formsearch" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+			<div class="form" id="login_2">
+			   <input type="hidden" name="kwtype" value="0" />
+			   <div class="search-keyword">
+			   <input name="q" type="text" class="" id="search-keyword" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';};hidekeyboard=true;login_2.className='form_on'"  onblur="if(this.value==''){this.value='在这里搜索...';};login_2.className='form'" />
+			   </div>
+			   <select name="searchtype" class="search-option" id="search-option">
+				   <option value="title" selected="selected">检索标题</option>
+				   <option value="titlekeyword">智能模糊</option>
+			   </select>
+			  <button type="submit" class="post_btn">搜索</button>
+			</div>
+			</form>
+			<div class="tags">
+			  <ul>
+			  {dede:tag row='10' getall='1' sort='month'}
+				<li><a href='[field:link/]' target="_blank">[field:tag /]</a></li>
+			  {/dede:tag}
+			  </ul>
+			</div>
+		</div><!-- //search -->
+	</div>
+      <div class="banner2">
+         <a  href="{dede:global.cfg_memberurl/}/index.php" class="user_login"  target="_blank">用户登录</a>
+         <a href="{dede:global.cfg_memberurl/}/index_do.php?fmdo=user&amp;dopost=regnew" class="user_reg"  target="_blank">注册帐号</a>
+		 <br/>
+		 <a href="{dede:global.cfg_memberurl/}/index.php"  target="_blank">会员中心</a> | 
+         <a href="{dede:global.cfg_memberurl/}/index_do.php?fmdo=login&amp;dopost=exit">安全退出</a> 
+	  </div>
+	</div><!-- //top -->
+	<!-- //菜单 -->
+    	<!-- //如果不使用currentstyle，可以在channel标签加入 cacheid='channeltoplist' 属性提升性能 -->
+		<div class="csc_top">
+		  <ul class="head_menu">	  	
+			<li class="current">
+			<a href='{dede:global.cfg_cmsurl/}/'><span>主页</span></a>
+			<span class="sep">|</span>
+			</li>
+			
+			{dede:channel type='top' row='10' currentstyle="<li class='hover'><a href='~typelink~' ~rel~><span>~typename~</span></a></li>"}
+			<li><a href='[field:typeurl/]' [field:rel/] target="_blank"><span>[field:typename/]</span></a><span class="sep">|</span></li>
+			{/dede:channel}
+		 </ul><span class="rss"><a href="{dede:global.cfg_dataurl/}/rssmap.html" class="rss" target="_blank"><img src="/images/rssicons.png"  title="RSS订阅" alt="RSS订阅"/></a></span>
+		</div>
+</div><!-- //header -->

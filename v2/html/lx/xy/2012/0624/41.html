@@ -1,0 +1,428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>校服的裙摆_酷爱音乐</title>
+<meta name="keywords" content="校服,的,裙摆,校服,的,裙摆,杉籽,枷,音狮,00.00,,校服的裙摆,杉籽伽" />
+<meta name="description" content="[ti:校服的裙摆][ar:杉籽枷][al:][by:T2音狮][00:00.00]T2音狮[00:10.00]t2.huamengnet.com[00:23.21]杉籽枷 - 校服的群摆[00:26.40]天很高[00:29.87]我想要飞向天[00:34.01]抓颗蓝色的星星[00:36.81]许下我的心愿" />
+<link href="/templets/default/style/style.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script>
+
+<script>
+
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin()
+{
+	var taget_obj = document.getElementById('_ajax_feedback');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/member/ajax_feedback.php");
+	DedeXHTTP = null;
+}
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+	DedeXHTTP = null;
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+	DedeXHTTP = null;
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+-->
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+	$(function(){
+		$("a[_for]").mouseover(function(){
+			$(this).parents().children("a[_for]").removeClass("thisclass").parents().children("dd").hide();
+			$(this).addClass("thisclass").blur();
+			$("#"+$(this).attr("_for")).show();
+		});
+		$("a[_for=uc_member]").mouseover();
+		$("a[_for=flink_1]").mouseover();
+	});
+	
+	function CheckLogin(){
+	  var taget_obj = document.getElementById('_userlogin');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("/member/ajax_loginsta.php");
+	  DedeXHTTP = null;
+	}
+-->
+</script>
+
+</head>
+<body class="playpage">
+<div id="body-bg"><img style="" src="/templets/default/images/playpage_bg.jpg"></div>
+<a name="gotop">&nbsp;</a>
+<div id="page">
+	<div class="chl-poster simple" id=header>
+	<a href="http://i.huamengnet.com"><img src="/images/logo.png" height="35" width="175" alt="酷爱音乐"/ style="float:left; margin-left:5px;"></a> 
+		<div id=site-nav>
+			<UL class=quick-menu>
+			  <LI class="mytaobao menu-item">
+				  <div class=menu>
+					  <A class=menu-hd href="#" target=_top rel=nofollow>我的酷爱<B></B></A> 
+					  <div class=menu-bd>
+					       <div id="_userlogin">
+						  <div class="userlogin">
+						   <form name="userlogin" action="/member/index_do.php" method="post">
+							<input type="hidden" name="fmdo" value="login" />
+							<input type="hidden" name="dopost" value="login" />
+							<input type="hidden" name="keeptime" value="604800" />
+							<div class="fb"><span>用户名:</span>
+							 <input type="text" name="userid" size="20" class="ipt-txt" />
+							</div>
+							<div class="fb"><span>密码:</span>
+							 <input type="password" name="pwd" size="20" class="ipt-txt" />
+							</div>
+							
+							<div class="fb"><span>验证码:</span>
+							 <input type="text" name="vdcode" size="8" class="ipt-txt" />
+							 <img id="vdimgck" align="middle" onclick="this.src=this.src+'?'" style="cursor:pointer;margin-left:0px;text-transform:uppercase;" alt="看不清？点击更换" src="/include/vdimgck.php"/></div>
+							
+							<div class="submit">
+							 <button type="submit" class="btn-1">登录</button>
+							 <a href="/member/index_do.php?fmdo=user&dopost=regnew" >注册帐号</a> <a href="/member/resetpassword.php">忘记密码?</a> </div>
+						   </form>
+						  </div>
+						 </div>
+						 <!-- /userlogin -->
+					  </div>
+				  </div>
+			  </LI>
+			  <LI class="search menu-item">
+				  <div class=menu><SPAN class=menu-hd><S></S>搜索<B></B></SPAN> 
+					  <div class=menu-bd>
+						  <div class=menu-bd-panel>
+							 <form  name="formsearch" action="/plus/search.php">
+							 <div class="form" id="login_2">
+								 <input type="hidden" name="kwtype" value="0" />
+								 <input name="q" type="text" class="" id="search-keyword" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';};hidekeyboard=true;login_2.className='form_on'"  onblur="if(this.value==''){this.value='在这里搜索...';};login_2.className='form'" />
+							   <select name="searchtype" class="search-option" id="search-option">
+							   <option value="title" selected="selected">检索标题</option>
+							   <option value="titlekeyword">智能模糊</option>
+							  </select>
+							  <button type="submit" class="post_btn">搜索</button>
+							</div>
+							</form>
+							 <a href="/plus/heightsearch.php" target="_blank" style="float:right; margin-top:10px;">高级搜索</a>
+						  </div>
+					  </div>
+				  </div>
+			  </LI>
+			  <LI class="services menu-item last">
+				  <div class=menu>
+					  <A class=menu-hd href="#" target=_top>网站导航<B></B></A> 
+					  <div class=menu-bd style="WIDTH: 210px;  _width: 202px">
+						  <div class=menu-bd-panel>
+							  <DL>
+								<DT>分类
+								<DD>
+							
+							<a href='/plus/list.php?tid=3'  rel='dropmenu3' target="_blank"><span>流行</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+							<a href='/plus/list.php?tid=1'  rel='dropmenu1' target="_blank"><span>轻音乐</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+							<a href='/plus/list.php?tid=8'  target="_blank"><span>MV</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+							<a href='/plus/list.php?tid=6'  target="_blank"><span>音乐专辑</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+							<a href='/plus/guestbook.php'  target="_blank"><span>在线留言</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+								</DD>
+							</DL>
+							  <DL>
+								<DT>快速导航 
+								<DD>			
+								 <a href="/data/rssmap.html" target="_blank">网站地图</a>|
+								<a href="/tags.php">TAG标签</a>
+								<a href="/data/rssmap.html" class="rss">RSS订阅</a>
+								</DD>
+							</DL>
+								
+							  <DL>
+								<DT>热门搜索 
+								<DD>
+								<div class="tags">
+							  
+								<a href='/tags.php?/%E5%B0%B1/' target="_blank">就</a>
+							  
+								<a href='/tags.php?/%E9%97%AE%E5%80%99/' target="_blank">问候</a>
+							  
+								<a href='/tags.php?/%E5%BF%83%E5%A2%83/' target="_blank">心境</a>
+							  
+								<a href='/tags.php?/%E6%9F%90%E4%B8%AA/' target="_blank">某个</a>
+							  
+								<a href='/tags.php?/Run/' target="_blank">Run</a>
+							  
+								<a href='/tags.php?/%E7%AB%99%E5%9C%A8/' target="_blank">站在</a>
+							  
+								<a href='/tags.php?/%E7%BC%B1%E7%BB%BB/' target="_blank">缱绻</a>
+							  
+								<a href='/tags.php?/%E6%9A%97%E6%81%8B%E8%BF%87/' target="_blank">暗恋过</a>
+							  
+								<a href='/tags.php?/%E9%AB%98%E5%A4%84/' target="_blank">高处</a>
+							  
+								<a href='/tags.php?/with/' target="_blank">with</a>
+							  
+								</DD></DL>
+							  <DL class=last>
+								<DD><STRONG style="FONT-WEIGHT: bold"><A href="/data/rssmap.html">更多内容</A></STRONG></DD>
+							  </DL>
+						  </div>
+					  </div>
+				  </div>
+			  </LI>
+			  
+		    </UL>
+		</div>
+	<div id="playnow" style="color:#fff"><span></span>爱生活，爱音乐...</div>
+	</div>
+</div>
+<div class="clear"></div>
+
+<!-- /header -->
+<div class="topnav">
+	<div class="tools">
+		<ul>
+			<li id="act-err"><a href="/plus/erraddsave.php?aid=41&title=校服的裙摆" target="_blank">报错</a></li>
+			<li id="act-pus"><a href="/plus/recommend.php?aid=41" target="_blank" title="推荐给好友" >推荐</a></li>
+			<!--li id="act-pnt"><a href="#" onClick="window.print();">打印</a></li-->
+			<li id="collection"><a href="/plus/stow.php?aid=41&type=3&music_url=http://t2music.com.nu/music/zh/%D0%A3%B7%FE%B5%C4%C8%B9%B0%DA.mp3" title="收藏到我的播放列表" target="_blank">收藏</a></li>
+			<li id="download"><a href='/plus/download.php?open=0&aid=41&cid=3' class="gotodownload" target="_blank" title="音乐下载">下载</a>
+</li>
+			<li id="feedback"><a href="/plus/feedback.php?aid=41" target="_blank">评论</a></li>
+		</ul>
+	</div>
+		<div class="position"><img src="/templets/default/images/chart_bar.png"/>&nbsp;&nbsp;当前分类：校园经典</div>
+
+</div>
+
+<div class="playerbox">
+	<div class="song_info">
+		<div class="song">
+		<div class="song_img"><img src='/uploads/allimg/120624/5-120624112Q20-L.jpg' /></div>
+		<div class="cmplayer" id="player"></div>
+			<div class="control">
+			  <ul>
+			  <li><input type=button onclick=document.location.href='/html/lx/xy/2012/0624/40.html'  title=上一曲  id=up /> </li>
+			  <li class="nopress" onClick="press(this)"><input type="button" value="" onclick="sendEvent('view_play');" title="播放/暂停"  id="play"  /></li>
+				<script>
+				function press(obj)
+				{
+				if(obj.className=="nopress")
+				{obj.className="press"}
+				else
+				{obj.className="nopress"}
+				}
+				</script>
+			  <li></li>
+			  <!--li><input type="button" value="" onclick="sendEvent('view_stop');" title="停止"  id="stop" /></li-->
+			  </ul>
+			</div>
+			<div id="lrc_content" style="float:left; width:250px">正在为您加载播放器...</div>
+					<div class="newdigg" id="newdigg"></div>
+			 <script language="javascript" type="text/javascript">getDigg(41);</script>
+			 <!-- Baidu Button BEGIN -->
+			<script type="text/javascript" id="bdshare_js" data="type=button&amp;uid=139658" ></script>
+			<script type="text/javascript" id="bdshell_js"></script>
+			<script type="text/javascript">
+				document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+			</script>
+			<!-- Baidu Button END -->
+
+		</div>
+		<div class="song_intro">
+		<div class="song_name">《校服的裙摆》<br/><span class="song_writer">BY&nbsp;-&nbsp;杉籽伽</span></div>
+		<div class="content">
+			<pre>[ti:校服的裙摆]
+[ar:杉籽枷]
+[al:]
+[by:T2音狮]
+[00:00.00]T2音狮
+[00:10.00]t2.huamengnet.com
+[00:23.21]杉籽枷 - 校服的群摆
+[00:26.40]天很高
+[00:29.87]我想要飞向天
+[00:34.01]抓颗蓝色的星星
+[00:36.81]许下我的心愿
+[00:40.09]你总说
+[00:42.91]总说我太贪恋
+[00:46.78]贪恋这青春的誓言
+[00:50.24]微薄的信念
+[00:53.34]十七岁 下着雨的夏天
+[00:59.65]你住进我心里面
+[01:02.85]告诉我什么是思念
+[01:05.71]雨总下得太缠绵
+[01:09.52]缠绵那腿色的书签
+[01:12.52]儿时的玩伴
+[01:14.48]和回也回不去的昨天
+[01:19.17]我想我会藏好我的伤
+[01:22.41]如你所愿
+[01:25.49]在太阳出来的时候
+[01:28.87]把所有孤单统统晾干
+[01:32.44]我想你会忘了我的好
+[01:35.44]走过陌生的街角
+[01:38.46]你用小弧的裙摆
+[01:41.60]和我说最坚定的再见
+[02:09.81]天很高
+[02:12.58]我想要飞向天
+[02:16.47]抓颗蓝色的星星
+[02:19.42]许下我的心愿
+[02:22.55]你总说
+[02:24.85]总说我太贪恋
+[02:29.41]贪恋这青春的誓言
+[02:32.53]微薄的信念
+[02:35.34]十七岁 下着雨的夏天
+[02:42.03]你住进我心里面
+[02:45.13]告诉我什么是思念
+[02:48.21]雨总下得太缠绵
+[02:51.81]缠绵那腿色的书签
+[02:54.86]儿时的玩伴
+[02:56.71]和回也回不去的昨天
+[03:01.02]我想我会藏好我的伤
+[03:04.60]如你所愿
+[03:07.45]在太阳出来的时候
+[03:11.24]把所有孤单统统晾干
+[03:14.78]我想你会忘了我的好
+[03:17.84]走过陌生的街角
+[03:20.65]你用小弧的裙摆
+[03:23.61]和我说最坚定的再见
+[03:27.47]我想我会藏好我的伤
+[03:30.61]如你所愿
+[03:33.64]在太阳出来的时候
+[03:37.01]把所有孤单统统晾干
+[03:40.43]我想你会忘了我的好
+[03:43.59]走过陌生的街角
+[03:46.41]你用小弧的裙摆
+[03:49.57]和我说最坚定的再见
+[03:55.00]T2音狮 - t2.huamengnet.com</pre>
+		</div>
+		</div>
+	</div>
+
+</div>
+<div class="foot"> ©2012 KuAi 酷爱音乐</div>
+
+<script type="text/javascript" src="/play/cmp.js"></script> 
+<script type="text/javascript">
+var cmpo;
+function sendEvent(type, data) {
+	cmpo.sendEvent(type, data);
+}
+function cmp_loaded(key) {
+	//cmp loaded
+	cmpo = CMP.get("cmp");
+	if (cmpo) {
+		//cmp callback		
+		showInfo(cmpo.config("name"));
+		//开始播放时
+		showInfo(cmpo.config("play"));
+
+		cmpo.addEventListener("model_start", "cmp_model_start");
+		//侦听歌词行改变事件
+		cmpo.addEventListener("lrc_rowchange", "cmp_lrc_rowchange");
+	}
+}
+//开始播放时清除信息，并显示描述
+function cmp_model_start(data) {
+	showInfo(cmpo.config("description"));
+}
+//歌词行改变时显示当前行信息
+function cmp_lrc_rowchange(data) {
+	showInfo(data);
+}
+function showInfo(str) {
+	//显示到浏览器窗口标题
+	//document.title = str;
+	//输出到页面
+	
+	document.getElementById("lrc_content").innerHTML = str;
+}
+
+//cmp主程序地址，替换成你自己的
+var cmp_url = "/play/player.swf?php=1&src=http://t2music.com.nu/music/zh/%D0%A3%B7%FE%B5%C4%C8%B9%B0%DA.mp3&label=校服的裙摆";
+var musicname = "校服的裙摆"
+var writer = "杉籽伽"
+//cmp的参数
+var flashvars = {
+	name : "正在为您缓冲歌曲...",
+	play : "正在缓冲：《"+musicname+"》- "+writer+"",
+	//cmp初始化完成时的脚本接口回调函数名
+	api:"cmp_loaded"
+};
+//id, width, height, swf_url, flashvars, params, attrs
+var htm = CMP.create("cmp", "100%", "100%", cmp_url, flashvars);
+document.getElementById("player").innerHTML = htm;
+</script>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+
+</body>
+</html>

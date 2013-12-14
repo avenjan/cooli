@@ -1,0 +1,73 @@
+
+.usercenter{ float:right; width:240px}
+.newlist_box{}
+.newlist_box li{ width:195px; height:90px; float:left; font-size:12px;}
+.newlist_box li h3{ color:#fff; font-size:12px; padding:10px 0;}
+.icon_play_hover span {display: block;width: 20px;height: 20px;cursor: pointer;position: absolute;right:5px;bottom: 25px;background: url(../images/icon_play.png) no-repeat 0 0;
+}
+.icon_play_hover span:hover{background: url(../images/icon_play.png) no-repeat -20px 0;}
+.play_btn{ float:right}
+.play_btn .post_btn{ height:20px; line-height:19px;}
+.play_checkbox{ margin-right:5px;}
+
+/**/
+.listbox .tbox{ border-bottom:none}
+.listbox .tbox dt{ height:35px; margin-bottom:15px;}
+.listbox .tbox dt strong{ border-left:5px solid #8bcc00}
+.listbox .tbox li{ width:333px;height: 23px;line-height: 24px;margin: 0 0 6px;padding: 0 0 6px;float: left;border-bottom: 1px dotted white; }
+.listbox .tbox li:hover{border-bottom:1px dashed #DDD}
+.listbox .tbox li a{color:#0F820C}
+
+/**/
+.pright .light{ width:240px; padding:6px 0}
+.light_tit{ border-left:5px solid #ff5400; color:#0F820C}
+/*×¨Ìâ*/
+.music_zt li{ float:right;padding:5px 10px;}
+.music_zt img{ width:220px; height:100px;}
+/**/
+			.boxgrid{ 
+				width: 195px; 
+				height: 90px; 
+				margin:10px; 
+				float:left; 
+				background:#161613; 
+				border: solid 2px #8399AF; 
+				overflow: hidden; 
+				position: relative; 
+			}
+				.boxgrid img{ 
+					height:90px;
+					width:195px;
+					position: absolute; 
+					top: 0; 
+					left: 0; 
+					border: 0; 
+				}
+				.boxgrid p{ 
+					height:65px;
+					width:185px;
+					color:#fff; 
+					font-weight:bold; 
+					font:10pt "Lucida Grande", Arial, sans-serif; 
+				}
+				
+			.boxcaption{ 
+				float: left; 
+				position: absolute; 
+				background: #000; 
+				height: 100px; 
+				width: 100%; 
+				opacity: .8; 
+				/* For IE 5-7 
+				filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+				/* For IE 8 
+				-MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";*/
+ 			}
+ 				.captionfull .boxcaption {
+ 					top: 10px;
+ 					left: 0;
+ 				}
+ 				.caption .boxcaption {
+ 					top: 60px;
+ 					left: 0;
+ 				}

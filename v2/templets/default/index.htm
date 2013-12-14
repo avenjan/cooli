@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<link href="{dede:global.cfg_templets_skin/}/style/style.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="{dede:global.cfg_templets_skin/}/style/index.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+<script type="text/javascript" src="/play/js/public.js"></script>
+<script type="text/javascript" src="/play/js/encode.js"></script>
+<script type="text/javascript" src="/play/cmp.js"></script>
+<script type="text/javascript" src="/play/miniplayer.js"></script>
+
+<script language="javascript" type="text/javascript">
+<!--
+	$(function(){
+		$("a[_for]").mouseover(function(){
+			$(this).parents().children("a[_for]").removeClass("thisclass").parents().children("dd").hide();
+			$(this).addClass("thisclass").blur();
+			$("#"+$(this).attr("_for")).show();
+		});
+		$("a[_for=uc_member]").mouseover();
+		$("a[_for=flink_1]").mouseover();
+	});
+	
+	function CheckLogin(){
+	  var taget_obj = document.getElementById('_userlogin');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("{dede:global.cfg_cmspath/}/member/ajax_loginsta.php");
+	  DedeXHTTP = null;
+	}
+-->
+</script>
+<script type="text/javascript">
+        var isClick = false; 
+         function changeBg(id,str){  
+               if(!isClick) {                 
+                   //document.getElementById(id+i).style.display="inline";
+                   eval("document.getElementById(\""+ id +"\").className=\""+ str +"off\";");    
+                   isClick = true;
+                   //alert(isClick);
+                   
+            
+               } else {
+           
+                eval("document.getElementById(\""+ id +"\").className=\""+ str +"\";");
+                isClick = false;
+               }
+          } 
+          
+</script>
+</head>
+<body class="index">
+{dede:include filename="head.htm"/}
+<!-- /header -->
+<div class="atindex">
+<div class="atlift">
+<div class="clear"></div>
+<section id="wrapper">	
+<div id="container">
+		<script type="text/javascript">
+		var arrName = new Array();
+		var arrUrl = new Array();
+		var arrBgimg = new Array();
+		</script>
+{dede:channelartlist}
+	{dede:arclist addfields='music_url' titlelen=42  channelid='3'}
+			<script type="text/javascript">
+			  var id = "[field:id/]";
+			  var name = "[field:title/]";
+			  var url = "[field:music_url/]";
+			  var bgimg = "[field:litpic /]"
+			  arrName[id] = name;
+			  arrUrl[id] = url;
+			  arrBgimg[id] = bgimg;
+			</script>
+	<div class="grid">
+		<div class="imgholder song_box">
+		<div class="pic pause" onmouseover="this.className+=' hover'" onmouseout="this.className=this.className.replace(/\shover/,'')" href="javascript:;" onclick="playboxSong(this, true)" title="[field:title /]" hidefocus="true">
+			<img src="[field:litpic/]" />
+			<b></b>
+			<a href="javascript:void(0)" onclick="play('[field:id /]');" title="立即播放"><i></i></a>
+			<a href="javascript:void(0)" onclick="add('[field:id /]');" title="加入播放列表"><em></em></a>
+			</div>
+		</div>
+		<strong>[field:title /]</strong>
+		<p>
+		<div class="list_cp" >
+		
+		<a href="[field:arcurl/]"  class="btn_play" target="_blank" title="独立播放">播放</a>
+			<a class="btn_add" href="/plus/stow.php?aid=[field:id/]&music_url=[field:music_url/]&type=3" title="收藏到我的播放列表" target="_blank"></a>
+			<a href="/plus/recommend.php?aid=[field:id/]" title="推荐给好友" class="btn_tuijian" target="_blank" >推荐</a>
+			<input type="checkbox" name="mcbox" value="[field:id /]" class="play_checkbox" style="float:right"/>
+		</div>
+		</p>
+		<div class="meta"><span>[field:pubdate function=MyDate('y-m-d',@me)/]</span>BY [field:writer/]</div>
+	</div>
+	{/dede:arclist}
+{/dede:channelartlist}
+</div>
+</section>
+</div>
+<!--END ATLIFT-->
+
+<div class="atright">
+	<div class="menulist">
+		<ul>
+			<li class="menutitle"><a href="/plus/list.php?tid=3">流行</a></li>
+			{dede:loop table='dede_arctype'  if='topid=3'}
+			<li class="menuname"><a href="/plus/list.php?tid=[field:id /]">[field:typename/]</a></li>
+			{/dede:loop}
+			<li class="menutitle"><a href="/plus/list.php?tid=1">轻音乐</a></li>
+			{dede:loop table='dede_arctype'  if='topid=1'}
+			<li class="menuname"><a href="/plus/list.php?tid=[field:id /]">[field:typename/]</a></li>
+			{/dede:loop}
+			<li class="menutitle"><a href="/plus/list.php?tid=8">MV</a></li>
+			<li class="menutitle"><a href="/plus/list.php?tid=6">音乐专辑</a></li>
+			<li class="menutitle"><a href="/plus/list.php?tid=4">留言</a></li>
+		</ul>
+	</div>
+     <div class="clear"></div>
+	<div class="feedback">
+	<span class="feedbacktag">最新评论</span>
+	{dede:feedback row='5' titlelen='35' infolen='80'}
+	<ul>
+      <li> 
+	  <span class="user"><IMG height=48 alt="[field:username function="(@me=='匿名' ? '游客' : @me)"/]" src="[field:userface function="(@me=='no' ? '/member/templets/images/nopic.gif' : @me)"/]" width=48> 
+<a href="http://kuai.com/member/index.php?uid=avenjan&action=infos" class="username">[field:username function="(@me=='guest' ? '游客' : @me)"/]</a> 
+	 </span>
+	 <a href="[field:global.cfg_phpurl/]/feedback.php?aid=[field:aid/]" class="title">[field:title/]</a>
+       <p>[field:msg/]</p>
+	   <span class="info">[field:dtime function=MyDate('y-m-d',@me)/]</span>
+	   
+      </li>
+	  </ul>
+      {/dede:feedback}
+	</div>
+</div>
+
+</div>
+<div class="clear"></div>
+<div class="flink w960 center clear">
+ <dl class="tbox">
+  <dt> <!--strong>友情链接</strong-->
+	<span class="linklabel">
+		{dede:flinktype type="dedecms"}
+			[field:typename/] 
+		{/dede:flinktype}
+	</span>
+	<span class="more"> <a href="plus/flink.php">所有链接</a> | <a href="plus/flink_add.php">申请加入</a> </span> </dt>
+
+ </dl>
+ 
+ <ul class="flink_img">
+{dede:flink row='24' type='image' titlelen="24" typeid="0"}
+ [field:link /]
+{/dede:flink}
+</ul>
+ <div class="clear"></div>
+  <ul class="flink_txt">
+
+ {dede:flink row='24' type='text' titlelen="24"  typeid="0"}
+ [field:link /]
+{/dede:flink}
+ </ul>
+ <div class="clear"></div>
+</div>
+
+<!-- /flink -->
+<div id="footAD" style="margin:10px auto; width:960px">{dede:myad name='indexfooterAD'/}</div>
+<div class="clear"></div>
+
+{dede:include filename="footer.htm"/}
+<!-- /footer -->
+
+</body>
+</html>

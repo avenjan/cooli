@@ -1,0 +1,34 @@
+body{font-family: "Microsoft YaHei"; text-align:left}
+h1{ float:left}
+h2{margin: 0 0 20px 0;font-size: 24px;font-weight: normal;color: #333;}
+a{ color:#0F820C}
+.sp-title,.formbox,.flinkbox{border: 1px solid #E4E4E4;border-radius: 4px; padding:15px 10px; -webkit-box-shadow:5px 2px 6px #DDD;-moz-box-shadow:5px 2px 6px #000;}
+.header{ margin:15px auto 0 auto}
+.header span{ float:right; margin:0 5px}
+.header span a{ margin:0 5px}
+.sp-title{ width:940px; height:55px;margin:15px auto;padding: 15px 10px 0 10px; }
+.sp-title h2{height:50px; padding-left:50px; line-height:2;background:url(../images/folder.png) no-repeat;}
+.sp-title h2 a{color: #333; text-decoration:none}
+div.line02 {width: 100%;height: auto;border-top: 1px dashed #CECECE;clear: both;margin: 15px auto;}
+.formbox table{ width:550px;}
+.formbox table li{ margin:10px 15px; float:left}
+.formbox .listtitle{ width:550px; height:35px; background: #0F820C url(../images/download_bg.png) 0 -60px no-repeat; padding-left:35px; font-size:16px; font-weight:600px; color:#fff; }
+.formbox table li a{
+color:#0f820c;
+border-radius: 3px;
+border:1px solid #0f820c;
+display: inline-block;
+line-height: 25px;
+height: 25px;
+padding: 0 10px;
+border-image: initial;
+}
+.formbox table li a:hover {
+background: #0F820C;
+color: white;
+text-decoration:none
+}
+.count{ width:56px;height: 60px;background:url(../images/digg-bg.gif) no-repeat; text-align:center; line-height:30px; color:#0F820C; font-weight:600}
+.count div{ color:#FF0000}
+.info{ height:200px; float:left}
+.info li{ background:url(../images/smallT-gray.gif)  no-repeat; height:26px; padding-left:15px; line-height:9px; font-size:14px}

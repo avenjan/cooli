@@ -1,0 +1,127 @@
+@import url("page.css");
+
+*{padding:0px;margin:0px;}
+html{background:#FFF;}
+body{font:12px Tahoma, Geneva, sans-serif; background:url(../images/bg.gif) repeat; z-index:1; text-align:center; color:#333}
+img{border:none;}
+
+a{color:#1CA1D8;text-decoration:none;}
+ul{	list-style:none;}
+input,select,button{font:12px Verdana,Arial,Tahoma;	vertical-align:middle;}
+.post_btn {cursor: pointer;font-size: 12px;color: #0F820C;background: white;border: 1px solid #0F820C;border-radius: 3px;box-shadow: 1px 2px 0 #F2F2F2;display: inline-block;line-height: 25px;height: 25px;padding: 0 10px;border-image: initial;}
+.post_btn:hover{ background:#0F820C; color:#FFF; text-decoration:none}
+
+.head{ background:url(../images/playerbox_head.png) repeat-x; width:100%; height:45px;}
+
+.left{ background:url(../images/playerbox_l.png) repeat-y;width: 171px;border-right: 1px solid #C1C1C1;position: fixed;top: 44px;bottom: 76px;overflow: hidden;}
+.searchbox{position: fixed;top: 5px;z-index: 9999999;left: 40%;}
+#login_2{background: url(//mu6.bdstatic.com/player/t/i/QT5mvCgq.png) no-repeat 0px -132px;border: none;height: 25px;width: 190px; margin:5px auto}
+#search-keyword{border: none;margin-top: 3px;float: left;margin-left: 11px;width: 149px;height: 19px;background: white;opacity: 0.5;}
+.search{width: 25px;height: 25px;background: white;opacity: 0;filter: alpha(opacity=0);-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; cursor:pointer}
+.right{right: 0;background: url(../images/playerbox_r.png) repeat-y;width: 205px;border-left: 1px solid #C1C1C1;overflow: hidden;position: fixed;top: 44px;bottom: 76px;}
+.center{left: 172px;background: white;right: 206px;border-top: none;border-bottom: none;position: fixed;top: 44px;bottom: 76px;}
+.center .list li{ text-align:left; line-height:35px; }
+.center .art0,.center .art1{ height:35px;border-bottom:1px dashed #DAD8D8}
+.center .art0{ background:#fff}
+.center .art1{background-color: whiteSmoke;}
+/*list_cp*/
+		li .list_cp{ float:right;}
+		li .list_cp span{ float:right}
+		li.show_play .list_cp span{ display:none;}
+		li.show_data .list_cp a{ display:none; }
+		
+		.list_cp a{  width:14px; height:14px; overflow: hidden;margin: 10px 0 0 6px;}
+		.list_cp a {background:url(../images/icon_sprite.png);display: inline-block;vertical-align: top; line-height:9999px}
+		.list_cp .btn_play{background-position: 0 -169px;}
+		.list_cp .btn_play:hover {background-position: 0 -183px;}
+		.list_cp .btn_add {background-position: -42px -169px;}
+		.list_cp .btn_add:hover {background-position: -42px -183px;}
+		.list_cp .btn_fav {background-position: -71px -211px;}
+		.list_cp .btn_fav:hover {background-position: -56px -211px;}
+		.list_cp .btn_tuijian{background-position: -28px -169px;}
+		.list_cp .btn_tuijian:hover{background-position: -28px -183px;}
+
+.list_head{width: 100%;height: 29px;background: url(../images/playpage.png) 0px -636px repeat-x;font-weight: bold;font-size: 12px;color: #333;border-bottom: 1px solid #DAD8D8;z-index: 3;overflow: hidden;line-height: 29px;}
+
+.lists{ width:100%; height:500px;overflow-y: auto;}
+.list .l_l,.list .l_c,.list .l_r{ width:29%;}
+.list_head .l_l,.list_head .l_c,.list_head .l_r{background: url(//mu5.bdstatic.com/player/t/i/Fbb8yF1y.png) no-repeat 8px 0;}
+.list .l_box,.list .l_l,.list .l_c,.list .l_r{ float:left; padding:0 15px}
+.list .l_box{ width:15px; margin:0 10px; padding:10px 0;}
+.playerwind{background: url(../images/playpage.png) 0px -684px repeat-x;height: 75px;width: 100%;overflow-y: hidden;position: absolute;bottom: 0;left: 0;}
+.myfooter {height: 35px;line-height: 35px;background: url(../images/playpage.png) 0px -804px repeat-x;position: absolute;bottom: 0px;width: 100%;border-top: 1px solid #D8D8D8;z-index: 3; }
+.myfooter .total{ float:right; margin-right:30px; color:#333}
+.myfooter input.all{ margin:0 5px 0 15px;}
+.myfooter .add{ width:75px; height:25px; color:#454545; background:#FFF; border:1px solid #454545;border-radius: 5px;box-shadow: 0px 1px 3px #999; cursor:pointer }
+.myfooter .add:hover{ background:#454545; color:#FFF}
+.myfooter a.add{ padding:5px}
+.player{ width:100%; height:75px; float:left}
+
+.right .music_img{width: 100%;text-align: center;margin: 20px 0 11px;color: #333;}
+.right .music_img img{ width:135px; height:135px;border-radius: 5px;box-shadow: 0px 1px 3px #999;}
+.right .music_info{padding:5px; text-align:left; overflow:hidden; color:#8B8B8B }
+
+
+/**/
+#page { WIDTH:100%; height:40px;background:#151515; border-bottom:1px #666;color:#FFF; position:fixed; top:0PX; left:0px;Z-INDEX: 9999; }
+#page #playnow{ position:fixed; top:12px; right:35px;background:url(../images/headphones.png) no-repeat; padding-left:20px; height:20px; line-height:20px;}
+#site-nav-bg {BACKGROUND: #f7f7f7; LEFT: 0px; WIDTH: 100%; BORDER-BOTTOM: #d2d2d2 1px solid; POSITION: absolute; TOP: 0px; HEIGHT: 25px}
+#site-nav { MARGIN:auto; COLOR: #000;  POSITION: relative; width:950px; HEIGHT:35px; }
+#site-nav A {COLOR: #888}
+#site-nav A:hover {COLOR: #f50}
+#site-nav .login-info {FLOAT: left; PADDING-TOP: 1px}
+#site-nav .login-info A {MARGIN-RIGHT: 8px}
+#site-nav .login-info A.user-nick {MARGIN-RIGHT: 0px}
+#site-nav .quick-menu {RIGHT: 0px; POSITION: absolute; TOP:10px}
+#site-nav .quick-menu LI {PADDING-RIGHT: 10px;  PADDING-LEFT: 10px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN-LEFT: -1px; PADDING-TOP: 2px}
+#site-nav .quick-menu LI.menu-item { padding:0px; POSITION: relative}
+#site-nav .quick-menu .cart {PADDING-TOP: 1px; POSITION: relative; _padding-top: 2px}
+#site-nav .quick-menu .cart A {PADDING-LEFT: 16px}
+#site-nav .quick-menu .cart S { LEFT: 8px; WIDTH: 14px; POSITION: absolute; TOP: 6px; HEIGHT: 11px}
+#site-nav .menu-hd {PADDING-RIGHT: 22px; DISPLAY: block; PADDING-LEFT: 10px; Z-INDEX: 10002; PADDING-BOTTOM: 0px; MARGIN: 1px 1px 0px; CURSOR: pointer; PADDING-TOP: 0px; POSITION: relative; HEIGHT: 20px}
+#site-nav .mytaobao .menu-hd {WIDTH: 48px; PADDING-TOP: 1px; _padding-top: 1px}
+#site-nav .search .menu-hd {WIDTH: 24px; PADDING-TOP: 1px; _padding-top: 1px}
+#site-nav .services .menu-hd {WIDTH: 48px; PADDING-TOP: 1px; _padding-top: 1px}
+#site-nav .menu-hd B {BORDER-RIGHT: #151515 4px solid; BORDER-TOP: #666 4px solid; FONT-SIZE: 0px; RIGHT: 10px; BORDER-LEFT: #151515 4px solid; WIDTH: 0px; LINE-HEIGHT: 0; BORDER-BOTTOM: #151515 4px solid; POSITION: absolute; TOP: 7px; HEIGHT: 0px; -webkit-transition: -webkit-transform .2s ease-in; -moz-transition: -webkit-transform .2s ease-in; -o-transition: -webkit-transform .2s ease-in; transition: -webkit-transform .2s ease-in}
+#site-nav .search .menu-hd {PADDING-LEFT: 25px; COLOR: #888}
+#site-nav .search .menu-hd S {BACKGROUND:URL(../images/search.png) no-repeat ; LEFT: 2px; WIDTH:16px; POSITION: absolute;  HEIGHT: 16px}
+#site-nav .menu-bd {BORDER-RIGHT: #bfbfbf 1px solid; BORDER-TOP: #bfbfbf 1px solid; DISPLAY: none; Z-INDEX: 10001; RIGHT: 0px; BACKGROUND: #fff; BORDER-LEFT: #bfbfbf 1px solid; BORDER-BOTTOM: #bfbfbf 1px solid; POSITION: absolute; TOP: 21px}
+#site-nav .search .menu-bd {_right: -1px}
+#site-nav IFRAME.menu-bd {BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; Z-INDEX: -1; BACKGROUND: none transparent scroll repeat 0% 0%; FILTER: alpha(opacity=0); FLOAT: left; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px}
+#site-nav .menu-bd-panel {PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 6px; PADDING-TOP: 10px}
+#site-nav .menu-item-opp .menu-bd {LEFT: 0px}
+#site-nav .menu {POSITION: relative}
+#site-nav .menu:hover .menu-hd {BORDER-RIGHT: #bfbfbf 1px solid; BORDER-TOP: #bfbfbf 1px solid; BACKGROUND: white; MARGIN: 0px; BORDER-LEFT: #bfbfbf 1px solid; BORDER-BOTTOM: #bfbfbf 1px; color:#888}
+#site-nav .hover .menu-hd {BORDER-RIGHT: #bfbfbf 1px solid; BORDER-TOP: #bfbfbf 1px solid; BACKGROUND: white; MARGIN: 0px; BORDER-LEFT: #bfbfbf 1px solid; BORDER-BOTTOM: #bfbfbf 1px}
+#site-nav .menu:hover .menu-bd {DISPLAY: block}
+#site-nav .hover .menu-bd {DISPLAY: block}
+#site-nav .menu:hover .menu-hd B {BORDER-LEFT-COLOR: #fff; FILTER: progid:DXImageTransform.Microsoft.BasicImage(rotation=2); BORDER-BOTTOM-COLOR: #fff; BORDER-TOP-COLOR: #666; TOP: 5px; BORDER-RIGHT-COLOR: #fff; -moz-transform: rotate(180deg); -moz-transform-origin: 50% 30%; -webkit-transform: rotate(180deg); -webkit-transform-origin: 50% 30%; -o-transform: rotate(180deg); -o-transform-origin: 50% 30%; transform: rotate(180deg); transform-origin: 50% 30%}
+#site-nav .hover .menu-hd B {BORDER-LEFT-COLOR: #fff; FILTER: progid:DXImageTransform.Microsoft.BasicImage(rotation=2); BORDER-BOTTOM-COLOR: #fff; BORDER-TOP-COLOR: #666; TOP: 5px; BORDER-RIGHT-COLOR: #fff; -moz-transform: rotate(180deg); -moz-transform-origin: 50% 30%; -webkit-transform: rotate(180deg); -webkit-transform-origin: 50% 30%; -o-transform: rotate(180deg); -o-transform-origin: 50% 30%; transform: rotate(180deg); transform-origin: 50% 30%}
+#site-nav .mytaobao .menu-bd {WIDTH:250px; LINE-HEIGHT: 1.7; TOP: 21px; HEIGHT:AUTO}
+#site-nav .mytaobao .menu-bd-panel {PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 8px; PADDING-TOP: 8px}
+#site-nav .search .menu-bd {WIDTH: 204px; TOP: 21px; HEIGHT: 66px}
+#site-nav .search .menu-bd INPUT {BORDER: #b7b7b7 1px solid; PADDING: 1px;  WIDTH:100px; height:20px; }
+#site-nav .search .search-option{height:23px;}
+#site-nav .search .menu-bd BUTTON {FLOAT: left;  WIDTH: 66px; CURSOR: pointer; color:#FFF; background:#0F820C; margin-top:5px;}
+#site-nav .search .menu-bd BUTTON:hover{ background:#fff; color:#0F820C;}
+#site-nav .services .menu-bd {WIDTH: 174px; TOP: 21px; HEIGHT: 218px}
+#site-nav .services .menu-bd-panel {PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px}
+#site-nav .services .menu-bd DL {PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BORDER-BOTTOM: #e5e5e5 1px solid}
+#site-nav .services .menu-bd .last {BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px}
+#site-nav .services .menu-bd DT {COLOR: #8c8c8c; LINE-HEIGHT: 1.5; TEXT-ALIGN: left}
+#site-nav .services .menu-bd DD {LINE-HEIGHT: 1.6; TEXT-ALIGN: left}
+#site-nav .services .menu-bd DD A {MARGIN-RIGHT: 2px}
+.left .userinfo{ width:170px; height:auto}
+.left .userinfo .welcome{ width:165px; text-align:left}
+.left .userinfo .userface{ padding:5px; margin:auto; float:none}
+.left .userinfo .userface img{ border:1px solid #ddd}
+.left .userinfo .mylink{ float:none; margin:auto}
+.left .userinfo .uclink{ width:135px; height:55px; margin:auto;}
+.left .userlogin{ width:170; margin:auto}
+.left .userlogin .fb span{ width:50px;color:#454545}
+.left .userlogin .fb input{ width:100px; height:17px;}
+.left .userlogin .fb #vdimgck{ margin-top:5px;}
+.left .userlogin .submit{ margin-top:10px; color:#454545}
+.left .userlogin .submit a{ color:#1AC}
+.left .userlogin .submit .btn-1{ width:35px;background:#fff; height:25px; border:1px solid #454545;border:1px solid #454545;border-radius: 5px;box-shadow: 0px 1px 3px #999; cursor:pointer}
+.left .userlogin .submit .btn-1:hover{ background:#454545; color:#fff}

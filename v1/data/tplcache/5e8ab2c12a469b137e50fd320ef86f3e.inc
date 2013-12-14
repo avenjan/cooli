@@ -1,0 +1,1 @@
+<li class='dotline'><input type="checkbox" name="mcbox" value="[field:id /]" class="play_checkbox"/><a href="[field:arcurl/]">[field:title/]</a></li>

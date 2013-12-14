@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/},{dede:field.title/},{dede:field.writer /}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+<link href="{dede:global.cfg_templets_skin/}/style/style.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+
+<script>
+
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin()
+{
+	var taget_obj = document.getElementById('_ajax_feedback');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("{dede:global.cfg_cmsurl/}/member/ajax_feedback.php");
+	DedeXHTTP = null;
+}
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("{dede:global name='cfg_phpurl'/}/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+	DedeXHTTP = null;
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "{dede:global.cfg_phpurl/}/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+	DedeXHTTP = null;
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("{dede:global.cfg_phpurl/}/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+-->
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+	$(function(){
+		$("a[_for]").mouseover(function(){
+			$(this).parents().children("a[_for]").removeClass("thisclass").parents().children("dd").hide();
+			$(this).addClass("thisclass").blur();
+			$("#"+$(this).attr("_for")).show();
+		});
+		$("a[_for=uc_member]").mouseover();
+		$("a[_for=flink_1]").mouseover();
+	});
+	
+	function CheckLogin(){
+	  var taget_obj = document.getElementById('_userlogin');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("{dede:global.cfg_cmspath/}/member/ajax_loginsta.php");
+	  DedeXHTTP = null;
+	}
+-->
+</script>
+
+</head>
+<body class="playpage">
+<div id="body-bg"><img style="" src="/templets/default/images/playpage_bg.jpg"></div>
+{dede:include filename="head2.htm"/}
+<!-- /header -->
+<div class="topnav">
+	<div class="tools">
+		<ul>
+			<li id="act-err"><a href="{dede:global name='cfg_phpurl'/}/erraddsave.php?aid={dede:field.id/}&title={dede:field.title/}" target="_blank">报错</a></li>
+			<li id="act-pus"><a href="{dede:global name='cfg_phpurl'/}/recommend.php?aid={dede:field.id/}" target="_blank" title="推荐给好友" >推荐</a></li>
+			<!--li id="act-pnt"><a href="#" onClick="window.print();">打印</a></li-->
+			<li id="collection"><a href="/plus/stow.php?aid={dede:field.id/}&type=3&music_url={dede:field.music_url/}" title="收藏到我的播放列表" target="_blank">收藏</a></li>
+			<li id="download">{dede:field name='softlinks'/}</li>
+			<li id="feedback"><a href="/plus/feedback.php?aid={dede:field.id/}" target="_blank">评论</a></li>
+		</ul>
+	</div>
+		<div class="position"><img src="/templets/default/images/chart_bar.png"/>&nbsp;&nbsp;当前分类：{dede:field.typename/}</div>
+
+</div>
+
+<div class="playerbox">
+	<div class="song_info">
+		<div class="song">
+		<div class="song_img">{dede:field name='image' /}</div>
+		<div class="cmplayer" id="player"></div>
+			<div class="control">
+			  <ul>
+			  <li>{dede:prenext get='pre'/}</li>
+			  <li class="nopress" onClick="press(this)"><input type="button" value="" onclick="sendEvent('view_play');" title="播放/暂停"  id="play"  /></li>
+				<script>
+				function press(obj)
+				{
+				if(obj.className=="nopress")
+				{obj.className="press"}
+				else
+				{obj.className="nopress"}
+				}
+				</script>
+			  <li>{dede:prenext get='next'/}</li>
+			  <!--li><input type="button" value="" onclick="sendEvent('view_stop');" title="停止"  id="stop" /></li-->
+			  </ul>
+			</div>
+			<div id="lrc_content" style="float:left; width:250px">正在为您加载播放器...</div>
+					<div class="newdigg" id="newdigg"></div>
+			 <script language="javascript" type="text/javascript">getDigg({dede:field.id/});</script>
+			 <!-- Baidu Button BEGIN -->
+			<script type="text/javascript" id="bdshare_js" data="type=button&amp;uid=139658" ></script>
+			<script type="text/javascript" id="bdshell_js"></script>
+			<script type="text/javascript">
+				document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+			</script>
+			<!-- Baidu Button END -->
+
+		</div>
+		<div class="song_intro">
+		<div class="song_name">《{dede:field.title /}》<br/><span class="song_writer">BY&nbsp;-&nbsp;{dede:field.writer /}</span></div>
+		<div class="content">
+			{dede:field.introduce/}
+		</div>
+		</div>
+	</div>
+
+</div>
+<div class="foot"> ©2012 KuAi 酷爱音乐</div>
+
+<script type="text/javascript" src="/play/cmp.js"></script> 
+<script type="text/javascript">
+var cmpo;
+function sendEvent(type, data) {
+	cmpo.sendEvent(type, data);
+}
+function cmp_loaded(key) {
+	//cmp loaded
+	cmpo = CMP.get("cmp");
+	if (cmpo) {
+		//cmp callback		
+		showInfo(cmpo.config("name"));
+		//开始播放时
+		showInfo(cmpo.config("play"));
+
+		cmpo.addEventListener("model_start", "cmp_model_start");
+		//侦听歌词行改变事件
+		cmpo.addEventListener("lrc_rowchange", "cmp_lrc_rowchange");
+	}
+}
+//开始播放时清除信息，并显示描述
+function cmp_model_start(data) {
+	showInfo(cmpo.config("description"));
+}
+//歌词行改变时显示当前行信息
+function cmp_lrc_rowchange(data) {
+	showInfo(data);
+}
+function showInfo(str) {
+	//显示到浏览器窗口标题
+	//document.title = str;
+	//输出到页面
+	
+	document.getElementById("lrc_content").innerHTML = str;
+}
+
+//cmp主程序地址，替换成你自己的
+var cmp_url = "{dede:global.cfg_cmsurl/}/play/player.swf?php=1&src={dede:field name='music_url'/}&label={dede:field name='title'/}";
+var musicname = "{dede:field name='title'/}"
+var writer = "{dede:field.writer /}"
+//cmp的参数
+var flashvars = {
+	name : "正在为您缓冲歌曲...",
+	play : "正在缓冲：《"+musicname+"》- "+writer+"",
+	//cmp初始化完成时的脚本接口回调函数名
+	api:"cmp_loaded"
+};
+//id, width, height, swf_url, flashvars, params, attrs
+var htm = CMP.create("cmp", "100%", "100%", cmp_url, flashvars);
+document.getElementById("player").innerHTML = htm;
+</script>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+
+</body>
+</html>

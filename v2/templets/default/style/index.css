@@ -1,0 +1,151 @@
+.atindex{ width:99%; margin:40px auto 0 auto}
+/*AT LEFT*/
+/* wrapper css */
+.atlift{ margin:auto; float:left; width:930px; height:auto;  text-align:center}
+#wrapper{
+	margin-top:10px;
+	width:940px;
+}
+#wrapper hgroup{
+	text-align:center;
+}
+#wrapper h2{
+	margin:5px 0;
+	color:#FF6D99;
+	text-shadow:1px 1px 2px #A50031;
+	font-size:33px;
+	font-family:Arial Narrow, Arial, sans-serif;
+}
+#wrapper h3{
+	font-style:italic;
+	font-weight:normal;
+	font-size:18px;
+	text-shadow:1px 1px 0 #fff;
+	color:#888;
+	margin:5px 0;
+}
+
+#container{
+	position:relative;
+	margin:0 auto 25px;
+	padding-bottom: 10px;
+	
+}
+.grid{
+	width:188px;
+	min-height:100px;
+	padding: 15px;
+	background:#fff;
+	margin:8px;
+	font-size:12px;
+	float:left;
+	box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+	-moz-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+	-webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+	
+	-webkit-transition: top 1s ease, left 1s ease;
+	-moz-transition: top 1s ease, left 1s ease;
+	-o-transition: top 1s ease, left 1s ease;
+	-ms-transition: top 1s ease, left 1s ease;
+}
+
+.grid strong {
+	border-bottom:1px solid #ccc;
+	margin:10px 0;
+	display:block;
+	padding:0 0 5px;
+	font-size:17px;
+}
+.grid .meta{text-align:right;color:#1CA1D8;font-style:italic; margin-top:5px;}
+.grid .meta span{ float:left; color:#777}
+.grid .imgholder img{
+	max-width:100%;
+	background:#ccc;
+	display:block;
+}
+
+/**/
+
+
+.song_box .pic {
+position: relative;
+}
+.song_box .pic:hover b {
+width: 200px;
+height: 200px;
+position: absolute;
+top:-5px;
+left:-5px;
+_left: 0;
+background: black;
+filter: Alpha(Opacity=50);
+Opacity: 0.5;
+}
+.song_box .hover i{
+width: 90px;
+height: 90px;
+position: absolute;
+top: 55px;
+left: 55px;
+background: url(../images/play.png) no-repeat;
+cursor: pointer;
+}
+.song_box .pic em{ display:none}
+.song_box .hover em {
+display:block;
+width: 32px;
+height: 40px;
+position: absolute;
+top: 160px;
+right: -6px;
+background:url(../images/player_bg.png) -145px -90px no-repeat;
+_right: 5px;
+}
+.onimg:hover b {
+width: 210px;
+height: 215px;
+position: absolute;
+top: 5px;
+left: 5px;
+_left: 0;
+background: black;
+filter: Alpha(Opacity=50);
+Opacity: 0.5;
+}
+/*END AT LEFT*/
+
+/*AT RIGHT*/
+.atright{font-family: "Microsoft Yahei",simsun,arial,sans-serif; float:right; width:270px;  margin-top:20px;box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+-moz-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+-webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+-webkit-transition: top 1s ease, left 1s ease;
+-moz-transition: top 1s ease, left 1s ease;
+-o-transition: top 1s ease, left 1s ease;
+-ms-transition: top 1s ease, left 1s ease;
+padding:2px 0 2px 2px}
+.atright .menulist{ width:auto; height:275px; background:#fff; text-align:left;}
+.atright .menulist li{ float:left}
+.atright .menulist .menutitle{ width:260px; height:35px; line-height:35px; padding-left:5px; font-size: 14px;color: #444; border-bottom:1px solid #CCC; border-left:3px solid #1CA1D8}
+.atright .menulist .menutitle a{ color:#444}
+.atright .menulist li.menuname{ float:left; margin:2px; width:55px; height:25px; line-height:25px; text-align:center; border:1px dashed #CCC; background:#F8F8F8; cursor:pointer; color:#404040}
+.atright .menulist li.menuname a{ color:#404040}
+.atright .menulist li.menuname:hover{ background:#1ca1d8; color:#fff}
+.atright .feedback{ color:#999; background:#FFF; padding:10px; margin-top:10px;}
+.atright .feedbacktag{  height: 40px;color: black;font-size: 16px;font-weight: bold;line-height: 40px;padding:5px 2px}
+
+.atright .feedback li{ width:260px; height:80px; border-top: #CCC 1px dashed; text-align:center;}
+.atright .feedback li span.user{ float:left; width:50px; text-align:center; margin-right:10px }
+.atright .feedback li span.user a{ }
+.atright .feedback li .title{ float:left; font-size:14px;}
+.atright .feedback li p{ float:left; width:195px}
+.atright .feedback li span.info{ float:left}
+
+/*flink*/
+.flink{ height:100px;color: #1CA1D8;}
+.flink a{color: #1CA1D8;}
+.tbox dt span.linklabel {float: left;margin-left: 0px;overflow: hidden;padding-right: 1px;padding-top: 2px; font-size:16px; font-weight:600; border:1px dashed #f1f1f1; border-bottom:none}
+.flink li{ float:left}
+.flink ul.flink_img{ border-bottom: 1px dashed #DCEBD7; height:60px;}
+.flink ul.flink_img li{ border:1px solid #f1f1f1;margin: 0 2px 0 16px;display: inline;}
+.flink ul.flink_img li,.flink ul.flink_img li img{ width:120px; height:50px;}
+.flink ul.flink_txt li{ width:100px;margin: 0 2px 0 16px;}

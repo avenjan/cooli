@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>一声缱绻的问候_酷爱音乐</title>
+<meta name="keywords" content="一声,缱绻,的,问候,不经意,的,站在,某个,高处,,一声缱绻的问候,test" />
+<meta name="description" content="不经意的站在某个高处，不挑时间，不挑心情 然后就这样，静静的，傻傻的，望着远处的一切 默默聆听，并不刻意去思考什么 只任由那一丝最浅的意识划过脑海 随即消失，不留一丝痕" />
+<link href="/templets/default/style/style.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script>
+
+<script>
+
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin()
+{
+	var taget_obj = document.getElementById('_ajax_feedback');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/member/ajax_feedback.php");
+	DedeXHTTP = null;
+}
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+	DedeXHTTP = null;
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+	DedeXHTTP = null;
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+-->
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+	$(function(){
+		$("a[_for]").mouseover(function(){
+			$(this).parents().children("a[_for]").removeClass("thisclass").parents().children("dd").hide();
+			$(this).addClass("thisclass").blur();
+			$("#"+$(this).attr("_for")).show();
+		});
+		$("a[_for=uc_member]").mouseover();
+		$("a[_for=flink_1]").mouseover();
+	});
+	
+	function CheckLogin(){
+	  var taget_obj = document.getElementById('_userlogin');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("/member/ajax_loginsta.php");
+	  DedeXHTTP = null;
+	}
+-->
+</script>
+
+</head>
+<body class="playpage">
+<div id="body-bg"><img style="" src="/templets/default/images/playpage_bg.jpg"></div>
+<a name="gotop">&nbsp;</a>
+<div id="page">
+	<div class="chl-poster simple" id=header>
+	<a href="http://i.huamengnet.com"><img src="/images/logo.png" height="35" width="175" alt="酷爱音乐"/ style="float:left; margin-left:5px;"></a> 
+		<div id=site-nav>
+			<UL class=quick-menu>
+			  <LI class="mytaobao menu-item">
+				  <div class=menu>
+					  <A class=menu-hd href="#" target=_top rel=nofollow>我的酷爱<B></B></A> 
+					  <div class=menu-bd>
+					       <div id="_userlogin">
+						  <div class="userlogin">
+						   <form name="userlogin" action="/member/index_do.php" method="post">
+							<input type="hidden" name="fmdo" value="login" />
+							<input type="hidden" name="dopost" value="login" />
+							<input type="hidden" name="keeptime" value="604800" />
+							<div class="fb"><span>用户名:</span>
+							 <input type="text" name="userid" size="20" class="ipt-txt" />
+							</div>
+							<div class="fb"><span>密码:</span>
+							 <input type="password" name="pwd" size="20" class="ipt-txt" />
+							</div>
+							
+							<div class="fb"><span>验证码:</span>
+							 <input type="text" name="vdcode" size="8" class="ipt-txt" />
+							 <img id="vdimgck" align="middle" onclick="this.src=this.src+'?'" style="cursor:pointer;margin-left:0px;text-transform:uppercase;" alt="看不清？点击更换" src="/include/vdimgck.php"/></div>
+							
+							<div class="submit">
+							 <button type="submit" class="btn-1">登录</button>
+							 <a href="/member/index_do.php?fmdo=user&dopost=regnew" >注册帐号</a> <a href="/member/resetpassword.php">忘记密码?</a> </div>
+						   </form>
+						  </div>
+						 </div>
+						 <!-- /userlogin -->
+					  </div>
+				  </div>
+			  </LI>
+			  <LI class="search menu-item">
+				  <div class=menu><SPAN class=menu-hd><S></S>搜索<B></B></SPAN> 
+					  <div class=menu-bd>
+						  <div class=menu-bd-panel>
+							 <form  name="formsearch" action="/plus/search.php">
+							 <div class="form" id="login_2">
+								 <input type="hidden" name="kwtype" value="0" />
+								 <input name="q" type="text" class="" id="search-keyword" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';};hidekeyboard=true;login_2.className='form_on'"  onblur="if(this.value==''){this.value='在这里搜索...';};login_2.className='form'" />
+							   <select name="searchtype" class="search-option" id="search-option">
+							   <option value="title" selected="selected">检索标题</option>
+							   <option value="titlekeyword">智能模糊</option>
+							  </select>
+							  <button type="submit" class="post_btn">搜索</button>
+							</div>
+							</form>
+							 <a href="/plus/heightsearch.php" target="_blank" style="float:right; margin-top:10px;">高级搜索</a>
+						  </div>
+					  </div>
+				  </div>
+			  </LI>
+			  <LI class="services menu-item last">
+				  <div class=menu>
+					  <A class=menu-hd href="#" target=_top>网站导航<B></B></A> 
+					  <div class=menu-bd style="WIDTH: 210px;  _width: 202px">
+						  <div class=menu-bd-panel>
+							  <DL>
+								<DT>分类
+								<DD>
+							
+							<a href='/plus/list.php?tid=3'  rel='dropmenu3' target="_blank"><span>流行</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+							<a href='/plus/list.php?tid=1'  rel='dropmenu1' target="_blank"><span>轻音乐</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+							<a href='/plus/list.php?tid=8'  target="_blank"><span>MV</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+							<a href='/plus/list.php?tid=6'  target="_blank"><span>音乐专辑</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+							<a href='/plus/guestbook.php'  target="_blank"><span>在线留言</span></a><span class="sep">&nbsp;&nbsp;</span>
+							
+								</DD>
+							</DL>
+							  <DL>
+								<DT>快速导航 
+								<DD>			
+								 <a href="/data/rssmap.html" target="_blank">网站地图</a>|
+								<a href="/tags.php">TAG标签</a>
+								<a href="/data/rssmap.html" class="rss">RSS订阅</a>
+								</DD>
+							</DL>
+								
+							  <DL>
+								<DT>热门搜索 
+								<DD>
+								<div class="tags">
+							  
+								<a href='/tags.php?/%E5%B0%B1/' target="_blank">就</a>
+							  
+								<a href='/tags.php?/%E9%97%AE%E5%80%99/' target="_blank">问候</a>
+							  
+								<a href='/tags.php?/%E5%BF%83%E5%A2%83/' target="_blank">心境</a>
+							  
+								<a href='/tags.php?/%E6%9F%90%E4%B8%AA/' target="_blank">某个</a>
+							  
+								<a href='/tags.php?/Run/' target="_blank">Run</a>
+							  
+								<a href='/tags.php?/%E7%AB%99%E5%9C%A8/' target="_blank">站在</a>
+							  
+								<a href='/tags.php?/%E7%BC%B1%E7%BB%BB/' target="_blank">缱绻</a>
+							  
+								<a href='/tags.php?/%E6%9A%97%E6%81%8B%E8%BF%87/' target="_blank">暗恋过</a>
+							  
+								<a href='/tags.php?/%E9%AB%98%E5%A4%84/' target="_blank">高处</a>
+							  
+								<a href='/tags.php?/with/' target="_blank">with</a>
+							  
+								</DD></DL>
+							  <DL class=last>
+								<DD><STRONG style="FONT-WEIGHT: bold"><A href="/data/rssmap.html">更多内容</A></STRONG></DD>
+							  </DL>
+						  </div>
+					  </div>
+				  </div>
+			  </LI>
+			  
+		    </UL>
+		</div>
+	<div id="playnow" style="color:#fff"><span></span>爱生活，爱音乐...</div>
+	</div>
+</div>
+<div class="clear"></div>
+
+<!-- /header -->
+<div class="topnav">
+	<div class="tools">
+		<ul>
+			<li id="act-err"><a href="/plus/erraddsave.php?aid=5&title=一声缱绻的问候" target="_blank">报错</a></li>
+			<li id="act-pus"><a href="/plus/recommend.php?aid=5" target="_blank" title="推荐给好友" >推荐</a></li>
+			<!--li id="act-pnt"><a href="#" onClick="window.print();">打印</a></li-->
+			<li id="collection"><a href="/plus/stow.php?aid=5&type=3&music_url={server}36327/20120322153511.1" title="收藏到我的播放列表" target="_blank">收藏</a></li>
+			<li id="download"><a href='/plus/download.php?open=0&aid=5&cid=3' class="gotodownload" target="_blank" title="音乐下载">下载</a>
+</li>
+			<li id="feedback"><a href="/plus/feedback.php?aid=5" target="_blank">评论</a></li>
+		</ul>
+	</div>
+		<div class="position"><img src="/templets/default/images/chart_bar.png"/>&nbsp;&nbsp;当前分类：钢琴曲</div>
+
+</div>
+
+<div class="playerbox">
+	<div class="song_info">
+		<div class="song">
+		<div class="song_img"><img src='http://t2.huamengnet.com/Picfile/201206/2012060272994505.jpg' /></div>
+		<div class="cmplayer" id="player"></div>
+			<div class="control">
+			  <ul>
+			  <li><input type=button onclick=document.location.href='/html/music/gq/2012/0610/3.html'  title=上一曲  id=up /> </li>
+			  <li class="nopress" onClick="press(this)"><input type="button" value="" onclick="sendEvent('view_play');" title="播放/暂停"  id="play"  /></li>
+				<script>
+				function press(obj)
+				{
+				if(obj.className=="nopress")
+				{obj.className="press"}
+				else
+				{obj.className="nopress"}
+				}
+				</script>
+			  <li></li>
+			  <!--li><input type="button" value="" onclick="sendEvent('view_stop');" title="停止"  id="stop" /></li-->
+			  </ul>
+			</div>
+			<div id="lrc_content" style="float:left; width:250px">正在为您加载播放器...</div>
+					<div class="newdigg" id="newdigg"></div>
+			 <script language="javascript" type="text/javascript">getDigg(5);</script>
+			 <!-- Baidu Button BEGIN -->
+			<script type="text/javascript" id="bdshare_js" data="type=button&amp;uid=139658" ></script>
+			<script type="text/javascript" id="bdshell_js"></script>
+			<script type="text/javascript">
+				document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+			</script>
+			<!-- Baidu Button END -->
+
+		</div>
+		<div class="song_intro">
+		<div class="song_name">《一声缱绻的问候》<br/><span class="song_writer">BY&nbsp;-&nbsp;test</span></div>
+		<div class="content">
+			不经意的站在某个高处，不挑时间，不挑心情<br />
+然后就这样，静静的，傻傻的，望着远处的一切<br />
+默默聆听，并不刻意去思考什么<br />
+只任由那一丝最浅的意识划过脑海<br />
+随即消失，不留一丝痕迹<br />
+留给自己的只是短暂的恍惚，迷离......<br />
+眼神停留处总会浮现一张模糊的脸庞<br />
+并不清楚自己想的是谁，只是一个轮廓的简单勾勒<br />
+但，总会不知不觉的寄上一声<br />
+连自己都不知道内容的问候<br />
+随后便陶醉在那若隐若现的笑容中<br />
+......<br />
+闲暇的时候，我曾努力搜寻脑海中的记忆<br />
+却始终找不到与之重合的映像<br />
+于是我常常这样想：<br />
+也许那只是生命中不经意错过的<br />
+&mdash;&mdash;某个美丽的可能......<br />
+文.佚名
+		</div>
+		</div>
+	</div>
+
+</div>
+<div class="foot"> ©2012 KuAi 酷爱音乐</div>
+
+<script type="text/javascript" src="/play/cmp.js"></script> 
+<script type="text/javascript">
+var cmpo;
+function sendEvent(type, data) {
+	cmpo.sendEvent(type, data);
+}
+function cmp_loaded(key) {
+	//cmp loaded
+	cmpo = CMP.get("cmp");
+	if (cmpo) {
+		//cmp callback		
+		showInfo(cmpo.config("name"));
+		//开始播放时
+		showInfo(cmpo.config("play"));
+
+		cmpo.addEventListener("model_start", "cmp_model_start");
+		//侦听歌词行改变事件
+		cmpo.addEventListener("lrc_rowchange", "cmp_lrc_rowchange");
+	}
+}
+//开始播放时清除信息，并显示描述
+function cmp_model_start(data) {
+	showInfo(cmpo.config("description"));
+}
+//歌词行改变时显示当前行信息
+function cmp_lrc_rowchange(data) {
+	showInfo(data);
+}
+function showInfo(str) {
+	//显示到浏览器窗口标题
+	//document.title = str;
+	//输出到页面
+	
+	document.getElementById("lrc_content").innerHTML = str;
+}
+
+//cmp主程序地址，替换成你自己的
+var cmp_url = "/play/player.swf?php=1&src={server}36327/20120322153511.1&label=一声缱绻的问候";
+var musicname = "一声缱绻的问候"
+var writer = "test"
+//cmp的参数
+var flashvars = {
+	name : "正在为您缓冲歌曲...",
+	play : "正在缓冲：《"+musicname+"》- "+writer+"",
+	//cmp初始化完成时的脚本接口回调函数名
+	api:"cmp_loaded"
+};
+//id, width, height, swf_url, flashvars, params, attrs
+var htm = CMP.create("cmp", "100%", "100%", cmp_url, flashvars);
+document.getElementById("player").innerHTML = htm;
+</script>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+
+</body>
+</html>

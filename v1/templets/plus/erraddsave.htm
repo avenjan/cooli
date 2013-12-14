@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title><?php echo $cfg_webname;?>_音乐报错</title>
+<link href="<?php echo $cfg_templets_skin; ?>/style/dedecms.css" rel="stylesheet" type="text/css" media="screen" />
+<style type="text/css">
+
+ li{margin-top:20px; color:#0f820c; font-weight:600px;}
+ span{ font-size:16px; font-weight:600}
+ b{ float:left; padding-top:30px;}
+ select{ width:250px; height:30px;}
+ textarea{ width:80%;border-radius: 3px; border:1px solid #0f820c}
+ .err_sub{ text-align:center}
+ .err_sub input{ margin:0 5px; width:100px; height:30px;}
+</style>
+</head>
+<body class="flinkpage">
+
+<div class="header">
+	<div class="top w960 center">
+		<div class="title">
+            <h1><a href="<?php echo $cfg_basehost;?>"><img src="<?php echo $cfg_templets_skin; ?>/images/logo.gif" height="40" width="233" alt="{dede:global.cfg_webname/}"/></a> </h1>
+		</div><!-- /title -->
+	</div><!-- /top -->
+</div><!-- /header -->
+
+<div class="w960 clear center mt1 cmt-box">
+	<div class="sp-title">
+		<h2>音乐报错</h2>
+		<span class="more">
+			<a href="<?php echo $cfg_basehost;?>">返回首页</a>
+		</span>
+	</div>
+  <div class="formbox">
+<form action="erraddsave.php"  method="post" name="feedback">
+     <input type='hidden' name='dopost' value='saveedit'>
+     <input type="hidden" name="title" value="<?php echo $title?>" />
+     <input type="hidden" name="aid" value="<?php echo $aid?>" />
+		<ul>
+		<li><span>音乐名称：</span><?php echo $title;?></li>
+    <li>
+    	错误类型：
+        
+        	<select name="type">
+            	<option value="1">音乐无法播放</option>
+                <option value="2">音乐无法下载</option>
+				<option value="3">音乐信息错误</option>
+				<!--option value="4">产品与图片不符</option>
+				<option value="5">事实年代以及内容错误</option>
+				<option value="6">技术参数错误</option-->
+				<option value="7">其他</option>
+   	    </select> 
+    </li>
+
+        <li><b>错误内容：</b><textarea name="err" cols="40" rows="4" class="ipt-txt" ></textarea></li>
+        <li><b>修正建议：</b><textarea name="erradd" cols="40" rows="4" class="ipt-txt"></textarea></li>    
+    	<li class="err_sub"><input name="提交" type="submit" value="提交" class="post_btn"/><input name="重置" type="reset" value="重置" class="post_btn"/></li>
+</form>
+
+</div>
+
+</div>
+
+
+
+<!-- //底部模板 -->
+<div class="footer w960 center mt1 clear">
+
+    <div class="footer_left"></div>
+    <div class="footer_body">
+	<span style="position:fixed; right:15px; bottom:25px;"><a href="javascript:scroll(0,0)"><img src="/images/top.gif" alt="返回顶部" title="返回顶部"/></a></span>
+	<p class="powered">    
+	<div class="copyright"><?php echo $cfg_powerby; ?>&nbsp;&nbsp;<?php echo $cfg_beian; ?></div></p>        
+<!-- /powered -->
+   </div>
+   <div class="footer_right"></div>
+</div>
+
+</body>
+</html>

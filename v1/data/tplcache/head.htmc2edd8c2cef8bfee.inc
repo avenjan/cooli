@@ -1,0 +1,43 @@
+<?php
+$z[0]=Array("global","",181,206);
+$z[0][4]['name']="cfg_cmsurl";
+$z[1]=Array("global","",276,301);
+$z[1][4]['name']="cfg_cmsurl";
+$z[2]=Array("global","",366,391);
+$z[2][4]['name']="cfg_cmsurl";
+$z[3]=Array("global","",428,454);
+$z[3][4]['name']="cfg_dataurl";
+$z[4]=Array("global","",591,618);
+$z[4][4]['name']="cfg_basehost";
+$z[5]=Array("global","",695,722);
+$z[5][4]['name']="cfg_basehost";
+$z[6]=Array("global","",725,751);
+$z[6][4]['name']="cfg_webname";
+$z[7]=Array("global","",920,947);
+$z[7][4]['name']="cfg_basehost";
+$z[8]=Array("global","",1006,1032);
+$z[8][4]['name']="cfg_webname";
+$z[9]=Array("global","",1152,1177);
+$z[9][4]['name']="cfg_cmsurl";
+$z[10]=Array("tag","\r\n				<li><a href='[field:link/]' target=\"_blank\">[field:tag /]</a></li>\r\n			  ",1975,2108);
+$z[10][4]['row']="10";
+$z[10][4]['getall']="1";
+$z[10][4]['sort']="month";
+$z[11]=Array("global","",2217,2245);
+$z[11][4]['name']="cfg_memberurl";
+$z[12]=Array("global","",2329,2357);
+$z[12][4]['name']="cfg_memberurl";
+$z[13]=Array("global","",2474,2502);
+$z[13][4]['name']="cfg_memberurl";
+$z[14]=Array("global","",2570,2598);
+$z[14][4]['name']="cfg_memberurl";
+$z[15]=Array("global","",2927,2952);
+$z[15][4]['name']="cfg_cmsurl";
+$z[16]=Array("channel","\r\n			<li><a href='[field:typeurl/]' [field:rel/] target=\"_blank\"><span>[field:typename/]</span></a><span class=\"sep\">|</span></li>\r\n			",3029,3306);
+$z[16][4]['type']="top";
+$z[16][4]['row']="10";
+$z[16][4]['currentstyle']="<li class='hover'><a href='~typelink~' ~rel~><span>~typename~</span></a></li>";
+$z[17]=Array("global","",3343,3369);
+$z[17][4]['name']="cfg_dataurl";
+
+?>

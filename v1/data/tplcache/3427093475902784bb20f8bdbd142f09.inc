@@ -1,0 +1,1 @@
+{dede:link islocal='1' text='音乐下载'} http://ho1hwg.bay.livefilestore.com/y1pHdsDq9QBRILdR0FFdXh60LrIcLp_wK_5MGUxBIW9kW4BYMVd_ws-Hmf6k5fdvXcHZD6wpuPPW0dlMYiE5gFqHw/Always_Come_Back_To_Your_Love.mp3 {/dede:link}

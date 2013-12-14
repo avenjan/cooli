@@ -1,0 +1,483 @@
+HTML {
+	OVERFLOW-X: auto; OVERFLOW-Y: scroll
+}
+BODY {
+	MARGIN: 0px; FONT: 12px/21px "ËÎÌו"; COLOR: #6c6c6c
+}
+UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+OL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+LI {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DD {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DT {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+P {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H1 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H2 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H3 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H4 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H5 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H6 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+INPUT {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H1 {
+	FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+H2 {
+	FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+H3 {
+	FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+H4 {
+	FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+H5 {
+	FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+H6 {
+	FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+IMG {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+FIELDSET {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+LI {
+	LIST-STYLE-TYPE: none; LIST-STYLE-IMAGE: none
+}
+TABLE {
+	BORDER-SPACING: 0; BORDER-COLLAPSE: collapse
+}
+SELECT {
+	VERTICAL-ALIGN: middle
+}
+INPUT {
+	VERTICAL-ALIGN: middle
+}
+IMG {
+	VERTICAL-ALIGN: middle
+}
+SELECT {
+	FONT-SIZE: 12px
+}
+INPUT {
+	FONT-SIZE: 12px
+}
+TEXTAREA {
+	FONT-SIZE: 12px
+}
+A {
+	COLOR: #010101; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #4c7d08; TEXT-DECORATION: underline
+}
+DIV {
+	ZOOM: 1
+}
+UL {
+	ZOOM: 1
+}
+DL {
+	ZOOM: 1
+}
+DIV:after {
+	DISPLAY: block; HEIGHT: 0px; VISIBILITY: hidden; CLEAR: both; CONTENT: ""
+}
+UL:after {
+	DISPLAY: block; HEIGHT: 0px; VISIBILITY: hidden; CLEAR: both; CONTENT: ""
+}
+DL:after {
+	DISPLAY: block; HEIGHT: 0px; VISIBILITY: hidden; CLEAR: both; CONTENT: ""
+}
+.gui-PlayLogSuggest {
+	POSITION: absolute; LINE-HEIGHT: 21px; WIDTH: 270px; COLOR: #6c6c6c; OVERFLOW: hidden
+}
+.gui-PlayLogSuggest .hd {
+	BORDER-BOTTOM: #eaeaea 1px solid; BACKGROUND: url(../images/suggest_bg_new1.png) no-repeat 0px -107px; HEIGHT: 39px; CLEAR: both; OVERFLOW: hidden
+}
+.gui-PlayLogSuggest .hd A.close {
+	LINE-HEIGHT: 47px; FLOAT: right; MARGIN-RIGHT: 11px
+}
+.gui-PlayLogSuggest A.corlory {
+	COLOR: #f26700
+}
+.gui-PlayLogSuggest .bd {
+	BORDER-BOTTOM: #e5e5e5 1px solid; BORDER-LEFT: #ccc 1px solid; BACKGROUND: #fff; BORDER-RIGHT: #ccc 1px solid
+}
+.gui-PlayLogSuggest .border0 {
+	BORDER-BOTTOM: 0px
+}
+.gui-PlayLogSuggest .ptop {
+	HEIGHT: 205px; PADDING-TOP: 50px
+}
+.gui-PlayLogSuggest .bd UL.max {
+	OVERFLOW-Y: auto; HEIGHT: 250px
+}
+.gui-PlayLogSuggest .bd UL LI {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; BACKGROUND-REPEAT: repeat-x; BACKGROUND-POSITION: 0px 49px; HEIGHT: 50px; CLEAR: both; OVERFLOW: hidden; PADDING-TOP: 0px; _margin-bottom: -2px
+}
+.gui-PlayLogSuggest .bd UL LI .row {
+	LINE-HEIGHT: 22px; CLEAR: both; OVERFLOW: hidden; PADDING-TOP: 3px
+}
+.gui-PlayLogSuggest .bd UL LI .row .tit_other {
+	FLOAT: left; COLOR: #999
+}
+.gui-PlayLogSuggest .bd UL LI .row .info {
+	FLOAT: left; COLOR: #999
+}
+.gui-PlayLogSuggest .bd UL LI .row .close {
+	FLOAT: right
+}
+.gui-PlayLogSuggest .bd UL LI .row .close {
+	DISPLAY: none
+}
+.gui-PlayLogSuggest .bd UL LI.on {
+	BACKGROUND-COLOR: #f8f8f8
+}
+.gui-PlayLogSuggest .bd UL LI.on .close {
+	MARGIN-TOP: 2px; TEXT-INDENT: -9999px; WIDTH: 8px; DISPLAY: block; BACKGROUND-POSITION: 0px -88px; HEIGHT: 8px; FONT-SIZE: 0px; OVERFLOW: hidden
+}
+.gui-PlayLogSuggest .bd UL LI.on .tit_other A:link {
+	BACKGROUND-POSITION: 0px -56px
+}
+.gui-PlayLogSuggest .bd UL LI.on .tit_other A:visited {
+	BACKGROUND-POSITION: 0px -56px
+}
+.gui-PlayLogSuggest .bd UL LI.on .tit_other A:hover {
+	BACKGROUND-POSITION: 0px -56px
+}
+.gui-PlayLogSuggest .bd UL LI .row .continue:link {
+	COLOR: #4e8000
+}
+.gui-PlayLogSuggest .bd UL LI .row .continue:visited {
+	COLOR: #4e8000
+}
+.gui-PlayLogSuggest .bd UL LI .row .continue:hover {
+	COLOR: #4e8000
+}
+.gui-PlayLogSuggest .bd UL LI .row .continue:active {
+	COLOR: #4e8000
+}
+.gui-PlayLogSuggest .bd UL .tit_other A {
+	PADDING-LEFT: 13px; COLOR: #000; FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+.gui-PlayLogSuggest .bd UL .tit_other A:link {
+	BACKGROUND-POSITION: 0px -28px
+}
+.gui-PlayLogSuggest .bd UL .tit_other A:visited {
+	BACKGROUND-POSITION: 0px -28px
+}
+.gui-PlayLogSuggest .bd UL .tit_other A:hover {
+	BACKGROUND-POSITION: 0px -56px
+}
+.gui-PlayLogSuggest .bd .nodata {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 30px; LINE-HEIGHT: 15px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 15px; COLOR: #999; PADDING-TOP: 30px
+}
+.gui-PlayLogSuggest .bd .ui_loading {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 30px; LINE-HEIGHT: 15px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: #fff; HEIGHT: 15px; PADDING-TOP: 30px
+}
+.gui-PlayLogSuggest .ft {
+	LINE-HEIGHT: 0; WIDTH: 270px; BACKGROUND: url(../images/suggest_bg_new1.png) #ccc no-repeat 0px -258px; CLEAR: both; OVERFLOW: hidden; BORDER-TOP: 0px
+}
+.gui-PlayLogSuggest .ft .ui_loading {
+	POSITION: static; TEXT-ALIGN: center; PADDING-BOTTOM: 0px; LINE-HEIGHT: 25px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: #fffff0; HEIGHT: 25px; PADDING-TOP: 5px
+}
+.gui-PlayLogSuggest .ft .ui_loading IMG {
+	VERTICAL-ALIGN: -4px; MARGIN-RIGHT: 4px
+}
+.gui-PlayLogSuggest .ft .loaded {
+	TEXT-ALIGN: center; LINE-HEIGHT: 30px; HEIGHT: 30px; COLOR: #808080; CLEAR: both; OVERFLOW: hidden
+}
+.gui-PlayLogSuggest .ft .loaded .close {
+	TEXT-INDENT: -9999px; MARGIN: 10px 5px 0px; WIDTH: 8px; PADDING-RIGHT: 8px; DISPLAY: block; BACKGROUND: url(../images/suggest_bg_new1.png) no-repeat 0px -228px; FLOAT: right; HEIGHT: 8px; FONT-SIZE: 0px; OVERFLOW: hidden
+}
+.gui-PlayLogSuggest .ft .loaded .nologin:link {
+	COLOR: #f39800
+}
+.gui-PlayLogSuggest .ft .loaded .nologin:visited {
+	COLOR: #f39800
+}
+.gui-PlayLogSuggest .ft .loaded .nologin:hover {
+	COLOR: #f39800
+}
+.gui-PlayLogSuggest .ft .loaded .nologin:active {
+	COLOR: #f39800
+}
+.gui-PlayLogSuggest .hd {
+	BACKGROUND-IMAGE: url(../images/suggest_bg_new1.png); BACKGROUND-REPEAT: no-repeat
+}
+.gui-PlayLogSuggest .bd UL LI {
+	BACKGROUND-IMAGE: url(../images/suggest_bg_new1.png); BACKGROUND-REPEAT: no-repeat
+}
+.gui-PlayLogSuggest .bd UL LI.on .tit_other A:link {
+	BACKGROUND-IMAGE: url(../images/suggest_bg_new1.png); BACKGROUND-REPEAT: no-repeat
+}
+.gui-PlayLogSuggest .bd UL LI.on .tit_other A:visited {
+	BACKGROUND-IMAGE: url(../images/suggest_bg_new1.png); BACKGROUND-REPEAT: no-repeat
+}
+.gui-PlayLogSuggest .bd UL LI.on .tit_other A:hover {
+	BACKGROUND-IMAGE: url(../images/suggest_bg_new1.png); BACKGROUND-REPEAT: no-repeat
+}
+.gui-PlayLogSuggest .bd UL LI.on .close {
+	BACKGROUND-IMAGE: url(../images/suggest_bg_new1.png); BACKGROUND-REPEAT: no-repeat
+}
+.gui-PlayLogSuggest .bd UL .tit_other A:link {
+	BACKGROUND-IMAGE: url(../images/suggest_bg_new1.png); BACKGROUND-REPEAT: no-repeat
+}
+.gui-PlayLogSuggest .bd UL .tit_other A:visited {
+	BACKGROUND-IMAGE: url(../images/suggest_bg_new1.png); BACKGROUND-REPEAT: no-repeat
+}
+.gui-PlayLogSuggest .bd UL .tit_other A:hover {
+	BACKGROUND-IMAGE: url(../images/suggest_bg_new1.png); BACKGROUND-REPEAT: no-repeat
+}
+.gui-PlayLogSuggest .bd UL LI .row_new {
+	PADDING-LEFT: 10px; PADDING-TOP: 0px
+}
+.gui-PlayLogSuggest .bd UL LI .info_R_New {
+	FLOAT: right; COLOR: #c8c8c8
+}
+.gui-PlayLogSuggest .bd UL LI EM {
+	PADDING-BOTTOM: 0px; FONT-STYLE: normal; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 0px
+}
+.gui-PlayLogSuggest .ft .fgx_line {
+	MARGIN: 0px 7px; COLOR: #ccc
+}
+.gui-PlayLogSuggest .bd .none_jilu {
+	PADDING-BOTTOM: 30px; PADDING-LEFT: 30px; PADDING-RIGHT: 30px; PADDING-TOP: 30px
+}
+.gui-PlayLogSuggest .bd .none_jilu P {
+	TEXT-ALIGN: center; FONT-WEIGHT: bold
+}
+.gui-PlayLogSuggest .bd .none_jilu UL {
+	MARGIN-TOP: 20px; WIDTH: 208px; OVERFLOW: hidden
+}
+.gui-PlayLogSuggest .bd .none_jilu UL LI {
+	PADDING-LEFT: 8px; WIDTH: 200px; BACKGROUND: url(../images/suggest_bg_new1.png) no-repeat 0px -302px
+}
+.gui-PlayLogSuggest .bd .none_jilu .jilu_help {
+	MARGIN-TOP: 15px; PADDING-LEFT: 25px; BACKGROUND: url(../images/suggest_bg_new1.png) no-repeat 0px -189px
+}
+P .btn00 {
+	BORDER-BOTTOM: 0px; TEXT-ALIGN: center; BORDER-LEFT: 0px; LINE-HEIGHT: 20px; WIDTH: 70px; BACKGROUND: url(../images/suggest_bg_new1.png) no-repeat -58px -227px; HEIGHT: 26px; COLOR: #000; VERTICAL-ALIGN: middle; BORDER-TOP: 0px; CURSOR: pointer; BORDER-RIGHT: 0px
+}
+.mr15 {
+	MARGIN-RIGHT: 15px
+}
+.wrap-bg0 {
+	BACKGROUND: url(../images/suggest_bg_new1.png) no-repeat 30px -352px
+}
+.wrap-wid {
+	WIDTH: 170px; MARGIN-LEFT: 65px
+}
+.wrap-wid P.tip {
+	PADDING-TOP: 15px
+}
+.gui-PlayLogSuggest .bd UL LI.add-tips {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 6px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: -15px; BACKGROUND: 0px 50%; HEIGHT: 20px; OVERFLOW: hidden; PADDING-TOP: 6px
+}
+.daoru {
+	TEXT-ALIGN: left; PADDING-RIGHT: 20px; MARGIN-LEFT: -40px
+}
+.Z_msg_bar {
+	WIDTH: 200px; BACKGROUND: url(http://www.qiyipic.com/common/fix/bottompop_images/sprite.png) #f6f6f6 no-repeat 0px 0px; HEIGHT: 33px; PADDING-TOP: 2px
+}
+.Z_msg_bar LI {
+	POSITION: relative; TEXT-ALIGN: center; WIDTH: 48px; DISPLAY: inline; FLOAT: left; MARGIN-LEFT: 2px
+}
+.Z_msg_bar .Z_txt {
+	WIDTH: 25px; DISPLAY: none; HEIGHT: 28px; OVERFLOW: hidden
+}
+.Z_msg_bar .first {
+	MARGIN-LEFT: 1px
+}
+.Z_msg_bar .Z_inter {
+	TEXT-ALIGN: center; MARGIN: 0px auto; WIDTH: 25px; DISPLAY: block; BACKGROUND: url(http://www.qiyipic.com/common/fix/bottompop_images/sprite.png) no-repeat -14px -41px; HEIGHT: 28px
+}
+.Z_msg_bar .Z_broadcast {
+	TEXT-ALIGN: center; MARGIN: 0px auto; WIDTH: 25px; DISPLAY: block; BACKGROUND: url(http://www.qiyipic.com/common/fix/bottompop_images/sprite.png) no-repeat -14px -41px; HEIGHT: 28px
+}
+.Z_msg_bar .Z_hot {
+	TEXT-ALIGN: center; MARGIN: 0px auto; WIDTH: 25px; DISPLAY: block; BACKGROUND: url(http://www.qiyipic.com/common/fix/bottompop_images/sprite.png) no-repeat -14px -41px; HEIGHT: 28px
+}
+.Z_msg_bar .Z_returnTop {
+	TEXT-ALIGN: center; MARGIN: 0px auto; WIDTH: 25px; DISPLAY: block; BACKGROUND: url(http://www.qiyipic.com/common/fix/bottompop_images/sprite.png) no-repeat -14px -41px; HEIGHT: 28px
+}
+.Z_msg_bar .Z_broadcast {
+	BACKGROUND-POSITION: -64px -41px
+}
+.Z_msg_bar .Z_hot {
+	BACKGROUND-POSITION: -114px -41px
+}
+.Z_msg_bar .Z_returnTop {
+	BACKGROUND-POSITION: -162px -41px
+}
+.Z_msg_bar .Z_newMsg .Z_num {
+	POSITION: absolute; TEXT-ALIGN: center; LINE-HEIGHT: 12px; WIDTH: 17px; DISPLAY: block; FONT-FAMILY: "ËÎÌו"; BACKGROUND: url(http://www.qiyipic.com/common/fix/bottompop_images/sprite.png) no-repeat 0px -180px; HEIGHT: 12px; COLOR: #fff; FONT-SIZE: 12px; OVERFLOW: hidden; TOP: -4px; RIGHT: 0px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.Z_msg_bar .Z_newMsg .Z_inter {
+	BACKGROUND-POSITION: -14px -87px
+}
+.Z_msg_bar .Z_newMsg .Z_broadcast {
+	BACKGROUND-POSITION: -64px -87px
+}
+.Z_msg_bar .Z_newMsg .Z_hot {
+	BACKGROUND-POSITION: -114px -87px
+}
+.Z_msg_bar .Z_newMsg .Z_returnTop {
+	BACKGROUND-POSITION: -162px -87px
+}
+.Z_msg_bar .Z_inter:hover {
+	BACKGROUND-POSITION: -14px -132px
+}
+.Z_msg_bar .Z_broadcast:hover {
+	BACKGROUND-POSITION: -64px -132px
+}
+.Z_msg_bar .Z_hot:hover {
+	BACKGROUND-POSITION: -114px -132px
+}
+.Z_msg_bar .Z_returnTop:hover {
+	BACKGROUND-POSITION: -162px -132px
+}
+.Z_msg_pop P.Zcenter {
+	TEXT-ALIGN: center; TEXT-INDENT: 0px
+}
+.Z_msg_pop .Zbtn {
+	BORDER-BOTTOM: 0px; TEXT-ALIGN: center; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; LINE-HEIGHT: 24px; TEXT-INDENT: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 70px; PADDING-RIGHT: 0px; DISPLAY: inline-block; BACKGROUND: url(http://www.qiyipic.com/common/fix/bottompop_images/sprite.png) no-repeat 0px -295px; HEIGHT: 24px; COLOR: #fff; BORDER-TOP: 0px; CURSOR: pointer; BORDER-RIGHT: 0px; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+.Z_msg_pop .ZbtnP {
+	BORDER-BOTTOM: 0px; TEXT-ALIGN: center; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; LINE-HEIGHT: 24px; TEXT-INDENT: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 70px; PADDING-RIGHT: 0px; DISPLAY: inline-block; BACKGROUND: url(http://www.qiyipic.com/common/fix/bottompop_images/sprite.png) no-repeat 0px -295px; HEIGHT: 24px; COLOR: #fff; BORDER-TOP: 0px; CURSOR: pointer; BORDER-RIGHT: 0px; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+.Z_msg_pop .ZbtnP {
+	TEXT-ALIGN: left; PADDING-LEFT: 11px; WIDTH: 69px; BACKGROUND-POSITION: -114px -295px
+}
+.Z_msg_pop I {
+	FONT-STYLE: normal; MARGIN: 0px 5px; COLOR: #d9d9d9
+}
+.Z_msg_pop {
+	BACKGROUND-COLOR: #fff; WIDTH: 290px; COLOR: #000
+}
+.Z_msg_pop2 {
+	WIDTH: 200px; COLOR: #000
+}
+.Z_msg_pop .Z_msgHead {
+	PADDING-LEFT: 5px; BACKGROUND: url(http://www.qiyipic.com/common/fix/bottompop_images/headbg.png) no-repeat 0px 0px
+}
+.Z_msg_pop .msgHead {
+	LINE-HEIGHT: 29px; BACKGROUND: url(http://www.qiyipic.com/common/fix/bottompop_images/headbg.png) no-repeat right -36px; HEIGHT: 29px; OVERFLOW: hidden; PADDING-TOP: 2px
+}
+.Z_msg_pop .msgHead H6 {
+	LINE-HEIGHT: 29px; PADDING-LEFT: 32px; BACKGROUND: url(http://www.qiyipic.com/common/fix/bottompop_images/sprite.png) no-repeat 12px -254px; COLOR: #4a7f07; FONT-WEIGHT: bold
+}
+.Z_msg_pop .msgHead .Zclose {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; DISPLAY: block; FONT-FAMILY: "Century Gothic", Cambria, "Trebuchet MS", Arial, Helvetica, sans-serif; FLOAT: right; COLOR: #999; FONT-SIZE: 20px; MARGIN-RIGHT: 3px; PADDING-TOP: 0px; _font-size: 14px
+}
+.Z_msg_pop .msgHead .Zclose:hover {
+	COLOR: #c90; TEXT-DECORATION: none
+}
+.Z_msg_pop .Z_msgConn {
+	BORDER-BOTTOM: #dee1e3 0px solid; BORDER-LEFT: #dee1e3 1px solid; BORDER-TOP: #dee1e3 0px solid; BORDER-RIGHT: #dee1e3 1px solid
+}
+.Z_msg_pop .ZConn {
+	BORDER-BOTTOM: #edf0f2 1px solid; PADDING-BOTTOM: 15px; MIN-HEIGHT: 65px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 16px; _height: 65px
+}
+.Z_msg_pop .ZConn P {
+	LINE-HEIGHT: 20px; TEXT-INDENT: 2em; MARGIN: 0px 18px
+}
+.Z_msg_pop .ZConn P.Z_msgH6 {
+	TEXT-ALIGN: center; TEXT-INDENT: 0px; FONT-WEIGHT: bold
+}
+.Z_msg_pop .ZConn STRONG {
+	COLOR: #eb6100; FONT-WEIGHT: normal
+}
+.Z_msg_pop .ZConn .ZupdataP {
+	TEXT-INDENT: 0px; MARGIN: 0px 15px 0px 140px
+}
+.Z_msg_pop .ZConn EM {
+	FONT-STYLE: normal; COLOR: #808080
+}
+.Z_msg_pop .ZConn .ZfeedUpdate {
+	WIDTH: 116px; DISPLAY: inline; FLOAT: left; HEIGHT: 65px; MARGIN-LEFT: 14px
+}
+.Z_msg_pop .Z_msgBottom {
+	BORDER-BOTTOM: #fff 1px solid; BORDER-LEFT: #fff 1px solid; LINE-HEIGHT: 29px; BACKGROUND-COLOR: #f8f8f8; PADDING-LEFT: 13px; HEIGHT: 29px; BORDER-TOP: #fff 1px solid; BORDER-RIGHT: #fff 1px solid
+}
+.z_note {
+	BORDER-BOTTOM: #fff 1px solid; BORDER-LEFT: #fff 1px solid; LINE-HEIGHT: 29px; BACKGROUND-COLOR: #f8f8f8; PADDING-LEFT: 13px; HEIGHT: 29px; BORDER-TOP: #fff 1px solid; BORDER-RIGHT: #fff 1px solid
+}
+.Z_msg_pop .Z_msgBottom .Zfn {
+	DISPLAY: inline; FLOAT: right; _margin-top: 11px
+}
+.Z_msg_pop .Z_msgBottom .prv {
+	WIDTH: 10px; DISPLAY: inline-block; BACKGROUND: url(http://www.qiyipic.com/common/fix/bottompop_images/sprite.png) no-repeat -34px -180px; HEIGHT: 9px
+}
+.Z_msg_pop .Z_msgBottom .next {
+	WIDTH: 10px; DISPLAY: inline-block; BACKGROUND: url(http://www.qiyipic.com/common/fix/bottompop_images/sprite.png) no-repeat -34px -180px; HEIGHT: 9px
+}
+.Z_msg_pop .Z_msgBottom A.prv {
+	BACKGROUND-POSITION: -34px -191px
+}
+.Z_msg_pop .Z_msgBottom A.next {
+	BACKGROUND-POSITION: -55px -180px
+}
+.Z_msg_pop .Z_msgBottom A.prvEnd {
+	BACKGROUND-POSITION: -34px -180px; CURSOR: default
+}
+.Z_msg_pop .Z_msgBottom A.nextEnd {
+	BACKGROUND-POSITION: -55px -191px; CURSOR: default
+}
+.Z_msg_pop .Zhot {
+	MARGIN: 15px 13px 0px; CLEAR: left; BORDER-TOP: #d9d9d9 1px solid; PADDING-TOP: 12px
+}
+.Z_msg_pop .Zul {
+	COLOR: #808080
+}
+.Z_msg_pop .Zul LI {
+	LINE-HEIGHT: 20px; PADDING-LEFT: 12px; BACKGROUND: url(http://www.qiyipic.com/common/fix/bottompop_images/sprite.png) no-repeat 4px -347px
+}
+.Z_msg_pop2 .ZConn {
+	MIN-HEIGHT: 55px; BORDER-BOTTOM-WIDTH: 0px; _height: 55px
+}
+.Z_msg_pop2 .Zul {
+	MARGIN-LEFT: 9px
+}
+.Z_msg_pop2 .ZConn P {
+	TEXT-INDENT: 0px; MARGIN: 0px 9px
+}
+.z_hotPop {
+	WIDTH: 290px; HEIGHT: 300px; OVERFLOW: hidden
+}
+.z_note {
+	BORDER-BOTTOM: #edf0f2 1px solid; TEXT-ALIGN: center; BACKGROUND: #fff; COLOR: #4a7f07
+}

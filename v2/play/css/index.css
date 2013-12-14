@@ -1,0 +1,11 @@
+
+
+/**/
+div#top{ height:30px; padding-top:15px; width:100%; border-top:1px solid #ddd}
+div#top .title{ width:950px; margin:auto;}
+.index{ width:950px; margin:auto; color:#CCC}
+.index_top{ width:950px; height:265px;}
+.cmpplayer{ width:400px; height:250px; float:left}
+.cmpplayer .player_btn{ float:left; width:350px; text-align:right}
+#player{ width:355px; height:215px; float:left; margin:0 auto}
+.line01{ margin:15px auto}

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="{dede:global.cfg_templets_skin/}/style/style.css" rel="stylesheet" media="screen" type="text/css" />
+<script type="text/javascript" src="/play/js/public.js"></script>
+<script language="javascript" src="/play/js/encode.js"></script>
+</head>
+<body class="downlist">
+{dede:include filename="head2.htm"/}
+<div class="thisplace">
+<div><strong>当前位置:</strong> {dede:field name='position'/}</div>
+</div><!-- /place -->
+<div class="music_list">
+	<div class="music_list_l">
+			<div class="listbox">
+			<div class="listbox_title">
+				<h3>最新 {dede:field name='typename'/}</h3>
+				<!--span class="music_play">
+				<input name="" type="button" onclick="selectAll()" value="" title="全/反选"  class="box">
+				<input name="" type="button" onclick="preview()" value="" title="播放" class="playbtn">
+				</span-->
+			</div>
+			<ul class="e2 side_nav">
+	{dede:list pagesize='10'}
+				<li class="show_data" onmouseover="this.className='show_play'" onmouseout="this.className='show_data'">
+					<!--input type="checkbox" name="mcbox" value="[field:id /]"/--> 
+					<a href="[field:arcurl/]" class="title" target="_blank">[field:title/]</a>
+					<div class="list_cp">
+						<span class="data">
+						<small>更新：</small>[field:pubdate function="GetDateTimeMK(@me)"/]
+						<small>推荐：</small>[field:softrank function='GetRankStar(@me)'/]
+						<small>人气：</small>[field:click/]
+						</span>
+						<a href="[field:arcurl/]"  class="btn_play" title="播放" target="_blank">播放</a>
+						<a class="btn_add" href="/plus/stow.php?aid=[field:id/]&music_url=[field:music_url/]&type=3" title="加入我的播放列表" target="_blank"></a>
+					   <a href="/plus/recommend.php?aid=[field:id/]" title="推荐给好友" class="btn_tuijian" target="_blank">推荐</a>
+					</div>
+				</li>
+	{/dede:list}
+		</ul>
+		</div><!-- /listbox -->
+		<div class="dede_pages">
+			<ul class="pagelist">
+				{dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="5"/}
+			</ul>
+		</div><!-- /pages -->
+	</div>
+	<div class="music_list_r">
+		<div class="pright">
+        <div>
+          <dl class="tbox">
+				<dt><strong>栏目列表</strong></dt>
+				<dd>
+					<ul class="d6">
+                      {dede:channel type='son' currentstyle="<li><a href='~typelink~' class='thisclass'>~typename~</a></li>"}
+		<li><a href='[field:typeurl/]'>[field:typename/]</a></li>{/dede:channel}
+					</ul>
+				</dd>
+			</dl>
+        </div>
+		<div class="downrange">
+			<dl class="tbox">
+				<dt><strong>推荐曲目</strong></dt>
+				<dd>
+					<ul class="f1">
+                    {dede:arclist flag='c' titlelen=42 row=8}
+						<li>
+							<a href="[field:arcurl/]">[field:title/]</a>
+							<span><small>好评:</small>[field:scores/]</span>
+							<span><small>人气:</small>[field:click/]</span>
+						</li>
+                    {/dede:arclist}
+					</ul>
+				</dd>
+			</dl>
+		</div><!-- /downrange -->
+		<div class="hot mt1">
+		 <dl class="tbox">
+			<dt><strong>人气排行</strong></dt>
+				<dd>
+					<ul class="c1 ico2">
+                    {dede:arclist row=10 orderby=click}
+                    	<li><a href="[field:arcurl/]">[field:title/]</a></li>
+                    {/dede:arclist}
+					</ul>
+				</dd>
+			</dl>
+		</div>	
+	</div>
+</div>
+<div id="innerfooterAD2" style="margin:10px auto; width:730px">{dede:myad name='footer'/}</div>
+{dede:include filename="footer.htm"/}
+<!-- /footer -->
+</body>
+</html>

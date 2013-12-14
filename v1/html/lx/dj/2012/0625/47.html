@@ -1,0 +1,755 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>如果我是DJ你会爱我吗_KUAI音乐</title>
+<meta name="keywords" content="如果,我是,你会,爱我,吗,,如果我是DJ你会爱我吗,Dj Sunny" />
+<meta name="description" content="" />
+<link href="/templets/default/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/default/style/music.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script>
+<script>
+<script language="javascript"> 
+function mood(){ 
+  var mood_obj = document.getElementById('_mood'); 
+  myajax = new DedeAjax(mood_obj,false,false,"","",""); 
+  myajax.SendGet2(""+10*Math.random()); 
+  DedeXHTTP = null; 
+} 
+function moodGet(mood) 
+{ 
+  var mood_obj = document.getElementById('_mood'); 
+  myajax = new DedeAjax(mood_obj,false,false,"","",""); 
+  myajax.SendGet2(""+mood+"&up="+10*Math.random()); 
+  myajax = null; 
+} 
+</script> 
+
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin()
+{
+	var taget_obj = document.getElementById('_ajax_feedback');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/member/ajax_feedback.php");
+	DedeXHTTP = null;
+}
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+	DedeXHTTP = null;
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+	DedeXHTTP = null;
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+-->
+</script>
+</head>
+<body class="downlist">
+<div class="header_top">  
+    <div class="w960 center">  
+     <span id="time" class="time">KuAi音乐 - 爱生活，爱音乐！</span>
+     <div class="toplinks">
+	 <a href="/plus/heightsearch.php" target="_blank">高级搜索</a>|
+	 <a href="/data/rssmap.html" target="_blank">网站地图</a>|
+	 <a href="/tags.php">TAG标签</a>
+	 <a href="/data/rssmap.html" class="rss">RSS订阅</a>
+	 <span>
+		 [<a href=""onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://i.huamengnet.com');">设为首页</a>]
+		 [<a href="javascript:window.external.AddFavorite('http://i.huamengnet.com','KUAI音乐')">加入收藏</a>]
+	 </span>
+	 </div>
+    </div> 
+</div>
+
+<div class="header">
+	<div class="top w960 center">
+      <div class="title">
+        <h1><a href="http://i.huamengnet.com"><img src="/images/logo.png" height="60" width="220" alt="KUAI音乐"/></a> </h1>
+      </div>
+      <div class="banner">
+		  <div class="search">
+		  <form  name="formsearch" action="/plus/search.php">
+			<div class="form" id="login_2">
+			   <input type="hidden" name="kwtype" value="0" />
+			   <div class="search-keyword">
+			   <input name="q" type="text" class="" id="search-keyword" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';};hidekeyboard=true;login_2.className='form_on'"  onblur="if(this.value==''){this.value='在这里搜索...';};login_2.className='form'" />
+			   </div>
+			   <select name="searchtype" class="search-option" id="search-option">
+				   <option value="title" selected="selected">检索标题</option>
+				   <option value="titlekeyword">智能模糊</option>
+			   </select>
+			  <button type="submit" class="post_btn">搜索</button>
+			</div>
+			</form>
+			<div class="tags">
+			  <ul>
+			  
+				<li><a href='/tags.php?/%E5%93%81%E5%86%A0/' target="_blank">品冠</a></li>
+			  
+				<li><a href='/tags.php?/%E7%AB%99%E5%9C%A8/' target="_blank">站在</a></li>
+			  
+				<li><a href='/tags.php?/%E6%83%B3%E8%A7%81/' target="_blank">想见</a></li>
+			  
+				<li><a href='/tags.php?/%E5%BF%83%E5%A2%83/' target="_blank">心境</a></li>
+			  
+				<li><a href='/tags.php?/%E6%9F%90%E4%B8%AA/' target="_blank">某个</a></li>
+			  
+				<li><a href='/tags.php?/%E6%9A%97%E6%81%8B%E8%BF%87/' target="_blank">暗恋过</a></li>
+			  
+				<li><a href='/tags.php?/%E4%B8%8D%E7%BB%8F%E6%84%8F/' target="_blank">不经意</a></li>
+			  
+				<li><a href='/tags.php?/%E7%BC%B1%E7%BB%BB/' target="_blank">缱绻</a></li>
+			  
+				<li><a href='/tags.php?/%E9%AB%98%E5%A4%84/' target="_blank">高处</a></li>
+			  
+				<li><a href='/tags.php?/%E9%97%AE%E5%80%99/' target="_blank">问候</a></li>
+			  
+			  </ul>
+			</div>
+		</div><!-- //search -->
+	</div>
+      <div class="banner2">
+         <a  href="/member/index.php" class="user_login"  target="_blank">用户登录</a>
+         <a href="/member/index_do.php?fmdo=user&amp;dopost=regnew" class="user_reg"  target="_blank">注册帐号</a>
+		 <br/>
+		 <a href="/member/index.php"  target="_blank">会员中心</a> | 
+         <a href="/member/index_do.php?fmdo=login&amp;dopost=exit">安全退出</a> 
+	  </div>
+	</div><!-- //top -->
+	<!-- //菜单 -->
+    	<!-- //如果不使用currentstyle，可以在channel标签加入 cacheid='channeltoplist' 属性提升性能 -->
+		<div class="csc_top">
+		  <ul class="head_menu">	  	
+			<li class="current">
+			<a href='/'><span>主页</span></a>
+			<span class="sep">|</span>
+			</li>
+			
+			<li class='hover'><a href='/plus/list.php?tid=3'  rel='dropmenu3'><span>流行</span></a></li>
+			<li><a href='/plus/list.php?tid=1'  rel='dropmenu1' target="_blank"><span>轻音乐</span></a><span class="sep">|</span></li>
+			
+			<li><a href='/plus/list.php?tid=8'  target="_blank"><span>MV</span></a><span class="sep">|</span></li>
+			
+			<li><a href='/plus/list.php?tid=6'  target="_blank"><span>音乐专辑</span></a><span class="sep">|</span></li>
+			
+			<li><a href='/plus/guestbook.php'  target="_blank"><span>在线留言</span></a><span class="sep">|</span></li>
+			
+		 </ul><span class="rss"><a href="/data/rssmap.html" class="rss" target="_blank"><img src="/images/rssicons.png"  title="RSS订阅" alt="RSS订阅"/></a></span>
+		</div>
+</div><!-- //header -->
+
+<!-- /header -->
+<div class="thisplace">
+<div><strong>当前位置:</strong> <a href='http://i.huamengnet.com/'>首页</a> > <a href='/plus/list.php?tid=3'>流行</a> > <a href='/plus/list.php?tid=13'>DJ舞曲</a> > </div>
+</div><!-- /place -->
+<div class="play">
+	<div class="play_l">
+		<div class="music_title">
+		<div class="newdigg" id="newdigg"></div>
+			 <script language="javascript" type="text/javascript">getDigg(47);</script>
+			 <!-- Baidu Button BEGIN -->
+			<script type="text/javascript" id="bdshare_js" data="type=button&amp;uid=139658" ></script>
+			<script type="text/javascript" id="bdshell_js"></script>
+			<script type="text/javascript">
+				document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+			</script>
+			<!-- Baidu Button END -->
+		<p class="count" id="listen_count">202人听过</p>
+		<h2><img src="/images/img3.jpg" />&nbsp;如果我是DJ你会爱我吗</h2>
+		</div>
+		<div class="music_player">
+		<div class="actbox">
+			<ul>
+				<li id="act-err"><a href="/plus/erraddsave.php?aid=47&title=如果我是DJ你会爱我吗" target="_blank">报错</a></li>
+				<li id="act-pus"><a href="/plus/recommend.php?aid=47" target="_blank">推荐</a></li>
+				<li id="act-pnt"><a href="#" onClick="window.print();">打印</a></li>
+			</ul>
+			
+		</div><!-- /actbox -->
+		<a href="/plus/stow.php?aid=47&type=3&music_url=http://file.gradio100.com/UpFiles/20110117045417.mp3" title="收藏到我的播放列表" target="_blank"><div class="addto"></div></a>
+		<div class="cmplayer" id="player"></div>
+	  	<div id="lrc_content">正在为您加载播放器...</div>
+			<div class="context">
+					<ul>
+						<li>上一首：没有了 </li>
+						<li>下一首：<a href='/html/lx/dj/2012/0625/48.html'>嘟啊嘟啊嘟啊嘟 - DJ</a> </li>
+					</ul>
+				</div><!-- /context -->
+		</div>
+		<div class="music_info">
+			<ul class="infolist">
+					<li><small>演唱/演奏：</small><span>Dj Sunny</span></li>
+					<li><small>类型：</small><span>其他</span></li>
+					<li><small>语言：</small><span>国语</span></li>
+					<li><small>时长：</small><span>4:51 </span></li>
+					<li><small>推荐等级：</small><span>★★★☆☆</span></li>
+					<li><small>发行时间：</small><span>不详</span></li>
+        			<li><small>下载次数：</small><span><script src="/plus/disdls.php?aid=47" language="javascript"></script></span></li>
+				</ul><!-- /info -->
+		</div>
+	<div class="line02"></div>
+	
+	<div class="music_wiew">
+		<div class="music_wiew_title">
+			<h3>音乐信息</h3>
+				<ul class="downurllist">
+                	<a href='/plus/download.php?open=0&aid=47&cid=3' class="gotodownload post_btn" target="_blank" title="音乐下载">获取下载地址列表</a>
+
+                </ul>
+		</div>
+		<div class="content">
+			<p><br /></p>
+		</div>
+		<div class="line02"></div>
+		<!-- //AJAX评论区 -->
+	<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script>
+
+<!-- //主模板必须要引入/include/dedeajax2.js -->
+<a name='postform'></a>
+<div class="mt1">
+  <dl class="tbox">
+    <dd>
+	<!-- //评论内容区 -->
+<a name='commettop'></a>
+<div class="mt1">
+  <dl class="tbox">
+    <dt> <strong>最新评论</strong> <span class="more"><a href="/plus/feedback.php?aid=47">进入详细评论页&gt;&gt;</a></span> </dt>
+    <!-- //这两个ID的区块必须存在，否则JS会出错 -->
+    <dd id='commetcontentNew'></dd>
+    <dd id='commetcontent'></dd>
+  </dl>
+</div>
+<!--
+//由于评论载入时使用异步传输，因此必须在最后一步加载（DIGG和评论框须放在评论内容前面）
+//如果一定需要提前的把myajax.SendGet改为myajax.SendGet2，但可能会引起页面阻滞
+-->
+<script language='javascript'>
+function LoadCommets(page)
+{
+		var taget_obj = document.getElementById('commetcontent');
+		var waithtml = "<div style='line-height:50px'><img src='/images/loadinglit.gif' />评论加载中...</div>";
+		var myajax = new DedeAjax(taget_obj, true, true, '', 'x', waithtml);
+		myajax.SendGet2("/plus/feedback_ajax.php?dopost=getlist&aid=47&page="+page);
+		DedeXHTTP = null;
+}
+function PostComment()
+{
+		var f = document.feedback;
+		var msg = CKEDITOR.instances.msg.getData();
+		var nface = '6';
+		var nfeedbacktype = 'feedback';
+		var nvalidate = '';
+		var nnotuser = '';
+		var nusername = '';
+		var npwd = '';
+		var taget_obj = $DE('commetcontentNew');
+		var waithtml = "<div style='line-height:30px'><img src='/images/loadinglit.gif' />正在发送中...</div>";
+		if(msg=='')
+		{
+			alert("评论内容不能为空！");
+			return;
+		}
+		if(f.validate)
+		{
+			if(f.validate.value=='') {
+				alert("请填写验证码！");
+				return;
+			}
+			else {
+				nvalidate = f.validate.value;
+			}
+		}
+		if(msg.length > 500)
+		{
+			alert("你的评论是不是太长了？请填写500字以内的评论。");
+			return;
+		}
+		if(f.feedbacktype) {
+			for(var i=0; i < f.feedbacktype.length; i++)
+				if(f.feedbacktype[i].checked) nfeedbacktype = f.feedbacktype[i].value;
+		}
+		/*
+		if(f.face) {
+			for(var j=0; j < f.face.length; j++)
+				if(f.face[j].checked) nface = f.face[j].value;
+		}
+		*/
+		if(f.notuser.checked) nnotuser = '1';
+		if(f.username) nusername = f.username.value;
+		if(f.pwd) npwd = f.pwd.value;
+		
+		var myajax = new DedeAjax(taget_obj, false, true, '', '', waithtml);
+		myajax.sendlang = 'utf-8';
+		myajax.AddKeyN('dopost', 'send');
+		myajax.AddKeyN('aid', '47');
+		myajax.AddKeyN('fid', f.fid.value);
+		myajax.AddKeyN('face', nface);
+		myajax.AddKeyN('feedbacktype', nfeedbacktype);
+		myajax.AddKeyN('validate', nvalidate);
+		myajax.AddKeyN('notuser', nnotuser);
+		myajax.AddKeyN('username', nusername);
+		myajax.AddKeyN('pwd', npwd);
+		myajax.AddKeyN('msg', msg);
+		myajax.SendPost2('/plus/feedback_ajax.php');
+		//msg = '';
+		CKEDITOR.instances.msg.setData('');
+		//taget_obj.removeAttribute('id');
+		f.fid.value = 0;
+		if(f.validate)
+		{
+			if($DE('validateimg')) $DE('validateimg').src = "/include/vdimgck.php?"+f.validate.value;
+			f.validate.value = '';
+		}
+		
+}
+function quoteCommet(fid)
+{
+	    document.feedback.fid.value = fid;
+}
+  
+function ajaxFeedback(aid, fid, type)
+{
+	
+	var taget_obj = $DE('ajaxfeedback_'+fid);
+	if(taget_obj.innerHTML == '')
+	{
+		var myajax = new DedeAjax(taget_obj, true, true, '', 'x');
+		myajax.SendGet2("/plus/feedback.php?aid="+aid+"&fid="+fid+"&action=quote&type=ajax");
+		eval('var result = typeof CKEDITOR.instances.msg_'+fid);
+		if(result != 'undefined')
+		{
+			// 删除实例
+			eval('var edit = CKEDITOR.instances.msg_'+fid);
+			CKEDITOR.remove(edit);
+		}
+		CKEDITOR.replace(document.getElementById('msg_'+fid) , CKEDITOR.instances.msg.config);
+		scroll(0, taget_obj.offsetTop - 120);
+		var formname = 'f = document.ajaxfeedback_'+fid;
+		eval(formname);
+		if(f.validate)
+		{
+			if($DE('vdimg_'+fid)) $DE('vdimg_'+fid).src = "/include/vdimgck.php?"+f.validate.value;
+			f.validate.value = '';
+		}
+		
+		DedeXHTTP = null;
+	}
+}
+
+
+
+function ajaxQuotePost(fid)
+{
+	var formname = 'f = document.ajaxfeedback_'+fid;
+	eval(formname);
+	//var f = document.formname;
+	//var f = f[0];
+	var nvalidate = '';
+	var nnotuser = '';
+	var nusername = '';
+	var npwd = '';
+	var taget_obj = $DE('commetcontentNew');
+	var waithtml = "<div style='line-height:30px'><img src='/images/loadinglit.gif' />正在发送中...</div>";
+	eval('var msg = CKEDITOR.instances.msg_'+fid+'.getData()');
+
+	if(f.validate)
+	{
+		if(f.validate.value=='') {
+			alert("请填写验证码！");
+			return;
+		}
+		else {
+			nvalidate = f.validate.value;
+		}
+	}
+	var myajax = new DedeAjax(taget_obj, false, true, '', '', waithtml);
+	
+	if(f.notuser.checked) nnotuser = '1';
+	if(f.username) nusername = f.username.value;
+	if(f.pwd) npwd = f.pwd.value;
+	
+	myajax.sendlang = 'utf-8';
+	myajax.AddKeyN('dopost', 'send');
+	myajax.AddKeyN('aid', '47');
+	myajax.AddKeyN('fid', f.fid.value);
+	myajax.AddKeyN('type', 'ajax');
+	myajax.AddKeyN('comtype', f.comtype.value);
+	myajax.AddKeyN('isconfirm','yes');
+	
+	myajax.AddKeyN('typeid', f.typeid.value);
+	myajax.AddKeyN('quotemsg', f.quotemsg.value);
+	myajax.AddKeyN('validate', nvalidate);
+	myajax.AddKeyN('notuser', nnotuser);
+	myajax.AddKeyN('username', nusername);
+	myajax.AddKeyN('pwd', npwd);
+	myajax.AddKeyN('msg', msg);
+	myajax.SendPost2('/plus/feedback_ajax.php');
+	//alert(f.quotemsg.value);
+	if($DE('ajaxfeedback_'+fid).innerHTML != null)
+	{
+		$DE('ajaxfeedback_'+fid).innerHTML = '';
+	}
+	scroll(0, taget_obj.offsetTop);
+}
+LoadCommets(1);
+</script>
+<!-- //评论内容区结束 -->
+
+      <div class="dede_comment_post">
+          <form action="/plus/feedback.php" method="post" name="feedback">
+            <input type="hidden" name="action" value="send" />
+            <input type="hidden" name="comtype" value="comments">
+            <input type="hidden" name="aid" value="47" />
+            <input type="hidden" name="isconfirm" value="yes" />
+            <div class="dcmp-title"> <small>请自觉遵守互联网相关的政策法规，严禁发布色情、暴力、反动的言论。</small> </div>
+            <!-- /dcmp-title -->
+            <div class="dcmp-stand"> <strong>评价:</strong>
+              <input type="radio" name="feedbacktype" checked="1" value="feedback" id="dcmp-stand-neu" />
+              <label for="dcmp-stand-neu"><img src="/templets/default/images/cmt-neu.gif" />中立</label>
+              <input type="radio" name="feedbacktype" value="good" id="dcmp-stand-good" />
+              <label for="dcmp-stand-good"><img src="/templets/default/images/cmt-good.gif" />好评</label>
+              <input type="radio" name="feedbacktype" value="bad" id="dcmp-stand-bad" />
+              <label for="dcmp-stand-bad"><img src="/templets/default/images/cmt-bad.gif" />差评</label>
+            </div>
+            <!-- /dcmp-stand -->
+            <div class="clr"></div>
+            <!-- /dcmp-mood -->
+            <div class="dcmp-content1">
+            <script type="text/javascript">
+					//<![CDATA[
+					window.CKEDITOR_BASEPATH='/include/ckeditor/';
+					//]]>
+                    </script>
+            <script type="text/javascript" src="/include/ckeditor/ckeditor.js?t=B8DJ5M3"></script>
+            <div id="editor"></div><script type="text/javascript">//<![CDATA[
+var options = { "toolbars": null, "minFrameHeight": "100", "UEDITOR_HOME_URL": "\/include\/ueditor\/", "textarea": "msg", "initialContent": "" };var simpleEditor = new baidu.editor.ui.Editor(options);simpleEditor.render("editor")
+//]]></script>
+
+            </div>
+            <!-- /dcmp-content -->
+          <div class="dcmp-post">
+            <!--未登陆-->
+            <div class="dcmp-userinfo" id="_ajax_feedback"> 用户名:
+              <input type="text" name="username" size="16" class="ipt-txt" style="text-transform: uppercase;"/>
+              
+              验证码:
+              <input type="text" name="validate" size="4" class="ipt-txt" style="text-transform:uppercase;"/>
+              <img src= "/include/vdimgck.php" id="validateimg" style="cursor:pointer" onclick="this.src=this.src+'?'" title="点击我更换图片" alt="点击我更换图片"  class="vdimg"/>
+              <input type="checkbox" name="notuser" id="dcmp-submit-guest" />
+              <label for="dcmp-submit-guest" />
+              匿名?
+              </label>
+            </div>
+            
+            <script language="javascript" type="text/javascript">CheckLogin();</script>
+            
+            <div >
+            <button type="submit" onClick='PostComment()' class="post_btn">发表评论</button>
+            </div>
+          </div>
+
+            <!-- /dcmp-post -->
+          </form>
+      </div>
+    </dd>
+  </dl>
+</div>
+<!-- //评论表单区结束 -->
+
+
+	</div>
+	</div>
+	<div class="play_r">
+		<div class="music_img"><img src='/uploads/allimg/120625/5-120625210K40-L.png' /></div>
+		<div class="infos_userinfo">
+				
+			</div>
+		<div class="type_hot">
+			<script type="text/javascript" src="/play/js/public.js"></script>
+			<script language="javascript" src="/play/js/encode.js"></script>
+			<h3>本类热门单曲：
+			<span class="music_play">
+			<input name="" type="button" onclick="selectjtAll()" value="" title="全/反选"  class="box">
+			<input name="" type="button" onclick="previewjt()" value="" title="播放" class="playbtn">
+			</span>
+			</h3>
+			<ul>
+			<li class="show_data" onmouseover="this.className='show_play'" onmouseout="this.className='show_data'">
+			  <input type="checkbox" name="jtbox" value="1" class="play_checkbox"/>
+			  <a href="/html/music/gq/2012/0610/1.html">Run away with me</a>
+			  <div class="list_cp" >
+				<span class="data">播放426次</span>
+			   <a href="/html/music/gq/2012/0610/1.html" title="播放" class="btn_play" target="_blank">播放</a>
+			   <a href="/plus/stow.php?aid=1&type=3&music_url={server}1/runwaywithme.1" title="收藏到我的播放列表" class="btn_add" target="_blank">添加</a>
+			   <!--a href="/plus/stow.php?aid=1" class="btn_fav " target="_blank">收藏</a-->
+			   <a href="/plus/recommend.php?aid=1" title="推荐给好友" class="btn_tuijian" target="_blank">推荐</a>
+				</div>
+			  </li>
+<li class="show_data" onmouseover="this.className='show_play'" onmouseout="this.className='show_data'">
+			  <input type="checkbox" name="jtbox" value="7" class="play_checkbox"/>
+			  <a href="/html/music/jt/2012/0613/7.html">心境·迷离</a>
+			  <div class="list_cp" >
+				<span class="data">播放250次</span>
+			   <a href="/html/music/jt/2012/0613/7.html" title="播放" class="btn_play" target="_blank">播放</a>
+			   <a href="/plus/stow.php?aid=7&type=3&music_url={server}31702/20120306013911.1" title="收藏到我的播放列表" class="btn_add" target="_blank">添加</a>
+			   <!--a href="/plus/stow.php?aid=7" class="btn_fav " target="_blank">收藏</a-->
+			   <a href="/plus/recommend.php?aid=7" title="推荐给好友" class="btn_tuijian" target="_blank">推荐</a>
+				</div>
+			  </li>
+<li class="show_data" onmouseover="this.className='show_play'" onmouseout="this.className='show_data'">
+			  <input type="checkbox" name="jtbox" value="9" class="play_checkbox"/>
+			  <a href="/html/lx/wy/2012/0613/9.html">Prisoner Of Love</a>
+			  <div class="list_cp" >
+				<span class="data">播放218次</span>
+			   <a href="/html/lx/wy/2012/0613/9.html" title="播放" class="btn_play" target="_blank">播放</a>
+			   <a href="/plus/stow.php?aid=9&type=3&music_url=http://f1.c.hjfile.cn/chat/song/489cd356-300e-4077-b1da-b9ccec43836d.mp3" title="收藏到我的播放列表" class="btn_add" target="_blank">添加</a>
+			   <!--a href="/plus/stow.php?aid=9" class="btn_fav " target="_blank">收藏</a-->
+			   <a href="/plus/recommend.php?aid=9" title="推荐给好友" class="btn_tuijian" target="_blank">推荐</a>
+				</div>
+			  </li>
+<li class="show_data" onmouseover="this.className='show_play'" onmouseout="this.className='show_data'">
+			  <input type="checkbox" name="jtbox" value="4" class="play_checkbox"/>
+			  <a href="/html/lx/hy/2012/0610/4.html">品冠-现在就想见的人</a>
+			  <div class="list_cp" >
+				<span class="data">播放209次</span>
+			   <a href="/html/lx/hy/2012/0610/4.html" title="播放" class="btn_play" target="_blank">播放</a>
+			   <a href="/plus/stow.php?aid=4&type=3&music_url=http://web.huamengnet.com/test/pg.mp3" title="收藏到我的播放列表" class="btn_add" target="_blank">添加</a>
+			   <!--a href="/plus/stow.php?aid=4" class="btn_fav " target="_blank">收藏</a-->
+			   <a href="/plus/recommend.php?aid=4" title="推荐给好友" class="btn_tuijian" target="_blank">推荐</a>
+				</div>
+			  </li>
+<li class="show_data" onmouseover="this.className='show_play'" onmouseout="this.className='show_data'">
+			  <input type="checkbox" name="jtbox" value="47" class="play_checkbox"/>
+			  <a href="/html/lx/dj/2012/0625/47.html">如果我是DJ你会爱我吗</a>
+			  <div class="list_cp" >
+				<span class="data">播放202次</span>
+			   <a href="/html/lx/dj/2012/0625/47.html" title="播放" class="btn_play" target="_blank">播放</a>
+			   <a href="/plus/stow.php?aid=47&type=3&music_url=http://file.gradio100.com/UpFiles/20110117045417.mp3" title="收藏到我的播放列表" class="btn_add" target="_blank">添加</a>
+			   <!--a href="/plus/stow.php?aid=47" class="btn_fav " target="_blank">收藏</a-->
+			   <a href="/plus/recommend.php?aid=47" title="推荐给好友" class="btn_tuijian" target="_blank">推荐</a>
+				</div>
+			  </li>
+<li class="show_data" onmouseover="this.className='show_play'" onmouseout="this.className='show_data'">
+			  <input type="checkbox" name="jtbox" value="43" class="play_checkbox"/>
+			  <a href="/plus/view.php?aid=43">后青春期的诗</a>
+			  <div class="list_cp" >
+				<span class="data">播放200次</span>
+			   <a href="/plus/view.php?aid=43" title="播放" class="btn_play" target="_blank">播放</a>
+			   <a href="/plus/stow.php?aid=43&type=3&music_url=http://220.166.62.60:8080/music/hqcds.mp3" title="收藏到我的播放列表" class="btn_add" target="_blank">添加</a>
+			   <!--a href="/plus/stow.php?aid=43" class="btn_fav " target="_blank">收藏</a-->
+			   <a href="/plus/recommend.php?aid=43" title="推荐给好友" class="btn_tuijian" target="_blank">推荐</a>
+				</div>
+			  </li>
+<li class="show_data" onmouseover="this.className='show_play'" onmouseout="this.className='show_data'">
+			  <input type="checkbox" name="jtbox" value="45" class="play_checkbox"/>
+			  <a href="/html/zj/2012/0625/45.html">毕业后，何处安放我</a>
+			  <div class="list_cp" >
+				<span class="data">播放190次</span>
+			   <a href="/html/zj/2012/0625/45.html" title="播放" class="btn_play" target="_blank">播放</a>
+			   <a href="/plus/stow.php?aid=45&type=3&music_url=" title="收藏到我的播放列表" class="btn_add" target="_blank">添加</a>
+			   <!--a href="/plus/stow.php?aid=45" class="btn_fav " target="_blank">收藏</a-->
+			   <a href="/plus/recommend.php?aid=45" title="推荐给好友" class="btn_tuijian" target="_blank">推荐</a>
+				</div>
+			  </li>
+<li class="show_data" onmouseover="this.className='show_play'" onmouseout="this.className='show_data'">
+			  <input type="checkbox" name="jtbox" value="36" class="play_checkbox"/>
+			  <a href="/plus/view.php?aid=36">能不能</a>
+			  <div class="list_cp" >
+				<span class="data">播放184次</span>
+			   <a href="/plus/view.php?aid=36" title="播放" class="btn_play" target="_blank">播放</a>
+			   <a href="/plus/stow.php?aid=36&type=3&music_url=http://www.lwoavie.com/lemongrass/grasshippo_nbn.mp3" title="收藏到我的播放列表" class="btn_add" target="_blank">添加</a>
+			   <!--a href="/plus/stow.php?aid=36" class="btn_fav " target="_blank">收藏</a-->
+			   <a href="/plus/recommend.php?aid=36" title="推荐给好友" class="btn_tuijian" target="_blank">推荐</a>
+				</div>
+			  </li>
+<li class="show_data" onmouseover="this.className='show_play'" onmouseout="this.className='show_data'">
+			  <input type="checkbox" name="jtbox" value="35" class="play_checkbox"/>
+			  <a href="/plus/view.php?aid=35">暗恋过,结局呢?</a>
+			  <div class="list_cp" >
+				<span class="data">播放181次</span>
+			   <a href="/plus/view.php?aid=35" title="播放" class="btn_play" target="_blank">播放</a>
+			   <a href="/plus/stow.php?aid=35&type=3&music_url=http://bs.newedu.info/UploadFiles/2012317182459.mp3" title="收藏到我的播放列表" class="btn_add" target="_blank">添加</a>
+			   <!--a href="/plus/stow.php?aid=35" class="btn_fav " target="_blank">收藏</a-->
+			   <a href="/plus/recommend.php?aid=35" title="推荐给好友" class="btn_tuijian" target="_blank">推荐</a>
+				</div>
+			  </li>
+<li class="show_data" onmouseover="this.className='show_play'" onmouseout="this.className='show_data'">
+			  <input type="checkbox" name="jtbox" value="40" class="play_checkbox"/>
+			  <a href="/html/lx/xy/2012/0624/40.html">我们都是好孩子</a>
+			  <div class="list_cp" >
+				<span class="data">播放174次</span>
+			   <a href="/html/lx/xy/2012/0624/40.html" title="播放" class="btn_play" target="_blank">播放</a>
+			   <a href="/plus/stow.php?aid=40&type=3&music_url=http://www.qingol.com/uploadfile/2011/1020/wmdshhz.mp3" title="收藏到我的播放列表" class="btn_add" target="_blank">添加</a>
+			   <!--a href="/plus/stow.php?aid=40" class="btn_fav " target="_blank">收藏</a-->
+			   <a href="/plus/recommend.php?aid=40" title="推荐给好友" class="btn_tuijian" target="_blank">推荐</a>
+				</div>
+			  </li>
+
+			</ul>
+		</div>
+	</div>
+
+</div>
+<script src="/plus/count.php?aid=47&mid=5" language="javascript"></script>
+<script type="text/javascript" src="/play/cmp.js"></script> 
+<script type="text/javascript">
+var cmpo;
+function cmp_loaded(key) {
+	//cmp loaded
+	cmpo = CMP.get("cmp");
+	if (cmpo) {
+		//cmp callback		
+		showInfo(cmpo.config("name"));
+		//开始播放时
+		showInfo(cmpo.config("play"));
+
+		//cmpo.addEventListener("model_start", "cmp_model_start");
+		//侦听歌词行改变事件
+		//cmpo.addEventListener("lrc_rowchange", "cmp_lrc_rowchange");
+	}
+}
+//开始播放时清除信息，并显示描述
+function cmp_model_start(data) {
+	showInfo(cmpo.config("description"));
+}
+//歌词行改变时显示当前行信息
+function cmp_lrc_rowchange(data) {
+	showInfo(data);
+}
+function showInfo(str) {
+	//显示到浏览器窗口标题
+	//document.title = str;
+	//输出到页面
+	
+	document.getElementById("lrc_content").innerHTML = str;
+}
+
+//cmp主程序地址，替换成你自己的
+var cmp_url = "/play/player.swf?php=1&src=http://file.gradio100.com/UpFiles/20110117045417.mp3&label=如果我是DJ你会爱我吗&lrc=/play/lrc.php?song_id=47";
+var musicname = "如果我是DJ你会爱我吗"
+var writer = "Dj Sunny"
+//cmp的参数
+var flashvars = {
+	name : "正在为您缓冲歌曲...",
+	play : "正在播放：《"+musicname+"》- "+writer+"",
+	//cmp初始化完成时的脚本接口回调函数名
+	api:"cmp_loaded"
+};
+//id, width, height, swf_url, flashvars, params, attrs
+var htm = CMP.create("cmp", "100%", "100%", cmp_url, flashvars);
+document.getElementById("player").innerHTML = htm;
+</script>
+
+<div id="innerfooterAD2" style="margin:10px auto; width:730px"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-8240022149099196";
+/* 728&#42;90图片广告 */
+google_ad_slot = "4224231781";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<!-- //底部模板 -->
+<div class="footer w960 center mt1 clear">
+    <div class="footer_left"></div>
+    <div class="footer_body">
+	    <span style="position:fixed; right:15px; bottom:25px;"><a href="javascript:scroll(0,0)"><img src="/images/top.gif" alt="返回顶部" title="返回顶部"/></a></span>
+	    
+		<div class="copyright">Copyright &copy; 2012 KUAI.CN. 桦盟网络 版权所有   </div>      
+<!-- /powered -->
+   </div>
+   <div class="footer_right"></div>
+   <p class="w3c">
+    <a href="http://validator.w3.org/check?uri=referer" target="_blank">
+	<img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88" />
+	</a>
+	 <a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+        <img style="border:0;" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+    </a>
+	<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+    <img style="border:0;" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+	</a>
+  </p>
+   <div class="tongji" style="margin:auto" align="center">
+   <script src="http://s84.cnzz.com/stat.php?id=3483221&web_id=3483221&show=pic" language="JavaScript" type="text/javascript"></script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fbd8e9c876f8adaf70538c0492cafdcd6' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+	</div>
+</div>
+<!-- /footer -->
+
+</body>
+</html>

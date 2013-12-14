@@ -1,0 +1,5 @@
+<li>
+	  	<span>[field:pubdate function="MyDate('m-d',@me)"/]</span>
+		  <input type="checkbox" name="qtbox" value="[field:id /]" class="play_checkbox"/>
+		  <a href="[field:arcurl/]">[field:title/]</a>
+	  </li>

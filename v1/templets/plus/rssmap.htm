@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global name='cfg_soft_lang'/}" />
+<title>{dede:global name='cfg_webname'/}_RSS订阅地图</title>
+<link href="{dede:global name='cfg_templets_skin'/}/style/dedecms.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="{dede:global name='cfg_templets_skin'/}/style/download.css" rel="stylesheet" type="text/css" media="screen" />
+<style type="text/css">
+tr{ height:60px; line-height:60px;}
+.tit h2{ float:left}
+.sp-title{ background:none;width: 900px; margin:10px auto}
+.sp-title,.linkbox{border: 1px solid #E4E4E4;border-radius: 4px; padding:15px 10px; -webkit-box-shadow:5px 2px 6px #DDD;-moz-box-shadow:5px 2px 6px #000;}
+.linkbox{ margin-top:15px;}
+.sp-title h2 {
+float:left;
+margin: 0 0 20px 0;
+font-size: 24px;
+font-weight: normal;
+color: #333;
+}
+.sp-title .more {
+float: right;
+margin:0px 15px;
+line-height: 27px;
+}
+.mt1{ width:920px; margin:10px auto}
+.formbox table { float:left; width:70%;}
+.tit{ width:70px}
+</style>
+</head>
+<body class="mapspage">
+<div class="header">
+  <div class="top w960 center">
+    <div class="title" style="width:960px">
+      <h1 style="float:left"><a href="<?php echo $cfg_basehost;?>" title="<?php echo $cfg_webname;?>"><img src="/images/logo.png" height="40" width="233" alt=""/></a> </h1>
+	  <span style="float:right"><a href="/">回到首页</a>|<a href="/member/">会员中心</a></span>
+    </div>
+    <!-- /title -->
+
+  </div>
+  <!-- /top -->
+</div>
+<!-- /header -->
+
+<div class="mt1">
+	<div class="sp-title">
+    <h2>全部分类</h2>
+    <span class="more">	<a href='{dede:global name='cfg_basehost'/}'>返回首页</a></span>
+    </div>
+
+	<div class="linkbox">
+	{dede:global name='maplist'/}
+	</div>
+
+
+</div>
+
+<!-- //底部模板 -->
+<div class="footer w960 center mt1 clear">
+    <div class="footer_left"></div>
+    <div class="footer_body">
+	    <span style="position:fixed; right:15px; bottom:25px;"><a href="javascript:scroll(0,0)"><img src="/images/top.gif" alt="返回顶部" title="返回顶部"/></a></span>
+	<p class="powered">    
+		<div class="copyright">{dede:global.cfg_powerby /}&nbsp;&nbsp;{dede:global.cfg_beian /}</div></p>        
+<!-- /powered -->
+   </div>
+   <div class="footer_right"></div>
+   <div class="tongji" style="margin:auto" align="center"><script src="http://s84.cnzz.com/stat.php?id=3483221&web_id=3483221&show=pic" language="JavaScript"></script>
+	</div>
+</div>
+
+</body>
+</html>
